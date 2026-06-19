@@ -118,6 +118,14 @@ main{margin-left:58px;}
 .sarrow{width:34px;height:14px;flex-shrink:0;margin:0 .4rem;}
 .vars{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:1.5px;background:rgba(21,23,26,.25);}
 .vcard{background:rgba(21,23,26,.12);padding:.9rem 1rem;font-family:var(--mono);font-size:.78rem;}
+.protos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5px;background:rgba(21,23,26,.25);margin-top:1.6rem;}
+.proto-card{background:rgba(21,23,26,.12);padding:1.4rem 1.3rem;}
+.proto-card h4{font-family:var(--display);font-weight:700;font-size:1.15rem;text-transform:uppercase;margin-bottom:.4rem;}
+.pspec{font-family:var(--mono);font-size:.62rem;opacity:.7;margin-bottom:1rem;}
+.proto-svg{width:100%;height:auto;display:block;margin-bottom:1rem;}
+.proto-legend{display:flex;flex-direction:column;gap:.4rem;}
+.proto-legend .row{display:flex;align-items:center;gap:.6rem;font-size:.7rem;line-height:1.4;}
+.proto-legend .sw{width:12px;height:12px;flex-shrink:0;border-radius:2px;}
 
 /* MÍDIA (mostarda) */
 #midia{background:var(--mostarda);color:var(--ink);}
@@ -132,6 +140,17 @@ main{margin-left:58px;}
 .partner a{font-family:var(--mono);font-size:.72rem;border-bottom:1.5px solid var(--cobalto);text-decoration:none;color:var(--cobalto);}
 .epchips{display:flex;flex-wrap:wrap;gap:.35rem;margin:.7rem 0;}
 .epchip{font-family:var(--mono);font-size:.66rem;border:1px solid #c9c4b4;padding:.1rem .45rem;color:#5a5d55;}
+.notaveis{margin-top:2.6rem;}
+.notaveis-h{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--terracota);margin-bottom:1.2rem;}
+.not-item{display:grid;grid-template-columns:1fr auto;gap:.3rem 1.2rem;align-items:baseline;
+  padding:1rem 0;border-top:1px solid rgba(21,23,26,.15);}
+.not-item:last-child{border-bottom:1px solid rgba(21,23,26,.15);}
+.not-t{font-size:.85rem;line-height:1.5;color:var(--ink);max-width:54ch;}
+.not-v{font-family:var(--mono);font-size:.72rem;color:var(--terracota);white-space:nowrap;}
+.not-meta{display:flex;align-items:center;gap:.7rem;grid-column:1 / -1;}
+.not-link{font-family:var(--mono);font-size:.68rem;color:var(--cobalto);text-decoration:none;border-bottom:1.5px solid var(--cobalto);}
+.not-publi{font-family:var(--mono);font-size:.62rem;letter-spacing:.04em;text-transform:uppercase;
+  background:var(--ink);color:var(--mostarda);padding:.1rem .4rem;}
 
 /* PESQUISA (verde) */
 #pesquisa{background:var(--verde);color:var(--paper);}
@@ -182,6 +201,20 @@ footer a{color:var(--mostarda);text-decoration:none;}
   .pub{grid-template-columns:1fr;gap:.3rem;}
   .iecis-wrap{flex-direction:column;}
   .iecis-side{width:100%;flex-direction:row;overflow-x:auto;}
+  .hero-head{max-width:none;}
+  .protos-grid{grid-template-columns:1fr;}
+  .schema{flex-direction:column;align-items:stretch;}
+  .snode{width:100%;}
+  .sarrow{transform:rotate(90deg);margin:.3rem auto;}
+  .stat-row{gap:1.8rem;}
+  .vars{grid-template-columns:repeat(2,1fr);}
+}
+
+@media (max-width:480px){
+  .pilares-grid{grid-template-columns:1fr;}
+  .vars{grid-template-columns:1fr;}
+  .partners{grid-template-columns:1fr;}
+}
 }
 </style>
 </head>
@@ -455,6 +488,78 @@ footer a{color:var(--mostarda);text-decoration:none;}
     <div class="partner">
       <h3>30eBR</h3>
       <p>pesquisa biográfica e de repertório para artistas em produção da casa, incluindo BK', Planet Hemp e o Projeto Dominguinho (João Gomes, Jota.pê e Mestrinho).</p>
+    </div>
+  </div>
+  </div>
+
+  <div class="notaveis">
+    <p class="notaveis-h">trabalhos mais notáveis</p>
+
+    <div class="not-item">
+      <div class="not-t">pesquisa sobre os "garotin"</div>
+      <div class="not-v">+1M de visualizações</div>
+      <div class="not-meta"><a class="not-link" href="https://www.instagram.com/reel/DQXhN3QD2wf/?igsh=eXl3N2Z5cWRodjc1" target="_blank" rel="noopener">ver reel ↗</a></div>
+    </div>
+
+    <div class="not-item">
+      <div class="not-t">pesquisa sobre Peter Tosh</div>
+      <div class="not-v">+1M de visualizações</div>
+      <div class="not-meta"><a class="not-link" href="https://www.instagram.com/reel/DH4QbxupLLW/?igsh=dG1yMDFhd3QybjRo" target="_blank" rel="noopener">ver reel ↗</a></div>
+    </div>
+
+    <div class="not-item">
+      <div class="not-t">sobre os asiáticos no filme Pecadores</div>
+      <div class="not-v">+1,5M de visualizações</div>
+      <div class="not-meta"><a class="not-link" href="https://www.instagram.com/reel/DMYj_j3Jk6d/?igsh=MXRxOXNmN3M5b3Rqdg==" target="_blank" rel="noopener">ver reel ↗</a></div>
+    </div>
+
+    <div class="not-item">
+      <div class="not-t">os "doidinhos do centro": são os loucos que estão na rua, ou é a rua que os leva à loucura?</div>
+      <div class="not-v">+3M de visualizações</div>
+      <div class="not-meta"><a class="not-link" href="https://www.instagram.com/reel/DTgVBYtj4sc/?igsh=MXRnNnB2MjdwODlyaw==" target="_blank" rel="noopener">ver reel ↗</a></div>
+    </div>
+
+    <div class="not-item">
+      <div class="not-t">cangaço, mundo árabe, indígena e africano</div>
+      <div class="not-v">+500mil de visualizações</div>
+      <div class="not-meta"><a class="not-link" href="https://www.instagram.com/reel/DY0M1rvhpax/?igsh=bnNyeWVwM3J3bnZt" target="_blank" rel="noopener">ver reel ↗</a></div>
+    </div>
+
+    <div class="not-item">
+      <div class="not-t">a cultura dos ratos em Recife</div>
+      <div class="not-v">+400mil de visualizações</div>
+      <div class="not-meta"><a class="not-link" href="https://www.instagram.com/reel/DVhGkozjzI6/?igsh=MW9vN3RhZzg0Z3M0ag==" target="_blank" rel="noopener">ver reel ↗</a></div>
+    </div>
+
+    <div class="not-item">
+      <div class="not-t">Auto da Compadecida e a origem do diabo</div>
+      <div class="not-v">+600mil de visualizações</div>
+      <div class="not-meta"><a class="not-link" href="https://www.instagram.com/reel/DN1MicI3vxD/?igsh=dXM2OXF4Znp0eGNk" target="_blank" rel="noopener">ver reel ↗</a></div>
+    </div>
+
+    <div class="not-item">
+      <div class="not-t">BK' — para 30eBR</div>
+      <div class="not-v">+200mil de visualizações</div>
+      <div class="not-meta">
+        <a class="not-link" href="https://www.instagram.com/reel/DXFhSWhD6zV/?igsh=MWpjOGN6OWM4dzFueQ==" target="_blank" rel="noopener">ver reel ↗</a>
+        <span class="not-publi">publi</span>
+      </div>
+    </div>
+<div class="not-item">
+      <div class="not-t">Jorge Ben — para 30eBR</div>
+      <div class="not-v">+100mil de visualizações</div>
+      <div class="not-meta">
+        <a class="not-link" href="https://www.instagram.com/reel/DY7hDKdMJoc/?igsh=MW90cnl4MzR0YXF2cg==" target="_blank" rel="noopener">ver reel ↗</a>
+        <span class="not-publi">publi</span>
+      </div>
+    </div>
+    <div class="not-item">
+      <div class="not-t">Planet Hemp — para 30eBR</div>
+      <div class="not-v">+250mil de visualizações</div>
+      <div class="not-meta">
+        <a class="not-link" href="https://www.instagram.com/reel/DOEtt7DD_r-/?igsh=MXdwY2RjNnh1emdyYQ==" target="_blank" rel="noopener">ver reel ↗</a>
+        <span class="not-publi">publi</span>
+      </div>
     </div>
   </div>
 </section>
