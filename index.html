@@ -22,14 +22,14 @@
   --mono:'Space Mono',monospace;
 }
 html{scroll-behavior:smooth;}
-body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6;}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6;overflow-x:hidden;}
 a{color:inherit;}
 ::selection{background:var(--mostarda);color:var(--ink);}
 
 /* ── RAIL NAV (desktop) ── */
 .rail{position:fixed;top:0;left:0;width:58px;height:100vh;background:var(--ink);z-index:200;
   display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:1.4rem 0;}
-.rail-mark{width:22px;height:22px;flex-shrink:0;}
+.rail-mark{width:22px;height:22px;flex-shrink:0;margin-bottom:1.8rem;}
 .rail-links{display:flex;flex-direction:column;gap:2.2rem;align-items:center;}
 .rail-links a{writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg);
   font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;color:rgba(236,231,218,.45);
@@ -231,7 +231,7 @@ footer a{color:var(--mostarda);text-decoration:none;}
   </svg>
 
   <p class="eyebrow">portfólio · aplicações · salvador, ba</p>
-  <h1 class="hero-head">pesquisa que vira <span class="hl">sistema</span></h1>
+  <h1 class="hero-head">penso teoria, construo <span class="hl">na mão</span>
   <p class="hero-sub">
     pesquisadora interdisciplinar. <b>penso a tecnologia a partir da crítica social</b> e construo, com as próprias mãos,
     os sistemas que a materializam: dashboards de gestão, telemetria industrial, audiosséries documentais, ensaios interativos.
@@ -478,8 +478,7 @@ footer a{color:var(--mostarda);text-decoration:none;}
     <a class="ens" href="/paredaoefisica/"><div class="ens-dot" style="background:#C0492B;"></div><div class="ens-t">paredão e física</div><div class="ens-c">acústica · cidade</div></a>
     <a class="ens" href="/acaradocrime/"><div class="ens-dot" style="background:#C9B68C;"></div><div class="ens-t">cara de bandido</div><div class="ens-c">linguagem · raça</div></a>
   </div>
-  <a href="index.html" class="arquivo-link">ver arquivo completo de ensaios ↗</a>
-
+  <a href="https://cintiavitorino.com.br/" class="arquivo-link">ver arquivo completo de ensaios ↗</a>
   <div style="margin-top:2.8rem;">
     <div class="pub">
       <div class="pub-y">2025</div>
