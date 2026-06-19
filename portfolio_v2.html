@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cíntia vitorino · portfólio</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20fill='%232643D6'/%3E%3Ccircle%20cx='100'%20cy='100'%20r='62'%20fill='%23ECE7DA'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --paper:#ECE7DA;
+  --ink:#15171A;
+  --cobalto:#2643D6;
+  --cobalto-d:#16297E;
+  --mostarda:#E8A93D;
+  --terracota:#C0492B;
+  --verde:#2B6E50;
+  --display:'Big Shoulders Display',sans-serif;
+  --body:'IBM Plex Sans',sans-serif;
+  --mono:'Space Mono',monospace;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6;}
+a{color:inherit;}
+::selection{background:var(--mostarda);color:var(--ink);}
+
+/* ── RAIL NAV (desktop) ── */
+.rail{position:fixed;top:0;left:0;width:58px;height:100vh;background:var(--ink);z-index:200;
+  display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:1.4rem 0;}
+.rail-mark{width:22px;height:22px;flex-shrink:0;}
+.rail-links{display:flex;flex-direction:column;gap:2.2rem;align-items:center;}
+.rail-links a{writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg);
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;color:rgba(236,231,218,.45);
+  text-decoration:none;transition:color .2s;}
+.rail-links a:hover{color:var(--mostarda);}
+.rail-mail{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--mono);font-size:.68rem;
+  letter-spacing:.1em;color:var(--mostarda);text-decoration:none;}
+
+/* ── MAIN OFFSET ── */
+main{margin-left:58px;}
+
+/* ── geometric module (signature) ── */
+.tile-mark{position:absolute;pointer-events:none;opacity:.5;}
+
+/* ── HERO ── */
+#inicio{position:relative;min-height:92vh;display:flex;flex-direction:column;justify-content:center;
+  padding:6rem 3.4rem 4rem;overflow:hidden;background:var(--paper);}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--cobalto);margin-bottom:1.6rem;text-transform:uppercase;}
+.hero-head{font-family:var(--display);font-weight:900;font-size:clamp(2.8rem,7vw,6.4rem);line-height:.94;
+  letter-spacing:-.01em;text-transform:uppercase;max-width:16ch;margin-bottom:2.2rem;}
+.hl{background:var(--cobalto);color:var(--paper);padding:0 .15em;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
+.hero-sub{font-size:.95rem;line-height:1.85;color:#3a3d3f;max-width:46ch;margin-bottom:2.4rem;}
+.hero-sub b{color:var(--ink);font-weight:600;}
+.hero-cta{display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap;}
+.btn-mail{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;color:var(--ink);
+  text-decoration:none;border-bottom:2px solid var(--cobalto);padding-bottom:.15rem;}
+.scroll-note{font-family:var(--mono);font-size:.68rem;color:#8a8d85;letter-spacing:.04em;}
+.hero-pattern{position:absolute;right:-2rem;top:50%;transform:translateY(-50%);width:min(38vw,460px);opacity:.95;}
+@media (max-width:900px){.hero-pattern{display:none;}}
+
+/* ── PILARES ── */
+#pilares{background:var(--cobalto);color:var(--paper);padding:5rem 3.4rem;position:relative;overflow:hidden;}
+.sec-head{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,3vw,2.4rem);text-transform:uppercase;
+  line-height:1.05;max-width:24ch;margin-bottom:2.8rem;}
+.pilares-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(236,231,218,.2);
+  border:1px solid rgba(236,231,218,.2);position:relative;z-index:1;}
+.pilar{background:var(--cobalto-d);padding:1.9rem 1.6rem;}
+.pilar-n{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;color:var(--p,var(--mostarda));margin-bottom:1rem;}
+.pilar-t{font-family:var(--display);font-weight:700;font-size:1.3rem;text-transform:uppercase;line-height:1.1;margin-bottom:.8rem;}
+.pilar-t span{color:var(--p,var(--mostarda));}
+.pilar-d{font-size:.78rem;line-height:1.7;color:rgba(236,231,218,.7);}
+
+/* ── SECTION GENÉRICA ── */
+.sec{padding:5.5rem 3.4rem;position:relative;}
+.sec-title{font-family:var(--display);font-weight:900;font-size:clamp(2.2rem,5vw,4rem);text-transform:uppercase;
+  line-height:.96;letter-spacing:-.01em;margin-bottom:1.6rem;}
+.sec-lead{font-size:.92rem;line-height:1.85;max-width:60ch;margin-bottom:2.2rem;}
+.chips-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2.6rem;}
+.chip{font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;padding:.35rem .8rem;border:1.5px solid currentColor;}
+
+/* PRODUTOS (paper) */
+#produtos{background:var(--paper);color:var(--ink);}
+#produtos .eyebrow{color:var(--cobalto);}
+.browser{border:2px solid var(--ink);max-width:900px;}
+.browser-top{display:flex;align-items:center;gap:.45rem;padding:.6rem .9rem;background:var(--ink);}
+.bdot{width:8px;height:8px;border-radius:50%;background:var(--paper);opacity:.35;}
+.burl{margin-left:.7rem;font-family:var(--mono);font-size:.65rem;color:var(--paper);opacity:.6;}
+.iecis-wrap{font-family:'Archivo',var(--body);background:#F5F9F0;color:#1A2B10;display:flex;min-height:320px;}
+.iecis-side{width:150px;flex-shrink:0;background:#086B38;padding:14px 10px;display:flex;flex-direction:column;gap:4px;}
+.iecis-brand{font-family:var(--display);color:#fff;font-size:19px;letter-spacing:.5px;margin-bottom:10px;padding:0 4px;font-weight:800;}
+.iecis-nav-item{font-size:10.5px;font-weight:700;color:rgba(255,255,255,.78);padding:7px 9px;border-radius:6px;}
+.iecis-nav-item.active{background:linear-gradient(135deg,rgba(232,120,10,.75),rgba(232,120,10,.45));color:#fff;}
+.iecis-main{flex:1;padding:14px 18px;min-width:0;}
+.iecis-topbar{font-family:var(--display);font-weight:700;font-size:20px;color:#086B38;border-bottom:2px solid #F07818;padding-bottom:8px;margin-bottom:12px;}
+.iecis-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-bottom:14px;}
+.iecis-stat{background:#fff;border:2px solid #CFE2A0;border-radius:4px;padding:9px 11px;}
+.iecis-stat .lb{font-size:8.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#3D5C28;}
+.iecis-stat .vl{font-family:var(--display);font-weight:800;font-size:22px;color:#1A2B10;margin-top:2px;}
+.iecis-stat.en .vl{color:#0CA848;}
+.iecis-stat.sa .vl{color:#E40084;}
+.iecis-tablecard{background:#fff;border:2px solid #CFE2A0;border-radius:4px;padding:9px 11px;}
+.iecis-tablecard .th{font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#7A9A5A;display:flex;justify-content:space-between;border-bottom:1px solid #EDF5E5;padding-bottom:5px;margin-bottom:5px;}
+.iecis-tablecard .row{display:flex;justify-content:space-between;font-size:9.5px;font-weight:600;padding:4px 0;border-bottom:1px solid #EDF5E5;}
+.iecis-badge{font-size:7.5px;font-weight:800;padding:2px 6px;border-radius:99px;}
+.iecis-badge.ok{background:#DFF3D6;color:#0CA848;}
+.iecis-badge.pend{background:#FCE3C4;color:#8A4400;}
+.fig-cap{font-family:var(--mono);font-size:.65rem;color:#8a8d85;margin-top:1rem;}
+
+/* AUTOMAÇÃO (terracota) */
+#automacao{background:var(--terracota);color:var(--paper);}
+#automacao .eyebrow{color:var(--ink);}
+.schema{display:flex;align-items:center;flex-wrap:wrap;gap:0;margin-bottom:2.6rem;}
+.snode{background:rgba(21,23,26,.18);border:1.5px solid var(--paper);padding:1.1rem 1.3rem;min-width:120px;text-align:center;}
+.snode .l{font-family:var(--mono);font-size:.78rem;letter-spacing:.05em;}
+.snode .s{font-family:var(--body);font-size:.62rem;opacity:.75;margin-top:.3rem;}
+.sarrow{width:34px;height:14px;flex-shrink:0;margin:0 .4rem;}
+.vars{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:1.5px;background:rgba(21,23,26,.25);}
+.vcard{background:rgba(21,23,26,.12);padding:.9rem 1rem;font-family:var(--mono);font-size:.78rem;}
+
+/* MÍDIA (mostarda) */
+#midia{background:var(--mostarda);color:var(--ink);}
+#midia .eyebrow{color:var(--terracota);}
+.stat-row{display:flex;gap:3.2rem;flex-wrap:wrap;margin-bottom:2.6rem;}
+.stat-n{font-family:var(--display);font-weight:900;font-size:2.6rem;line-height:1;}
+.stat-l{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;margin-top:.4rem;}
+.partners{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--ink);border:1px solid var(--ink);}
+.partner{background:var(--paper);padding:1.8rem 1.7rem;}
+.partner h3{font-family:var(--display);font-weight:800;font-size:1.4rem;text-transform:uppercase;margin-bottom:.8rem;}
+.partner p{font-size:.78rem;line-height:1.75;color:#3a3d3f;margin-bottom:.7rem;}
+.partner a{font-family:var(--mono);font-size:.72rem;border-bottom:1.5px solid var(--cobalto);text-decoration:none;color:var(--cobalto);}
+.epchips{display:flex;flex-wrap:wrap;gap:.35rem;margin:.7rem 0;}
+.epchip{font-family:var(--mono);font-size:.66rem;border:1px solid #c9c4b4;padding:.1rem .45rem;color:#5a5d55;}
+
+/* PESQUISA (verde) */
+#pesquisa{background:var(--verde);color:var(--paper);}
+#pesquisa .eyebrow{color:var(--mostarda);}
+.ens-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:rgba(236,231,218,.2);
+  border:1px solid rgba(236,231,218,.2);margin-bottom:1.8rem;}
+.ens{background:#235940;padding:1.3rem 1.2rem;text-decoration:none;color:var(--paper);display:block;}
+.ens-dot{width:9px;height:9px;border-radius:50%;margin-bottom:.7rem;}
+.ens-t{font-family:var(--display);font-weight:700;font-size:1.05rem;text-transform:uppercase;line-height:1.1;margin-bottom:.35rem;}
+.ens-c{font-family:var(--mono);font-size:.62rem;opacity:.6;}
+.arquivo-link{font-family:var(--mono);font-size:.78rem;color:var(--mostarda);text-decoration:none;border-bottom:1.5px solid var(--mostarda);}
+
+.pub{padding:1.7rem 0;border-top:1px solid rgba(236,231,218,.25);display:grid;grid-template-columns:90px 1fr;gap:1.4rem;}
+.pub:last-child{border-bottom:1px solid rgba(236,231,218,.25);}
+.pub-y{font-family:var(--display);font-weight:800;font-size:1.5rem;opacity:.55;}
+.pub-t{font-family:var(--body);font-weight:700;font-size:1rem;margin-bottom:.4rem;line-height:1.3;}
+.pub-v{font-family:var(--mono);font-size:.64rem;color:var(--mostarda);margin-bottom:.6rem;}
+.pub-d{font-size:.78rem;line-height:1.75;color:rgba(236,231,218,.75);max-width:62ch;margin-bottom:.5rem;}
+.pub-l{font-family:var(--mono);font-size:.72rem;color:var(--paper);border-bottom:1.5px solid var(--mostarda);text-decoration:none;}
+
+/* SOBRE */
+#sobre{background:var(--paper);color:var(--ink);display:grid;grid-template-columns:1fr 1.7fr;gap:4rem;padding:5.5rem 3.4rem;}
+.sobre-name{font-family:var(--display);font-weight:900;font-size:clamp(2rem,4vw,3rem);text-transform:uppercase;line-height:.95;margin-bottom:1rem;}
+.sobre-mail{font-family:var(--mono);font-size:.85rem;color:var(--cobalto);text-decoration:none;border-bottom:2px solid var(--cobalto);}
+.sobre-loc{font-family:var(--mono);font-size:.7rem;color:#8a8d85;margin-top:.7rem;}
+.sobre-body p{font-size:.92rem;line-height:1.85;max-width:60ch;margin-bottom:1.3rem;color:#2c2e2f;}
+.sobre-quote{font-family:var(--display);font-weight:700;font-size:1.3rem;text-transform:uppercase;color:var(--cobalto);
+  border-left:4px solid var(--cobalto);padding-left:1.2rem;margin:1.8rem 0;max-width:30ch;line-height:1.25;}
+.stack-row{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.4rem;}
+.stack-chip{font-family:var(--mono);font-size:.7rem;border:1.5px solid var(--ink);padding:.3rem .75rem;}
+
+/* FOOTER */
+footer{background:var(--ink);color:var(--paper);padding:1.4rem 3.4rem;display:flex;justify-content:space-between;
+  align-items:center;flex-wrap:wrap;gap:.6rem;font-family:var(--mono);font-size:.72rem;}
+footer a{color:var(--mostarda);text-decoration:none;}
+
+/* ── MOBILE ── */
+.top-mobile{display:none;}
+@media (max-width:860px){
+  .rail{display:none;}
+  main{margin-left:0;}
+  .top-mobile{display:flex;position:sticky;top:0;z-index:200;background:var(--ink);color:var(--paper);
+    padding:.9rem 1.2rem;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.7rem;}
+  .top-mobile a{color:rgba(236,231,218,.6);text-decoration:none;margin-left:.9rem;}
+  #inicio,#pilares,.sec,#sobre,footer{padding-left:1.3rem;padding-right:1.3rem;}
+  .pilares-grid{grid-template-columns:repeat(2,1fr);}
+  #sobre{grid-template-columns:1fr;gap:2rem;}
+  .pub{grid-template-columns:1fr;gap:.3rem;}
+  .iecis-wrap{flex-direction:column;}
+  .iecis-side{width:100%;flex-direction:row;overflow-x:auto;}
+}
+</style>
+</head>
+<body>
+
+<div class="top-mobile">
+  <span>cíntia vitorino</span>
+  <span><a href="#produtos">produtos</a><a href="#automacao">automação</a><a href="#midia">mídia</a><a href="#pesquisa">pesquisa</a></span>
+</div>
+
+<nav class="rail">
+  <svg class="rail-mark" viewBox="0 0 40 40"><rect width="40" height="40" fill="#2643D6"/><circle cx="40" cy="40" r="24" fill="#ECE7DA"/></svg>
+  <div class="rail-links">
+    <a href="#inicio">início</a>
+    <a href="#produtos">produtos</a>
+    <a href="#automacao">automação</a>
+    <a href="#midia">mídia</a>
+    <a href="#pesquisa">pesquisa</a>
+    <a href="#sobre">sobre</a>
+  </div>
+  <a class="rail-mail" href="mailto:cintiavtrnssa@gmail.com">contato ↗</a>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section id="inicio">
+  <svg class="hero-pattern" viewBox="0 0 360 420" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="120" height="120" fill="#2643D6"/>
+    <circle cx="120" cy="120" r="70" fill="#ECE7DA"/>
+    <rect x="120" y="0" width="120" height="120" fill="#E8A93D"/>
+    <path d="M120,0 L240,0 L240,120 Z" fill="#C0492B"/>
+    <rect x="0" y="120" width="120" height="120" fill="#15171A"/>
+    <circle cx="60" cy="180" r="34" fill="#ECE7DA" opacity=".9"/>
+    <rect x="120" y="120" width="120" height="120" fill="#2B6E50"/>
+    <path d="M120,240 L240,120 L240,240 Z" fill="#E8A93D"/>
+    <rect x="240" y="0" width="120" height="120" fill="#ECE7DA" stroke="#15171A" stroke-width="2"/>
+    <circle cx="300" cy="60" r="46" fill="#C0492B"/>
+    <rect x="240" y="120" width="120" height="120" fill="#2643D6"/>
+    <path d="M240,120 L360,120 L300,240 Z" fill="#ECE7DA"/>
+    <rect x="0" y="240" width="120" height="120" fill="#E8A93D"/>
+    <rect x="30" y="270" width="60" height="60" fill="#15171A"/>
+    <rect x="120" y="240" width="120" height="120" fill="#ECE7DA" stroke="#15171A" stroke-width="2"/>
+    <circle cx="180" cy="300" r="40" fill="#2643D6"/>
+    <rect x="240" y="240" width="120" height="120" fill="#C0492B"/>
+    <path d="M300,240 L360,240 L360,360 Z" fill="#15171A"/>
+  </svg>
+
+  <p class="eyebrow">portfólio · aplicações · salvador, ba</p>
+  <h1 class="hero-head">pesquisa que vira <span class="hl">sistema</span></h1>
+  <p class="hero-sub">
+    pesquisadora interdisciplinar. <b>penso a tecnologia a partir da crítica social</b> e construo, com as próprias mãos,
+    os sistemas que a materializam: dashboards de gestão, telemetria industrial, audiosséries documentais, ensaios interativos.
+  </p>
+  <div class="hero-cta">
+    <a href="mailto:cintiavtrnssa@gmail.com" class="btn-mail">cintiavtrnssa@gmail.com ↗</a>
+    <span class="scroll-note">// quatro aplicações abaixo</span>
+  </div>
+</section>
+
+<!-- PILARES -->
+<section id="pilares">
+  <p class="eyebrow" style="color:var(--mostarda);">visão geral</p>
+  <h2 class="sec-head">quatro formas de fazer a mesma pergunta: o que a tecnologia faz com as pessoas e o que dá pra construir a partir disso.</h2>
+  <div class="pilares-grid">
+    <div class="pilar" style="--p:#E8A93D;"><div class="pilar-n">01 / produtos</div><h3 class="pilar-t">sistemas <span>digitais</span></h3><p class="pilar-d">dashboards, autenticação e bancos de dados em tempo real para organizações reais.</p></div>
+    <div class="pilar" style="--p:#C0492B;"><div class="pilar-n">02 / hardware</div><h3 class="pilar-t">automação <span>& iot</span></h3><p class="pilar-d">prototipagem, robótica e telemetria: sensores, microcontroladores, protocolos.</p></div>
+    <div class="pilar" style="--p:#E8A93D;"><div class="pilar-n">03 / narrativa</div><h3 class="pilar-t">conteúdo <span>& pesquisa</span></h3><p class="pilar-d">pesquisa e roteirização para mídia: redes sociais, audiosséries, parcerias.</p></div>
+    <div class="pilar" style="--p:#7FD9AE;"><div class="pilar-n">04 / pesquisa</div><h3 class="pilar-t">ciência <span>aplicada</span></h3><p class="pilar-d">revisão bibliográfica, análise de conteúdo, ensaios digitais interativos.</p></div>
+  </div>
+</section>
+
+<!-- PRODUTOS -->
+<section class="sec" id="produtos">
+  <p class="eyebrow">01 · produto digital · gestão institucional</p>
+  <h2 class="sec-title">iecis<br>gestão</h2>
+  <p class="sec-lead">
+    sistema de gestão desenvolvido para o <b>Instituto de Esporte, Cidadania &amp; Inclusão Social (IECIS)</b>.
+    interface para controle de associados, mensalidades, fluxo de caixa e doações, com autenticação e banco de dados
+    em tempo real. projeto completo, da concepção da interface até a migração de dados.
+  </p>
+  <div class="chips-row" style="color:var(--cobalto);">
+    <span class="chip">Firebase · Firestore</span>
+    <span class="chip">Auth (Email/Senha)</span>
+    <span class="chip">HTML · CSS · JavaScript</span>
+    <span class="chip">GitHub Pages</span>
+  </div>
+
+  <div class="browser">
+    <div class="browser-top"><span class="bdot"></span><span class="bdot"></span><span class="bdot"></span><span class="burl">iecis.com.br</span></div>
+    <div class="iecis-wrap">
+      <div class="iecis-side">
+        <div class="iecis-brand">IECIS</div>
+        <div class="iecis-nav-item active">Painel</div>
+        <div class="iecis-nav-item">Associados</div>
+        <div class="iecis-nav-item">Pagamentos</div>
+        <div class="iecis-nav-item">Fluxo de caixa</div>
+        <div class="iecis-nav-item">Doações</div>
+        <div class="iecis-nav-item">Configurações</div>
+      </div>
+      <div class="iecis-main">
+        <div class="iecis-topbar">Painel</div>
+        <div class="iecis-stats">
+          <div class="iecis-stat"><div class="lb">Associados ativos</div><div class="vl">84</div></div>
+          <div class="iecis-stat en"><div class="lb">Mensalidades em dia</div><div class="vl">76%</div></div>
+          <div class="iecis-stat en"><div class="lb">Entradas no mês</div><div class="vl">R$ 12.4k</div></div>
+          <div class="iecis-stat sa"><div class="lb">Saídas no mês</div><div class="vl">R$ 5.1k</div></div>
+        </div>
+        <div class="iecis-tablecard">
+          <div class="th"><span>associado</span><span>status</span></div>
+          <div class="row"><span>Maria S.</span><span class="iecis-badge ok">pago</span></div>
+          <div class="row"><span>João P.</span><span class="iecis-badge pend">pendente</span></div>
+          <div class="row" style="border-bottom:none;"><span>Carlos A.</span><span class="iecis-badge ok">pago</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="fig-cap">interface ilustrativa. dados fictícios, apenas para demonstração de layout.</p>
+</section>
+
+<!-- AUTOMAÇÃO -->
+<section class="sec" id="automacao">
+  <p class="eyebrow">02 · automação predial · robótica · iot</p>
+  <h2 class="sec-title">bms &<br>telemetria</h2>
+  <p class="sec-lead">
+    projeto de automação predial (BMS) e telemetria de energia elétrica para os empreendimentos
+    <b>Fasano Tennis Club</b> (São Paulo) e <b>Fasano Trancoso</b>, via Unify Engenharia e Software,
+    prestação de serviço autônoma (MEI), sem vínculo empregatício. base técnica construída em robótica
+    educacional e automação residencial e industrial (LABTEKH, IFBA).
+  </p>
+
+  <div class="schema">
+    <div class="snode">
+      <svg class="snode-ico" viewBox="0 0 40 40"><path d="M20,7 A13,13 0 1,1 19.9,7" fill="none" stroke="#ECE7DA" stroke-width="2.4"/><line x1="6" y1="20" x2="34" y2="20" stroke="#ECE7DA" stroke-width="2"/></svg>
+      <div class="l">sensores</div><div class="s">tensão · corrente</div>
+    </div>
+    <svg class="sarrow" viewBox="0 0 34 14"><path d="M0,7 H28 M20,1 L28,7 L20,13" stroke="#ECE7DA" stroke-width="2" fill="none"/></svg>
+    <div class="snode">
+      <svg class="snode-ico" viewBox="0 0 40 40"><rect x="9" y="13" width="22" height="15" fill="none" stroke="#ECE7DA" stroke-width="2.2"/><rect x="15" y="17" width="10" height="7" fill="none" stroke="#ECE7DA" stroke-width="1.4"/></svg>
+      <div class="l">esp32</div><div class="s">microcontrolador</div>
+    </div>
+    <svg class="sarrow" viewBox="0 0 34 14"><path d="M0,7 H28 M20,1 L28,7 L20,13" stroke="#ECE7DA" stroke-width="2" fill="none"/></svg>
+    <div class="snode">
+      <svg class="snode-ico" viewBox="0 0 40 40">
+        <path d="M11,27 V13" stroke="#ECE7DA" stroke-width="2"/>
+        <path d="M6,16 A7,7 0 0 1 16,16" fill="none" stroke="#ECE7DA" stroke-width="1.6"/>
+        <path d="M2,12 A12,12 0 0 1 20,12" fill="none" stroke="#ECE7DA" stroke-width="1.6"/>
+        <rect x="21" y="20" width="14" height="9" fill="none" stroke="#ECE7DA" stroke-width="2"/>
+        <circle cx="25" cy="24.5" r="1.1" fill="#ECE7DA"/><circle cx="28" cy="24.5" r="1.1" fill="#ECE7DA"/><circle cx="31" cy="24.5" r="1.1" fill="#ECE7DA"/>
+      </svg>
+      <div class="l">rs-485 / lora</div><div class="s">comunicação</div>
+    </div>
+    <svg class="sarrow" viewBox="0 0 34 14"><path d="M0,7 H28 M20,1 L28,7 L20,13" stroke="#ECE7DA" stroke-width="2" fill="none"/></svg>
+    <div class="snode">
+      <svg class="snode-ico" viewBox="0 0 40 40"><rect x="6" y="8" width="28" height="19" fill="none" stroke="#ECE7DA" stroke-width="2.2"/><rect x="11" y="18" width="4" height="6" fill="#ECE7DA"/><rect x="18" y="14" width="4" height="10" fill="#ECE7DA"/><rect x="25" y="11" width="4" height="13" fill="#ECE7DA"/><line x1="16" y1="31" x2="24" y2="31" stroke="#ECE7DA" stroke-width="2"/></svg>
+      <div class="l">painel bms</div><div class="s">gestão energética</div>
+    </div>
+  </div>
+
+  <p class="eyebrow" style="color:var(--ink);font-size:.65rem;margin-bottom:.9rem;">variáveis monitoradas</p>
+  <div class="vars">
+    <div class="vcard">tensão</div><div class="vcard">corrente</div><div class="vcard">frequência</div>
+    <div class="vcard">demanda ativa</div><div class="vcard">demanda reativa</div>
+  </div>
+
+  <div class="protos-intro">
+    <p class="eyebrow" style="color:var(--ink);font-size:.65rem;">protótipos físicos</p>
+    <p class="sec-lead" style="max-width:64ch;">
+      o Cyber Game Deck e o Cyber MP3 Player são protótipos pessoais, construídos com microcontroladores,
+      programação e eletrônica. os dois têm estrutura em placa de fenolite perfurada, soldada à mão,
+      com os componentes organizados em camadas: a placa, os módulos eletrônicos e a case externa.
+    </p>
+  </div>
+
+  <div class="protos-grid">
+
+    <div class="proto-card">
+      <h4>cyber game deck</h4>
+      <p class="pspec">esp32 · display oled ssd1306 · matriz de led ws2812b</p>
+      <svg class="proto-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+        <line x1="150.0" y1="195.0" x2="150.0" y2="141.0" stroke="#ECE7DA" stroke-width="1.2" stroke-dasharray="2 4"/>
+        <line x1="196.8" y1="303.0" x2="196.8" y2="249.0" stroke="#ECE7DA" stroke-width="1.2" stroke-dasharray="2 4"/>
+        <polygon points="150.0,132.9 280.9,208.5 196.8,257.1 65.8,181.5" fill="none" stroke="#ECE7DA" stroke-width="1.6" stroke-dasharray="3 4"/>
+        <polygon points="150.0,195.0 266.9,262.5 196.8,303.0 79.9,235.5" fill="#9C6B3E" stroke="#15171A" stroke-width="1.5"/>
+        <g fill="#3a2a17" opacity=".5">
+          <circle cx="150.0" cy="204.4" r="1.4"/><circle cx="137.1" cy="211.9" r="1.4"/><circle cx="124.3" cy="219.3" r="1.4"/><circle cx="111.4" cy="226.7" r="1.4"/><circle cx="98.6" cy="234.1" r="1.4"/>
+          <circle cx="162.9" cy="211.9" r="1.4"/><circle cx="150.0" cy="219.3" r="1.4"/><circle cx="137.1" cy="226.7" r="1.4"/><circle cx="124.3" cy="234.2" r="1.4"/><circle cx="111.4" cy="241.6" r="1.4"/>
+          <circle cx="175.7" cy="219.3" r="1.4"/><circle cx="162.9" cy="226.7" r="1.4"/><circle cx="150.0" cy="234.1" r="1.4"/><circle cx="137.1" cy="241.6" r="1.4"/><circle cx="124.3" cy="249.0" r="1.4"/>
+          <circle cx="188.6" cy="226.7" r="1.4"/><circle cx="175.7" cy="234.2" r="1.4"/><circle cx="162.9" cy="241.6" r="1.4"/><circle cx="150.0" cy="249.0" r="1.4"/><circle cx="137.1" cy="256.4" r="1.4"/>
+          <circle cx="201.4" cy="234.1" r="1.4"/><circle cx="188.6" cy="241.6" r="1.4"/><circle cx="175.7" cy="249.0" r="1.4"/><circle cx="162.9" cy="256.4" r="1.4"/><circle cx="150.0" cy="263.8" r="1.4"/>
+          <circle cx="214.3" cy="241.6" r="1.4"/><circle cx="201.4" cy="249.0" r="1.4"/><circle cx="188.6" cy="256.4" r="1.4"/><circle cx="175.7" cy="263.8" r="1.4"/><circle cx="162.9" cy="271.3" r="1.4"/>
+        </g>
+        <polygon points="150.0,181.5 185.1,201.8 161.7,215.2 126.6,195.0" fill="#15171A"/>
+        <polygon points="196.8,208.5 243.5,235.5 220.1,249.0 173.4,222.0" fill="#2643D6" stroke="#ECE7DA" stroke-width="1.2"/>
+        <polygon points="116.1,201.1 125.4,206.5 117.3,211.2 107.9,205.8" fill="#E8A93D"/>
+        <polygon points="127.8,207.8 137.1,213.2 129.0,217.9 119.6,212.5" fill="#C0492B"/>
+        <polygon points="139.5,214.6 148.8,220.0 140.6,224.7 131.3,219.3" fill="#2B6E50"/>
+        <polygon points="151.2,221.3 160.5,226.7 152.3,231.4 143.0,226.0" fill="#2643D6"/>
+        <polygon points="105.6,207.1 114.9,212.6 106.7,217.3 97.4,211.9" fill="#C0492B"/>
+        <polygon points="117.3,213.9 126.6,219.3 118.4,224.0 109.1,218.6" fill="#2B6E50"/>
+        <polygon points="129.0,220.6 138.3,226.1 130.1,230.8 120.8,225.4" fill="#2643D6"/>
+        <polygon points="140.6,227.4 150.0,232.8 141.8,237.5 132.5,232.1" fill="#E8A93D"/>
+        <circle cx="169.9" cy="241.6" r="4.4" fill="none" stroke="#ECE7DA" stroke-width="1.6"/>
+        <circle cx="189.8" cy="253.1" r="4.4" fill="none" stroke="#ECE7DA" stroke-width="1.6"/>
+      </svg>
+      <div class="proto-legend">
+        <div class="row"><span class="sw" style="background:#9C6B3E;"></span>placa de fenolite perfurada, 5×7cm</div>
+        <div class="row"><span class="sw" style="background:#15171A;"></span>esp32, display oled e matriz de led</div>
+        <div class="row"><span class="sw" style="background:transparent;border:1.5px dashed #ECE7DA;"></span>case (estrutura externa)</div>
+      </div>
+    </div>
+
+    <div class="proto-card">
+      <h4>cyber mp3 player</h4>
+      <p class="pspec">esp32-c3 mini · dfplayer mini · bateria 18650</p>
+      <svg class="proto-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+        <line x1="150.0" y1="195.0" x2="150.0" y2="141.0" stroke="#ECE7DA" stroke-width="1.2" stroke-dasharray="2 4"/>
+        <line x1="173.4" y1="276.0" x2="173.4" y2="222.0" stroke="#ECE7DA" stroke-width="1.2" stroke-dasharray="2 4"/>
+        <polygon points="150.0,133.6 244.7,188.2 173.4,229.4 78.7,174.8" fill="none" stroke="#ECE7DA" stroke-width="1.6" stroke-dasharray="3 4"/>
+        <polygon points="150.0,195.0 231.8,242.2 173.4,276.0 91.5,228.8" fill="#9C6B3E" stroke="#15171A" stroke-width="1.5"/>
+        <g fill="#3a2a17" opacity=".5">
+          <circle cx="150.0" cy="204.4" r="1.4"/><circle cx="137.1" cy="211.9" r="1.4"/><circle cx="124.3" cy="219.3" r="1.4"/><circle cx="111.4" cy="226.7" r="1.4"/>
+          <circle cx="162.9" cy="211.9" r="1.4"/><circle cx="150.0" cy="219.3" r="1.4"/><circle cx="137.1" cy="226.7" r="1.4"/><circle cx="124.3" cy="234.2" r="1.4"/>
+          <circle cx="175.7" cy="219.3" r="1.4"/><circle cx="162.9" cy="226.7" r="1.4"/><circle cx="150.0" cy="234.1" r="1.4"/><circle cx="137.1" cy="241.6" r="1.4"/>
+          <circle cx="188.6" cy="226.7" r="1.4"/><circle cx="175.7" cy="234.2" r="1.4"/><circle cx="162.9" cy="241.6" r="1.4"/><circle cx="150.0" cy="249.0" r="1.4"/>
+        </g>
+        <polygon points="150.0,176.1 173.4,189.6 154.7,200.4 131.3,186.9" fill="#15171A"/>
+        <path d="M173.4,189.6 L181,185 M181,185 L186,187 M181,185 L183,180" stroke="#ECE7DA" stroke-width="1.2" fill="none"/>
+        <polygon points="178.1,192.3 206.1,208.5 185.1,220.6 157.0,204.4" fill="#E8A93D" stroke="#15171A" stroke-width="1.1"/>
+        <polygon points="124.3,191.0 159.4,211.2 143.0,220.7 107.9,200.4" fill="#2643D6" stroke="#15171A" stroke-width="1.1"/>
+        <circle cx="171.0" cy="226.0" r="9" fill="none" stroke="#2B6E50" stroke-width="2"/>
+        <circle cx="171.0" cy="226.0" r="4.5" fill="#2B6E50"/>
+      </svg>
+      <div class="proto-legend">
+        <div class="row"><span class="sw" style="background:#9C6B3E;"></span>placa de fenolite perfurada</div>
+        <div class="row"><span class="sw" style="background:#15171A;"></span>esp32-c3 mini, dfplayer mini, bateria 18650</div>
+        <div class="row"><span class="sw" style="background:transparent;border:1.5px dashed #ECE7DA;"></span>case (estrutura externa)</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MÍDIA -->
+<section class="sec" id="midia">
+  <p class="eyebrow">03 — pesquisa para mídia · conteúdo & narrativa</p>
+  <h2 class="sec-title">preta<br>letrada</h2>
+  <p class="sec-lead">
+    pesquisadora e roteirista de conteúdo para a <b>Preta Letrada</b> (@pretaletrada). pesquisa e roteirização
+    regular para redes sociais, além de pesquisa para parcerias institucionais com plataformas de streaming,
+    audiosséries e produtoras musicais.
+  </p>
+
+  <div class="stat-row">
+    <div><div class="stat-n">500k+</div><div class="stat-l">seguidores</div></div>
+    <div><div class="stat-n">14.8M+</div><div class="stat-l">visualizações</div></div>
+  </div>
+
+  <div class="partners">
+    <div class="partner">
+      <h3>spotify</h3>
+      <p>pesquisa sobre trajetórias artísticas e impacto cultural de artistas de trap, funk e sertanejo para conteúdo de campanha.</p>
+    </div>
+    <div class="partner">
+      <h3>audible</h3>
+      <p>pesquisa para a audiossérie documental <b>Apartheid Tropical — 2ª Temporada</b>, sobre relações raciais no Brasil
+      pós-Constituição de 1988. pesquisa conjunta com Camilla (Preta Letrada) para quatro dos oito episódios da temporada.</p>
+      <div class="epchips"><span class="epchip">ep. 04</span><span class="epchip">ep. 05</span><span class="epchip">ep. 07</span><span class="epchip">ep. 08</span></div>
+      <a href="https://www.audible.com.br/pd/APARTHEID-TROPICAL-Segunda-Temporada-Audiolivro/B0G3C6TGMR" target="_blank" rel="noopener">ouvir na audible ↗</a>
+    </div>
+    <div class="partner">
+      <h3>30eBR</h3>
+      <p>pesquisa biográfica e de repertório para artistas em produção da casa, incluindo BK', Planet Hemp e o Projeto Dominguinho (João Gomes, Jota.pê e Mestrinho).</p>
+    </div>
+  </div>
+</section>
+
+<!-- PESQUISA -->
+<section class="sec" id="pesquisa">
+  <p class="eyebrow">04 — pesquisa aplicada</p>
+  <h2 class="sec-title">ensaios &<br>publicações</h2>
+  <p class="sec-lead">
+    artefatos interativos construídos na intersecção entre pesquisa acadêmica, jornalismo de dados e
+    experimentação gráfica — e a produção científica que sustenta esse trabalho.
+  </p>
+
+  <div class="ens-grid">
+    <a class="ens" href="/pranchasmartcities/"><div class="ens-dot" style="background:#7FD9AE;"></div><div class="ens-t">cidades inteligentes</div><div class="ens-c">tecnologia urbana · lab404</div></a>
+    <a class="ens" href="/eagoraIA/"><div class="ens-dot" style="background:#B9A8F5;"></div><div class="ens-t">ia, e agora</div><div class="ens-c">inteligência artificial</div></a>
+    <a class="ens" href="/apesquisadora/"><div class="ens-dot" style="background:#E8A93D;"></div><div class="ens-t">a pesquisadora</div><div class="ens-c">autoetnografia digital</div></a>
+    <a class="ens" href="/petdigital/"><div class="ens-dot" style="background:#8FCBEA;"></div><div class="ens-t">pet virtual i</div><div class="ens-c">memória · gerações</div></a>
+    <a class="ens" href="/scrollytellingpetvirtual/"><div class="ens-dot" style="background:#8FCBEA;"></div><div class="ens-t">pet virtual ii</div><div class="ens-c">arquivo · reddit</div></a>
+    <a class="ens" href="/plataformizacao/"><div class="ens-dot" style="background:#E69BB5;"></div><div class="ens-t">plataformização</div><div class="ens-c">educação · nordeste</div></a>
+    <a class="ens" href="/paredaoefisica/"><div class="ens-dot" style="background:#C0492B;"></div><div class="ens-t">paredão e física</div><div class="ens-c">acústica · cidade</div></a>
+    <a class="ens" href="/acaradocrime/"><div class="ens-dot" style="background:#C9B68C;"></div><div class="ens-t">cara de bandido</div><div class="ens-c">linguagem · raça</div></a>
+  </div>
+  <a href="index.html" class="arquivo-link">ver arquivo completo de ensaios ↗</a>
+
+  <div style="margin-top:2.8rem;">
+    <div class="pub">
+      <div class="pub-y">2025</div>
+      <div>
+        <div class="pub-t">Plataformização da Educação e Práxis Docente: revisão bibliográfica sobre economia da atenção e transformações pedagógicas</div>
+        <div class="pub-v">COLLOQUIUM HUMANARUM · V.22 · COM LYNN ALVES</div>
+        <p class="pub-d">revisão de 36 textos acadêmicos (2019–2024) sobre os efeitos da plataformização na educação brasileira, organizados em quatro eixos: mercantilização, tecnologias de captura de dados, práxis docente e avaliações críticas. discute como a economia da atenção e a dataficação reconfiguram a autonomia pedagógica e propõe o fortalecimento da soberania digital como resposta.</p>
+        <a class="pub-l" href="https://doi.org/10.5747/ch.2025.v22.h647" target="_blank" rel="noopener">ler artigo ↗</a>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="pub-y">2023</div>
+      <div>
+        <div class="pub-t">Apropriações e usos das plataformas digitais de ensino pelos docentes no Brasil: uma revisão sistemática de literatura</div>
+        <div class="pub-v">CENAS EDUCACIONAIS · COM ALLAN OLIVEIRA E LYNN ALVES</div>
+        <p class="pub-d">mapeamento sistemático de como docentes brasileiros incorporam plataformas digitais de ensino à prática pedagógica, base do projeto de iniciação científica sobre plataformização da educação.</p>
+        <a class="pub-l" href="https://www.revistas.uneb.br/index.php/cenaseducacionais/article/view/16483" target="_blank" rel="noopener">ler artigo ↗</a>
+      </div>
+    </div>
+    <div class="pub">
+      <div class="pub-y">2024</div>
+      <div>
+        <div class="pub-t">Universidade e Pandemia: uma análise dos estados de plataformização na UFBA</div>
+        <div class="pub-v">IN: TECNOLOGIAS E PRÁTICAS EDUCATIVAS NO ENSINO REMOTO EMERGENCIAL · COM LYNN ALVES</div>
+        <p class="pub-d">capítulo que analisa como a UFBA absorveu plataformas digitais durante o ensino remoto emergencial, identificando estágios distintos de dependência tecnológica entre unidades da universidade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div>
+    <h2 class="sobre-name">cíntia<br>vitorino</h2>
+    <a href="mailto:cintiavtrnssa@gmail.com" class="sobre-mail">cintiavtrnssa@gmail.com</a>
+    <p class="sobre-loc">SALVADOR · BAHIA · LAB404 · UFBA</p>
+  </div>
+  <div class="sobre-body">
+    <p>pesquisadora e desenvolvedora interdisciplinar. transito entre a crítica social — plataformização, dataficação, colonialismo digital — e a construção técnica de sistemas que respondem a essas mesmas questões: dashboards, telemetria, ensaios interativos, audiosséries documentais.</p>
+    <div class="sobre-quote">pensar criticamente sobre tecnologia exige também saber construí-la.</div>
+    <p>cada projeto aqui nasce do mesmo lugar: a pergunta de pesquisa primeiro, a ferramenta técnica depois — nunca o contrário.</p>
+    <div class="stack-row">
+      <span class="stack-chip">pesquisa & revisão bibliográfica</span>
+      <span class="stack-chip">HTML · CSS · JavaScript</span>
+      <span class="stack-chip">C/C++ (Arduino, ESP32)</span>
+      <span class="stack-chip">Firebase / Firestore</span>
+      <span class="stack-chip">robótica & automação</span>
+      <span class="stack-chip">roteirização & narrativa</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span>[ cíntia vitorino · portfólio · 2026 ]</span>
+  <a href="mailto:cintiavtrnssa@gmail.com">cintiavtrnssa@gmail.com</a>
+</footer>
+
+</body>
+</html>
