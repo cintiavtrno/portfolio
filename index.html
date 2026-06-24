@@ -25,8 +25,6 @@ html{scroll-behavior:smooth;}
 body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6;overflow-x:hidden;}
 a{color:inherit;}
 ::selection{background:var(--mostarda);color:var(--ink);}
-
-/* ── RAIL NAV (desktop) ── */
 .rail{position:fixed;top:0;left:0;width:58px;height:100vh;background:var(--ink);z-index:200;
   display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:1.4rem 0;}
 .rail-mark{width:22px;height:22px;flex-shrink:0;margin-bottom:1.8rem;}
@@ -37,14 +35,8 @@ a{color:inherit;}
 .rail-links a:hover{color:var(--mostarda);}
 .rail-mail{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--mono);font-size:.68rem;
   letter-spacing:.1em;color:var(--mostarda);text-decoration:none;}
-
-/* ── MAIN OFFSET ── */
 main{margin-left:58px;}
-
-/* ── geometric module (signature) ── */
 .tile-mark{position:absolute;pointer-events:none;opacity:.5;}
-
-/* ── HERO ── */
 #inicio{position:relative;min-height:92vh;display:flex;flex-direction:column;justify-content:center;
   padding:6rem 3.4rem 4rem;overflow:hidden;background:var(--paper);}
 .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--cobalto);margin-bottom:1.6rem;text-transform:uppercase;}
@@ -59,8 +51,6 @@ main{margin-left:58px;}
 .scroll-note{font-family:var(--mono);font-size:.68rem;color:#8a8d85;letter-spacing:.04em;}
 .hero-pattern{position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);width:min(34vw,420px);opacity:.95;}
 @media (max-width:900px){.hero-pattern{display:none;}}
-
-/* ── PILARES ── */
 #pilares{background:var(--cobalto);color:var(--paper);padding:5rem 3.4rem;position:relative;overflow:hidden;}
 .sec-head{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,3vw,2.4rem);text-transform:uppercase;
   line-height:1.05;max-width:24ch;margin-bottom:2.8rem;}
@@ -71,16 +61,12 @@ main{margin-left:58px;}
 .pilar-t{font-family:var(--display);font-weight:700;font-size:1.3rem;text-transform:uppercase;line-height:1.1;margin-bottom:.8rem;}
 .pilar-t span{color:var(--p,var(--mostarda));}
 .pilar-d{font-size:.78rem;line-height:1.7;color:rgba(236,231,218,.7);}
-
-/* ── SECTION GENÉRICA ── */
 .sec{padding:5.5rem 3.4rem;position:relative;}
 .sec-title{font-family:var(--display);font-weight:900;font-size:clamp(2.2rem,5vw,4rem);text-transform:uppercase;
   line-height:.96;letter-spacing:-.01em;margin-bottom:1.6rem;}
 .sec-lead{font-size:.92rem;line-height:1.85;max-width:60ch;margin-bottom:2.2rem;}
 .chips-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2.6rem;}
 .chip{font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;padding:.35rem .8rem;border:1.5px solid currentColor;}
-
-/* PRODUTOS (paper) */
 #produtos{background:var(--paper);color:var(--ink);}
 #produtos .eyebrow{color:var(--cobalto);}
 .browser{border:2px solid var(--ink);max-width:900px;}
@@ -107,8 +93,6 @@ main{margin-left:58px;}
 .iecis-badge.ok{background:#DFF3D6;color:#0CA848;}
 .iecis-badge.pend{background:#FCE3C4;color:#8A4400;}
 .fig-cap{font-family:var(--mono);font-size:.65rem;color:#8a8d85;margin-top:1rem;}
-
-/* AUTOMAÇÃO (terracota) */
 #automacao{background:var(--terracota);color:var(--paper);}
 #automacao .eyebrow{color:var(--ink);}
 .schema{display:flex;align-items:center;flex-wrap:wrap;gap:0;margin-bottom:2.6rem;}
@@ -126,8 +110,6 @@ main{margin-left:58px;}
 .proto-legend{display:flex;flex-direction:column;gap:.4rem;}
 .proto-legend .row{display:flex;align-items:center;gap:.6rem;font-size:.7rem;line-height:1.4;}
 .proto-legend .sw{width:12px;height:12px;flex-shrink:0;border-radius:2px;}
-
-/* MÍDIA (mostarda) */
 #midia{background:var(--mostarda);color:var(--ink);}
 #midia .eyebrow{color:var(--terracota);}
 .stat-row{display:flex;gap:3.2rem;flex-wrap:wrap;margin-bottom:2.6rem;}
@@ -151,8 +133,6 @@ main{margin-left:58px;}
 .not-link{font-family:var(--mono);font-size:.68rem;color:var(--cobalto);text-decoration:none;border-bottom:1.5px solid var(--cobalto);}
 .not-publi{font-family:var(--mono);font-size:.62rem;letter-spacing:.04em;text-transform:uppercase;
   background:var(--ink);color:var(--mostarda);padding:.1rem .4rem;}
-
-/* PESQUISA (verde) */
 #pesquisa{background:var(--verde);color:var(--paper);}
 #pesquisa .eyebrow{color:var(--mostarda);}
 .ens-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:rgba(236,231,218,.2);
@@ -170,8 +150,6 @@ main{margin-left:58px;}
 .pub-v{font-family:var(--mono);font-size:.64rem;color:var(--mostarda);margin-bottom:.6rem;}
 .pub-d{font-size:.78rem;line-height:1.75;color:rgba(236,231,218,.75);max-width:62ch;margin-bottom:.5rem;}
 .pub-l{font-family:var(--mono);font-size:.72rem;color:var(--paper);border-bottom:1.5px solid var(--mostarda);text-decoration:none;}
-
-/* SOBRE */
 #sobre{background:var(--paper);color:var(--ink);display:grid;grid-template-columns:1fr 1.7fr;gap:4rem;padding:5.5rem 3.4rem;}
 .sobre-name{font-family:var(--display);font-weight:900;font-size:clamp(2rem,4vw,3rem);text-transform:uppercase;line-height:.95;margin-bottom:1rem;}
 .sobre-mail{font-family:var(--mono);font-size:.85rem;color:var(--cobalto);text-decoration:none;border-bottom:2px solid var(--cobalto);}
@@ -181,13 +159,9 @@ main{margin-left:58px;}
   border-left:4px solid var(--cobalto);padding-left:1.2rem;margin:1.8rem 0;max-width:30ch;line-height:1.25;}
 .stack-row{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.4rem;}
 .stack-chip{font-family:var(--mono);font-size:.7rem;border:1.5px solid var(--ink);padding:.3rem .75rem;}
-
-/* FOOTER */
 footer{background:var(--ink);color:var(--paper);padding:1.4rem 3.4rem;display:flex;justify-content:space-between;
   align-items:center;flex-wrap:wrap;gap:.6rem;font-family:var(--mono);font-size:.72rem;}
 footer a{color:var(--mostarda);text-decoration:none;}
-
-/* ── MOBILE ── */
 .top-mobile{display:none;}
 @media (max-width:860px){
   .rail{display:none;}
@@ -240,7 +214,6 @@ footer a{color:var(--mostarda);text-decoration:none;}
 
 <main>
 
-<!-- HERO -->
 <section id="inicio">
   <svg class="hero-pattern" viewBox="0 0 360 420" xmlns="http://www.w3.org/2000/svg">
     <rect x="0" y="0" width="120" height="120" fill="#2643D6"/>
@@ -275,7 +248,6 @@ footer a{color:var(--mostarda);text-decoration:none;}
   </div>
 </section>
 
-<!-- PILARES -->
 <section id="pilares">
   <p class="eyebrow" style="color:var(--mostarda);">visão geral</p>
   <h2 class="sec-head">quatro formas de fazer a mesma pergunta: o que a tecnologia faz com as pessoas e o que dá pra construir a partir disso.</h2>
@@ -287,7 +259,6 @@ footer a{color:var(--mostarda);text-decoration:none;}
   </div>
 </section>
 
-<!-- PRODUTOS -->
 <section class="sec" id="produtos">
   <p class="eyebrow">01 · produto digital · gestão institucional</p>
   <h2 class="sec-title">iecis<br>gestão</h2>
@@ -334,8 +305,6 @@ footer a{color:var(--mostarda);text-decoration:none;}
   </div>
   <p class="fig-cap">interface ilustrativa. dados fictícios, apenas para demonstração de layout.</p>
 </section>
-
-<!-- AUTOMAÇÃO -->
 <section class="sec" id="automacao">
   <p class="eyebrow">02 · automação predial · robótica · iot</p>
   <h2 class="sec-title">bms &<br>telemetria</h2>
@@ -457,8 +426,6 @@ footer a{color:var(--mostarda);text-decoration:none;}
 
   </div>
 </section>
-
-<!-- MÍDIA -->
 <section class="sec" id="midia">
   <p class="eyebrow">03 — pesquisa para mídia · conteúdo & narrativa</p>
   <h2 class="sec-title">preta<br>letrada</h2>
@@ -563,8 +530,6 @@ footer a{color:var(--mostarda);text-decoration:none;}
     </div>
   </div>
 </section>
-
-<!-- PESQUISA -->
 <section class="sec" id="pesquisa">
   <p class="eyebrow">04 — pesquisa aplicada</p>
   <h2 class="sec-title">ensaios &<br>publicações</h2>
@@ -613,8 +578,6 @@ footer a{color:var(--mostarda);text-decoration:none;}
     </div>
   </div>
 </section>
-
-<!-- SOBRE -->
 <section id="sobre">
   <div>
     <h2 class="sobre-name">cíntia<br>vitorino</h2>
