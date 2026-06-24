@@ -42,7 +42,24 @@ main{margin-left:58px;}
 .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--cobalto);margin-bottom:1.6rem;text-transform:uppercase;}
 .hero-head{font-family:var(--display);font-weight:900;font-size:clamp(2.8rem,7vw,6.4rem);line-height:.94;
   letter-spacing:-.01em;text-transform:uppercase;max-width:16ch;margin-bottom:2.2rem;}
-.hl{background:var(--cobalto);color:var(--paper);padding:0 .15em;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
+.hl{
+  display:inline;
+  color:var(--cobalto);
+  background:none;
+  font-style:italic;
+  position:relative;
+  padding:0 .05em;
+}
+.hl::after{
+  content:'';
+  position:absolute;
+  left:0;right:0;
+  bottom:.08em;
+  height:.22em;
+  background:var(--mostarda);
+  z-index:-1;
+  transform:skewX(-6deg);
+}
 .hero-sub{font-size:.95rem;line-height:1.85;color:#3a3d3f;max-width:46ch;margin-bottom:2.4rem;}
 .hero-sub b{color:var(--ink);font-weight:600;}
 .hero-cta{display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap;}
@@ -54,19 +71,27 @@ main{margin-left:58px;}
 #pilares{background:var(--cobalto);color:var(--paper);padding:5rem 3.4rem;position:relative;overflow:hidden;}
 .sec-head{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,3vw,2.4rem);text-transform:uppercase;
   line-height:1.05;max-width:24ch;margin-bottom:2.8rem;}
-.pilares-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(236,231,218,.2);
-  border:1px solid rgba(236,231,218,.2);position:relative;z-index:1;}
-.pilar{background:var(--cobalto-d);padding:1.9rem 1.6rem;}
-.pilar-n{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;color:var(--p,var(--mostarda));margin-bottom:1rem;}
-.pilar-t{font-family:var(--display);font-weight:700;font-size:1.3rem;text-transform:uppercase;line-height:1.1;margin-bottom:.8rem;}
+.pilares-grid{display:flex;flex-direction:column;gap:0;border-top:1px solid rgba(236,231,218,.25);position:relative;z-index:1;}
+.pilar{display:grid;grid-template-columns:4rem 1fr auto;gap:0 2rem;align-items:baseline;
+  padding:1.4rem 0;border-bottom:1px solid rgba(236,231,218,.18);}
+.pilar-n{font-family:var(--display);font-weight:900;font-size:2.8rem;line-height:1;opacity:.3;color:var(--paper);padding-top:.15rem;}
+.pilar-t{font-family:var(--display);font-weight:700;font-size:1.2rem;text-transform:uppercase;line-height:1.1;color:var(--paper);}
 .pilar-t span{color:var(--p,var(--mostarda));}
-.pilar-d{font-size:.78rem;line-height:1.7;color:rgba(236,231,218,.7);}
+.pilar-d{font-size:.76rem;line-height:1.65;color:rgba(236,231,218,.6);max-width:34ch;}
+.pilar-pg{font-family:var(--mono);font-size:.65rem;color:rgba(236,231,218,.3);letter-spacing:.05em;white-space:nowrap;align-self:center;}
 .sec{padding:5.5rem 3.4rem;position:relative;}
 .sec-title{font-family:var(--display);font-weight:900;font-size:clamp(2.2rem,5vw,4rem);text-transform:uppercase;
   line-height:.96;letter-spacing:-.01em;margin-bottom:1.6rem;}
 .sec-lead{font-size:.92rem;line-height:1.85;max-width:60ch;margin-bottom:2.2rem;}
 .chips-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2.6rem;}
-.chip{font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;padding:.35rem .8rem;border:1.5px solid currentColor;}
+.chip{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;
+  padding:.3rem .75rem .3rem .6rem;
+  background:transparent;
+  border:1.5px solid currentColor;
+  clip-path:polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+  display:inline-block;
+}
 #produtos{background:var(--paper);color:var(--ink);}
 #produtos .eyebrow{color:var(--cobalto);}
 .browser{border:2px solid var(--ink);max-width:900px;}
@@ -95,11 +120,15 @@ main{margin-left:58px;}
 .fig-cap{font-family:var(--mono);font-size:.65rem;color:#8a8d85;margin-top:1rem;}
 #automacao{background:var(--terracota);color:var(--paper);}
 #automacao .eyebrow{color:var(--ink);}
-.schema{display:flex;align-items:center;flex-wrap:wrap;gap:0;margin-bottom:2.6rem;}
-.snode{background:rgba(21,23,26,.18);border:1.5px solid var(--paper);padding:1.1rem 1.3rem;min-width:120px;text-align:center;}
-.snode .l{font-family:var(--mono);font-size:.78rem;letter-spacing:.05em;}
-.snode .s{font-family:var(--body);font-size:.62rem;opacity:.75;margin-top:.3rem;}
-.sarrow{width:34px;height:14px;flex-shrink:0;margin:0 .4rem;}
+.schema-ds{margin-bottom:2.6rem;border:1.5px solid rgba(236,231,218,.35);font-family:var(--mono);}
+.ds-row{display:grid;grid-template-columns:3.5rem 1fr 9rem 3.5rem;gap:.5rem;padding:.65rem 1rem;border-bottom:1px solid rgba(236,231,218,.15);font-size:.72rem;}
+.ds-row.ds-header{font-size:.6rem;letter-spacing:.12em;color:rgba(236,231,218,.4);border-bottom:1.5px solid rgba(236,231,218,.35);}
+.ds-ref{color:var(--mostarda);}
+.ds-desc{color:var(--paper);}
+.ds-proto{color:rgba(236,231,218,.6);}
+.ds-qty{color:rgba(236,231,218,.4);text-align:right;}
+.ds-note{font-family:var(--mono);font-size:.65rem;color:rgba(236,231,218,.3);padding:.7rem 1rem;}
+@media(max-width:860px){.ds-row{grid-template-columns:3rem 1fr 5rem;}.ds-qty{display:none;}}
 .vars{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:1.5px;background:rgba(21,23,26,.25);}
 .vcard{background:rgba(21,23,26,.12);padding:.9rem 1rem;font-family:var(--mono);font-size:.78rem;}
 .protos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5px;background:rgba(21,23,26,.25);margin-top:1.6rem;}
@@ -115,13 +144,20 @@ main{margin-left:58px;}
 .stat-row{display:flex;gap:3.2rem;flex-wrap:wrap;margin-bottom:2.6rem;}
 .stat-n{font-family:var(--display);font-weight:900;font-size:2.6rem;line-height:1;}
 .stat-l{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;margin-top:.4rem;}
+.stat-prose{font-size:1.05rem;line-height:1.8;max-width:52ch;margin-bottom:2.6rem;color:rgba(21,23,26,.85);}
+.stat-prose b{color:var(--ink);font-weight:700;}
 .partners{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--ink);border:1px solid var(--ink);}
 .partner{background:var(--paper);padding:1.8rem 1.7rem;}
 .partner h3{font-family:var(--display);font-weight:800;font-size:1.4rem;text-transform:uppercase;margin-bottom:.8rem;}
 .partner p{font-size:.78rem;line-height:1.75;color:#3a3d3f;margin-bottom:.7rem;}
 .partner a{font-family:var(--mono);font-size:.72rem;border-bottom:1.5px solid var(--cobalto);text-decoration:none;color:var(--cobalto);}
 .epchips{display:flex;flex-wrap:wrap;gap:.35rem;margin:.7rem 0;}
-.epchip{font-family:var(--mono);font-size:.66rem;border:1px solid #c9c4b4;padding:.1rem .45rem;color:#5a5d55;}
+.epchip{
+  font-family:var(--mono);font-size:.66rem;border:1px solid #c9c4b4;
+  padding:.15rem .5rem .15rem .4rem;color:#5a5d55;
+  clip-path:polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 0 100%);
+  display:inline-block;
+}
 .notaveis{margin-top:2.6rem;}
 .notaveis-h{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--terracota);margin-bottom:1.2rem;}
 .not-item{display:grid;grid-template-columns:1fr auto;gap:.3rem 1.2rem;align-items:baseline;
@@ -158,7 +194,12 @@ main{margin-left:58px;}
 .sobre-quote{font-family:var(--display);font-weight:700;font-size:1.3rem;text-transform:uppercase;color:var(--cobalto);
   border-left:4px solid var(--cobalto);padding-left:1.2rem;margin:1.8rem 0;max-width:30ch;line-height:1.25;}
 .stack-row{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.4rem;}
-.stack-chip{font-family:var(--mono);font-size:.7rem;border:1.5px solid var(--ink);padding:.3rem .75rem;}
+.stack-chip{
+  font-family:var(--mono);font-size:.7rem;border:1.5px solid var(--ink);
+  padding:.3rem .75rem .3rem .6rem;
+  clip-path:polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
+  display:inline-block;
+}
 footer{background:var(--ink);color:var(--paper);padding:1.4rem 3.4rem;display:flex;justify-content:space-between;
   align-items:center;flex-wrap:wrap;gap:.6rem;font-family:var(--mono);font-size:.72rem;}
 footer a{color:var(--mostarda);text-decoration:none;}
@@ -170,16 +211,14 @@ footer a{color:var(--mostarda);text-decoration:none;}
     padding:.9rem 1.2rem;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.7rem;}
   .top-mobile a{color:rgba(236,231,218,.6);text-decoration:none;margin-left:.9rem;}
   #inicio,#pilares,.sec,#sobre,footer{padding-left:1.3rem;padding-right:1.3rem;}
-  .pilares-grid{grid-template-columns:repeat(2,1fr);}
+  .pilares-grid{flex-direction:column;}
+  .pilar{grid-template-columns:3rem 1fr auto;}
   #sobre{grid-template-columns:1fr;gap:2rem;}
   .pub{grid-template-columns:1fr;gap:.3rem;}
   .iecis-wrap{flex-direction:column;}
   .iecis-side{width:100%;flex-direction:row;overflow-x:auto;}
   .hero-head{max-width:none;}
   .protos-grid{grid-template-columns:1fr;}
-  .schema{flex-direction:column;align-items:stretch;}
-  .snode{width:100%;}
-  .sarrow{transform:rotate(90deg);margin:.3rem auto;}
   .stat-row{gap:1.8rem;}
   .vars{grid-template-columns:repeat(2,1fr);}
 }
@@ -236,11 +275,12 @@ footer a{color:var(--mostarda);text-decoration:none;}
     <path d="M300,240 L360,240 L360,360 Z" fill="#15171A"/>
   </svg>
 
-  <p class="eyebrow">portfólio · aplicações · salvador, ba</p>
-  <h1 class="hero-head">penso teoria, construo <span class="hl">na mão</span>
+  <p class="eyebrow">salvador, ba · lab404 / ufba · 2026</p>
+  <h1 class="hero-head">pesquisa<br>crítica.<br><span class="hl">construção</span><br>na mão.</h1>
   <p class="hero-sub">
-    pesquisadora interdisciplinar. <b>penso a tecnologia a partir da crítica social</b> e construo, com as próprias mãos,
-    os sistemas que a materializam: dashboards de gestão, telemetria industrial, audiosséries documentais, ensaios interativos.
+    pesquisadora interdisciplinar em salvador. construo os sistemas que critico:
+    dashboards de gestão, telemetria industrial, ensaios digitais interativos, audiosséries documentais.
+    <b>a pergunta de pesquisa primeiro. a ferramenta técnica, depois.</b>
   </p>
   <div class="hero-cta">
     <a href="mailto:cintiavtrnssa@gmail.com" class="btn-mail">cintiavtrnssa@gmail.com ↗</a>
@@ -252,10 +292,10 @@ footer a{color:var(--mostarda);text-decoration:none;}
   <p class="eyebrow" style="color:var(--mostarda);">visão geral</p>
   <h2 class="sec-head">quatro formas de fazer a mesma pergunta: o que a tecnologia faz com as pessoas e o que dá pra construir a partir disso.</h2>
   <div class="pilares-grid">
-    <div class="pilar" style="--p:#E8A93D;"><div class="pilar-n">01 / produtos</div><h3 class="pilar-t">sistemas <span>digitais</span></h3><p class="pilar-d">dashboards, autenticação e bancos de dados em tempo real para organizações reais.</p></div>
-    <div class="pilar" style="--p:#C0492B;"><div class="pilar-n">02 / hardware</div><h3 class="pilar-t">automação <span>& iot</span></h3><p class="pilar-d">prototipagem, robótica e telemetria: sensores, microcontroladores, protocolos.</p></div>
-    <div class="pilar" style="--p:#E8A93D;"><div class="pilar-n">03 / narrativa</div><h3 class="pilar-t">conteúdo <span>& pesquisa</span></h3><p class="pilar-d">pesquisa e roteirização para mídia: redes sociais, audiosséries, parcerias.</p></div>
-    <div class="pilar" style="--p:#7FD9AE;"><div class="pilar-n">04 / pesquisa</div><h3 class="pilar-t">ciência <span>aplicada</span></h3><p class="pilar-d">revisão bibliográfica, análise de conteúdo, ensaios digitais interativos.</p></div>
+    <div class="pilar" style="--p:#E8A93D;"><div class="pilar-n">01</div><div><h3 class="pilar-t">sistemas <span>digitais</span></h3><p class="pilar-d">dashboards, autenticação e bancos de dados em tempo real para organizações reais.</p></div><div class="pilar-pg">p. 01</div></div>
+    <div class="pilar" style="--p:#C0492B;"><div class="pilar-n">02</div><div><h3 class="pilar-t">automação <span>& iot</span></h3><p class="pilar-d">prototipagem, robótica e telemetria: sensores, microcontroladores, protocolos.</p></div><div class="pilar-pg">p. 02</div></div>
+    <div class="pilar" style="--p:#E8A93D;"><div class="pilar-n">03</div><div><h3 class="pilar-t">conteúdo <span>& pesquisa</span></h3><p class="pilar-d">pesquisa e roteirização para mídia: redes sociais, audiosséries, parcerias.</p></div><div class="pilar-pg">p. 03</div></div>
+    <div class="pilar" style="--p:#7FD9AE;"><div class="pilar-n">04</div><div><h3 class="pilar-t">ciência <span>aplicada</span></h3><p class="pilar-d">revisão bibliográfica, análise de conteúdo, ensaios digitais interativos.</p></div><div class="pilar-pg">p. 04</div></div>
   </div>
 </section>
 
@@ -306,7 +346,7 @@ footer a{color:var(--mostarda);text-decoration:none;}
   <p class="fig-cap">interface ilustrativa. dados fictícios, apenas para demonstração de layout.</p>
 </section>
 <section class="sec" id="automacao">
-  <p class="eyebrow">02 · automação predial · robótica · iot</p>
+  <p class="eyebrow">ESP32 · RS-485 · LoRa · MEI — Fasano SP / Trancoso</p>
   <h2 class="sec-title">bms &<br>telemetria</h2>
   <p class="sec-lead">
     projeto de automação predial (BMS) e telemetria de energia elétrica para os empreendimentos
@@ -315,32 +355,38 @@ footer a{color:var(--mostarda);text-decoration:none;}
     educacional e automação residencial e industrial (LABTEKH, IFBA).
   </p>
 
-  <div class="schema">
-    <div class="snode">
-      <svg class="snode-ico" viewBox="0 0 40 40"><path d="M20,7 A13,13 0 1,1 19.9,7" fill="none" stroke="#ECE7DA" stroke-width="2.4"/><line x1="6" y1="20" x2="34" y2="20" stroke="#ECE7DA" stroke-width="2"/></svg>
-      <div class="l">sensores</div><div class="s">tensão · corrente</div>
+  <div class="schema-ds">
+    <div class="ds-row ds-header">
+      <span class="ds-ref">REF</span>
+      <span class="ds-desc">COMPONENTE</span>
+      <span class="ds-proto">PROTOCOLO</span>
+      <span class="ds-qty">QTD</span>
     </div>
-    <svg class="sarrow" viewBox="0 0 34 14"><path d="M0,7 H28 M20,1 L28,7 L20,13" stroke="#ECE7DA" stroke-width="2" fill="none"/></svg>
-    <div class="snode">
-      <svg class="snode-ico" viewBox="0 0 40 40"><rect x="9" y="13" width="22" height="15" fill="none" stroke="#ECE7DA" stroke-width="2.2"/><rect x="15" y="17" width="10" height="7" fill="none" stroke="#ECE7DA" stroke-width="1.4"/></svg>
-      <div class="l">esp32</div><div class="s">microcontrolador</div>
+    <div class="ds-row">
+      <span class="ds-ref">U1</span>
+      <span class="ds-desc">sensor tensão/corrente</span>
+      <span class="ds-proto">analógico</span>
+      <span class="ds-qty">×n</span>
     </div>
-    <svg class="sarrow" viewBox="0 0 34 14"><path d="M0,7 H28 M20,1 L28,7 L20,13" stroke="#ECE7DA" stroke-width="2" fill="none"/></svg>
-    <div class="snode">
-      <svg class="snode-ico" viewBox="0 0 40 40">
-        <path d="M11,27 V13" stroke="#ECE7DA" stroke-width="2"/>
-        <path d="M6,16 A7,7 0 0 1 16,16" fill="none" stroke="#ECE7DA" stroke-width="1.6"/>
-        <path d="M2,12 A12,12 0 0 1 20,12" fill="none" stroke="#ECE7DA" stroke-width="1.6"/>
-        <rect x="21" y="20" width="14" height="9" fill="none" stroke="#ECE7DA" stroke-width="2"/>
-        <circle cx="25" cy="24.5" r="1.1" fill="#ECE7DA"/><circle cx="28" cy="24.5" r="1.1" fill="#ECE7DA"/><circle cx="31" cy="24.5" r="1.1" fill="#ECE7DA"/>
-      </svg>
-      <div class="l">rs-485 / lora</div><div class="s">comunicação</div>
+    <div class="ds-row">
+      <span class="ds-ref">U2</span>
+      <span class="ds-desc">microcontrolador ESP32</span>
+      <span class="ds-proto">Wi-Fi · BLE</span>
+      <span class="ds-qty">×1</span>
     </div>
-    <svg class="sarrow" viewBox="0 0 34 14"><path d="M0,7 H28 M20,1 L28,7 L20,13" stroke="#ECE7DA" stroke-width="2" fill="none"/></svg>
-    <div class="snode">
-      <svg class="snode-ico" viewBox="0 0 40 40"><rect x="6" y="8" width="28" height="19" fill="none" stroke="#ECE7DA" stroke-width="2.2"/><rect x="11" y="18" width="4" height="6" fill="#ECE7DA"/><rect x="18" y="14" width="4" height="10" fill="#ECE7DA"/><rect x="25" y="11" width="4" height="13" fill="#ECE7DA"/><line x1="16" y1="31" x2="24" y2="31" stroke="#ECE7DA" stroke-width="2"/></svg>
-      <div class="l">painel bms</div><div class="s">gestão energética</div>
+    <div class="ds-row">
+      <span class="ds-ref">U3</span>
+      <span class="ds-desc">barramento de campo</span>
+      <span class="ds-proto">RS-485 / LoRa</span>
+      <span class="ds-qty">—</span>
     </div>
+    <div class="ds-row">
+      <span class="ds-ref">U4</span>
+      <span class="ds-desc">painel BMS</span>
+      <span class="ds-proto">dashboard web</span>
+      <span class="ds-qty">×1</span>
+    </div>
+    <p class="ds-note">// fluxo: U1 → U2 → U3 → U4</p>
   </div>
 
   <p class="eyebrow" style="color:var(--ink);font-size:.65rem;margin-bottom:.9rem;">variáveis monitoradas</p>
@@ -435,10 +481,10 @@ footer a{color:var(--mostarda);text-decoration:none;}
     audiosséries e produtoras musicais.
   </p>
 
-  <div class="stat-row">
-    <div><div class="stat-n">500k+</div><div class="stat-l">seguidores</div></div>
-    <div><div class="stat-n">14.8M+</div><div class="stat-l">visualizações</div></div>
-  </div>
+  <p class="stat-prose">
+    os reels que pesquisei passaram de <b>14,8 milhões de visualizações</b>.
+    a @pretaletrada tem mais de <b>500 mil seguidores</b> — e sobe.
+  </p>
 
   <div class="partners">
     <div class="partner">
