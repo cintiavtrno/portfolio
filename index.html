@@ -33,25 +33,45 @@ a{color:inherit;}
   font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;color:rgba(236,231,218,.45);
   text-decoration:none;transition:color .2s;}
 .rail-links a:hover{color:var(--mostarda);}
-.rail-mail{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--mono);font-size:.68rem;
-  letter-spacing:.1em;color:var(--mostarda);text-decoration:none;}
+.rail-contact{display:flex;flex-direction:column;align-items:center;gap:.85rem;flex-shrink:0;}
+.rail-contact .dot{width:13px;height:13px;display:block;}
+.rail-mail{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--mono);font-size:.64rem;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--mostarda);text-decoration:none;transition:color .2s;}
+.rail-mail:hover{color:var(--paper);}
 main{margin-left:58px;}
 .tile-mark{position:absolute;pointer-events:none;opacity:.5;}
-#inicio{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;
+#inicio{position:relative;min-height:100vh;perspective:1400px;display:flex;flex-direction:column;justify-content:flex-end;
   padding:0 0 3.2rem;overflow:hidden;background:var(--ink);}
 #inicio-bg{position:absolute;inset:0;width:100%;height:100%;z-index:0;}
-#inicio-content{position:relative;z-index:1;padding:0 3.4rem;}
+#inicio-content{position:relative;z-index:2;padding:0 3.4rem;}
 #inicio .eyebrow{color:rgba(236,231,218,.45);}
 #inicio .hero-head{color:var(--paper);}
 #inicio .hero-sub{color:rgba(236,231,218,.65);}
 #inicio .hero-sub b{color:var(--paper);}
 #inicio .btn-mail{color:var(--paper);border-bottom-color:var(--mostarda);}
 #inicio .scroll-note{color:rgba(236,231,218,.3);}
+.hero-pop{position:absolute;z-index:1;top:7%;right:6%;
+  width:clamp(200px,30vw,360px);height:clamp(200px,30vw,360px);
+  transform:rotateX(9deg) rotateY(-17deg);transform-style:preserve-3d;pointer-events:none;}
+.pop{position:absolute;transform-style:preserve-3d;animation:popFloat 10s ease-in-out infinite;}
+.pop.sq{border:2px solid rgba(236,231,218,.85);}
+.pop.p1{width:46%;height:46%;left:2%;top:2%;background:var(--cobalto);
+  transform:translateZ(40px);box-shadow:-16px 22px 44px rgba(0,0,0,.5);}
+.pop.p2{width:40%;height:40%;left:36%;top:26%;background:var(--mostarda);
+  transform:translateZ(95px);box-shadow:-22px 26px 50px rgba(0,0,0,.55);animation-delay:-2.6s;}
+.pop.p3{width:33%;height:33%;left:13%;top:55%;background:var(--terracota);
+  transform:translateZ(155px);box-shadow:-26px 30px 56px rgba(0,0,0,.6);animation-delay:-5.2s;}
+.pop.ring{width:56%;height:56%;right:-8%;top:30%;border-radius:50%;
+  border:2px solid rgba(236,231,218,.45);
+  background:radial-gradient(circle,rgba(43,110,80,.55) 0 32%,transparent 33%);
+  transform:translateZ(18px);animation-delay:-1.3s;}
+@keyframes popFloat{0%,100%{translate:0 0;}50%{translate:0 -15px;}}
+@media(prefers-reduced-motion:reduce){.pop{animation:none;}}
 @media(max-width:860px){
   #inicio-content{padding:0 1.3rem;}
   #inicio{min-height:100svh;}
+  .hero-pop{display:none;}
 }
-  padding:6rem 3.4rem 4rem;overflow:hidden;background:var(--paper);}
 .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--cobalto);margin-bottom:1.6rem;text-transform:uppercase;}
 .hero-head{font-family:var(--display);font-weight:900;font-size:clamp(2.8rem,7vw,6.4rem);line-height:.94;
   letter-spacing:-.01em;text-transform:uppercase;max-width:16ch;margin-bottom:2.2rem;}
@@ -198,7 +218,8 @@ main{margin-left:58px;}
 .pub-v{font-family:var(--mono);font-size:.64rem;color:var(--mostarda);margin-bottom:.6rem;}
 .pub-d{font-size:.78rem;line-height:1.75;color:rgba(236,231,218,.75);max-width:62ch;margin-bottom:.5rem;}
 .pub-l{font-family:var(--mono);font-size:.72rem;color:var(--paper);border-bottom:1.5px solid var(--mostarda);text-decoration:none;}
-#sobre{background:var(--paper);color:var(--ink);position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1.7fr;gap:4rem;padding:5.5rem 3.4rem;}
+#sobre{background:var(--paper);color:var(--ink);position:relative;overflow:hidden;padding:5.5rem 3.4rem;}
+.sobre-grid{display:grid;grid-template-columns:1fr 1.7fr;gap:4rem;}
 .sobre-name{font-family:var(--display);font-weight:900;font-size:clamp(2rem,4vw,3rem);text-transform:uppercase;line-height:.95;margin-bottom:1rem;}
 .sobre-mail{font-family:var(--mono);font-size:.85rem;color:var(--cobalto);text-decoration:none;border-bottom:2px solid var(--cobalto);}
 .sobre-loc{font-family:var(--mono);font-size:.7rem;color:#8a8d85;margin-top:.7rem;}
@@ -212,6 +233,28 @@ main{margin-left:58px;}
   clip-path:polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 0 100%);
   display:inline-block;
 }
+#cta{background:var(--cobalto);color:var(--paper);position:relative;overflow:hidden;}
+.cta-wall{position:absolute;inset:0;z-index:0;display:flex;flex-direction:column;justify-content:center;gap:0;opacity:.5;}
+.cta-wall .line{font-family:var(--display);font-weight:900;font-size:clamp(2.6rem,8vw,6rem);line-height:.92;
+  text-transform:uppercase;color:var(--cobalto-d);white-space:nowrap;width:max-content;will-change:transform;}
+.cta-wall .l1{animation:ctaScroll 40s linear infinite;}
+.cta-wall .l2{animation:ctaScrollR 34s linear infinite;}
+.cta-wall .l3{animation:ctaScroll 46s linear infinite;}
+@keyframes ctaScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@keyframes ctaScrollR{from{transform:translateX(-50%);}to{transform:translateX(0);}}
+.cta-inner{position:relative;z-index:1;padding:6rem 3.4rem;}
+.cta-card{position:relative;background:var(--mostarda);color:var(--ink);max-width:560px;padding:3rem 3rem 2.6rem;
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 40px),calc(100% - 40px) 100%,0 100%);}
+.cta-eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--terracota);margin-bottom:1.2rem;}
+.cta-head{font-family:var(--display);font-weight:900;font-size:clamp(2rem,4.6vw,3.4rem);line-height:.98;text-transform:uppercase;margin-bottom:1.3rem;}
+.cta-sub{font-size:.92rem;line-height:1.8;max-width:42ch;margin-bottom:2rem;color:#2c2e2f;}
+.cta-btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.82rem;font-weight:700;
+  background:var(--ink);color:var(--paper);text-decoration:none;padding:.85rem 1.3rem;
+  clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,0 100%);transition:background .2s;}
+.cta-btn:hover{background:var(--terracota);}
+.cta-ring{position:absolute;z-index:1;right:6%;top:50%;transform:translateY(-50%);width:clamp(120px,15vw,210px);height:auto;pointer-events:none;}
+@media(prefers-reduced-motion:reduce){.cta-wall .line{animation:none;}}
+@media(max-width:860px){.cta-inner{padding:4rem 1.3rem;}.cta-ring{display:none;}}
 footer{background:var(--ink);color:var(--paper);padding:1.4rem 3.4rem;display:flex;justify-content:space-between;
   align-items:center;flex-wrap:wrap;gap:.6rem;font-family:var(--mono);font-size:.72rem;}
 footer a{color:var(--mostarda);text-decoration:none;}
@@ -225,7 +268,7 @@ footer a{color:var(--mostarda);text-decoration:none;}
   #inicio,#pilares,.sec,#sobre,footer{padding-left:1.3rem;padding-right:1.3rem;}
   .pilares-grid{flex-direction:column;}
   .pilar{grid-template-columns:3rem 1fr auto;}
-  #sobre{grid-template-columns:1fr;gap:2rem;}
+  #sobre .sobre-grid{grid-template-columns:1fr;gap:2rem;}
   .pub{grid-template-columns:1fr;gap:.3rem;}
   .iecis-wrap{flex-direction:column;}
   .iecis-side{width:100%;flex-direction:row;overflow-x:auto;}
@@ -239,7 +282,6 @@ footer a{color:var(--mostarda);text-decoration:none;}
   .pilares-grid{grid-template-columns:1fr;}
   .vars{grid-template-columns:1fr;}
   .partners{grid-template-columns:1fr;}
-}
 }
 </style>
 </head>
@@ -260,32 +302,55 @@ footer a{color:var(--mostarda);text-decoration:none;}
     <a href="#pesquisa">pesquisa</a>
     <a href="#sobre">sobre</a>
   </div>
-  <a class="rail-mail" href="mailto:cintiavtrnssa@gmail.com">contato ↗</a>
+  <div class="rail-contact">
+    <svg class="dot" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="none" stroke="#E8A93D" stroke-width="1.6"/><circle cx="12" cy="12" r="3.5" fill="#E8A93D"/></svg>
+    <a class="rail-mail" href="mailto:cintiavtrnssa@gmail.com">contato</a>
+  </div>
 </nav>
 
 <main>
 <section id="inicio">
-  <svg id="inicio-bg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <rect width="700" height="700" fill="#15171A"/>
-    <rect x="0" y="0" width="175" height="175" fill="#2643D6" opacity=".9"/>
-    <circle cx="87" cy="87" r="68" fill="#ECE7DA" opacity=".07"/>
-    <rect x="175" y="0" width="175" height="175" fill="#E8A93D" opacity=".85"/>
-    <polygon points="175,0 350,0 262,175" fill="#C0492B" opacity=".7"/>
-    <rect x="350" y="0" width="175" height="175" fill="#2B6E50" opacity=".8"/>
-    <circle cx="437" cy="87" r="68" fill="#2643D6" opacity=".5"/>
-    <rect x="525" y="0" width="175" height="175" fill="#15171A"/>
-    <circle cx="612" cy="87" r="95" fill="#C0492B" opacity=".6"/>
-    <circle cx="612" cy="87" r="52" fill="#E8A93D" opacity=".5"/>
-    <rect x="0"   y="175" width="525" height="175" fill="#2643D6" opacity=".1"/>
-    <rect x="525" y="175" width="175" height="175" fill="#2B6E50" opacity=".18"/>
-    <polygon points="0,350 262,175 525,350" fill="#E8A93D" opacity=".07"/>
-    <rect x="0" y="350" width="700" height="350" fill="#15171A"/>
-    <circle cx="120" cy="520" r="160" fill="#2643D6" opacity=".18"/>
-    <circle cx="420" cy="700" r="200" fill="#E8A93D" opacity=".1"/>
-    <rect x="520" y="380" width="180" height="180" fill="#C0492B" opacity=".25"/>
-    <circle cx="620" cy="580" r="90" fill="#2B6E50" opacity=".2"/>
-    <line x1="0" y1="350" x2="700" y2="350" stroke="#ECE7DA" stroke-width="1" opacity=".08"/>
+  <svg id="inicio-bg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1440" height="900" fill="#15171A"/>
+    <!-- faixa geométrica superior, largura toda -->
+    <rect x="0"    y="0" width="180" height="180" fill="#2643D6" opacity=".9"/>
+    <circle cx="90" cy="90" r="70" fill="#ECE7DA" opacity=".06"/>
+    <rect x="180"  y="0" width="180" height="180" fill="#E8A93D" opacity=".85"/>
+    <polygon points="360,0 540,0 450,180" fill="#C0492B" opacity=".7"/>
+    <rect x="540"  y="0" width="180" height="180" fill="#2B6E50" opacity=".8"/>
+    <circle cx="630" cy="90" r="70" fill="#2643D6" opacity=".45"/>
+    <rect x="720"  y="0" width="180" height="180" fill="#15171A"/>
+    <polygon points="900,0 1080,0 990,180" fill="#E8A93D" opacity=".5"/>
+    <rect x="1080" y="0" width="180" height="180" fill="#16297E" opacity=".8"/>
+    <circle cx="1170" cy="90" r="58" fill="#ECE7DA" opacity=".08"/>
+    <rect x="1260" y="0" width="180" height="180" fill="#C0492B" opacity=".7"/>
+    <circle cx="1350" cy="90" r="60" fill="#E8A93D" opacity=".5"/>
+    <!-- banda intermediária, transição suave -->
+    <rect x="0"    y="180" width="1440" height="6" fill="#ECE7DA" opacity=".07"/>
+    <polygon points="0,360 450,180 900,360" fill="#2643D6" opacity=".06"/>
+    <polygon points="720,360 1080,180 1440,360" fill="#E8A93D" opacity=".05"/>
+    <!-- planeta concêntrico à direita (assinatura) -->
+    <circle cx="1230" cy="640" r="320" fill="none" stroke="#ECE7DA" stroke-width="1.5" opacity=".12"/>
+    <circle cx="1230" cy="640" r="210" fill="#2643D6" opacity=".16"/>
+    <circle cx="1230" cy="640" r="120" fill="none" stroke="#ECE7DA" stroke-width="1.2" opacity=".18"/>
+    <circle cx="1230" cy="640" r="62"  fill="#C0492B" opacity=".5"/>
+    <circle cx="1230" cy="640" r="26"  fill="#E8A93D" opacity=".55"/>
+    <!-- corpos menores espalhados pela base -->
+    <circle cx="980" cy="560" r="150" fill="none" stroke="#ECE7DA" stroke-width="1" opacity=".07"/>
+    <circle cx="980" cy="560" r="72"  fill="#2B6E50" opacity=".28"/>
+    <rect   x="640" y="470" width="190" height="190" fill="#C0492B" opacity=".14"/>
+    <circle cx="430" cy="700" r="200" fill="#E8A93D" opacity=".07"/>
+    <circle cx="150" cy="560" r="150" fill="#2643D6" opacity=".12"/>
+    <circle cx="80"  cy="800" r="22"  fill="#ECE7DA" opacity=".12"/>
+    <line x1="0" y1="186" x2="1440" y2="186" stroke="#ECE7DA" stroke-width="1" opacity=".06"/>
   </svg>
+
+  <div class="hero-pop" aria-hidden="true">
+    <span class="pop sq p1"></span>
+    <span class="pop ring"></span>
+    <span class="pop sq p2"></span>
+    <span class="pop sq p3"></span>
+  </div>
 
   <div id="inicio-content">
     <p class="eyebrow">salvador, ba · lab404 / ufba · 2026</p>
@@ -727,7 +792,7 @@ footer a{color:var(--mostarda);text-decoration:none;}
     <circle cx="285" cy="572" r="47" fill="#C0492B" opacity=".08"/>
     <circle cx="82" cy="584" r="21" fill="#15171A" opacity=".07"/>
   </svg>
-  <div class="sec-content" style="display:grid;grid-template-columns:1fr 1.7fr;gap:4rem;">
+  <div class="sec-content sobre-grid">
   <div>
     <h2 class="sobre-name">cíntia<br>vitorino</h2>
     <a href="mailto:cintiavtrnssa@gmail.com" class="sobre-mail">cintiavtrnssa@gmail.com</a>
@@ -746,6 +811,31 @@ footer a{color:var(--mostarda);text-decoration:none;}
       <span class="stack-chip">roteirização & narrativa</span>
     </div>
   </div>
+  </div>
+</section>
+
+<section id="cta">
+  <div class="cta-wall" aria-hidden="true">
+    <div class="line l1">CONSTRUIR · CONSTRUIR · CONSTRUIR · CONSTRUIR · CONSTRUIR · CONSTRUIR · CONSTRUIR · CONSTRUIR · CONSTRUIR · CONSTRUIR · CONSTRUIR · CONSTRUIR · CONSTRUIR · CONSTRUIR · CONSTRUIR · CONSTRUIR · </div>
+    <div class="line l2">PESQUISAR · PESQUISAR · PESQUISAR · PESQUISAR · PESQUISAR · PESQUISAR · PESQUISAR · PESQUISAR · PESQUISAR · PESQUISAR · PESQUISAR · PESQUISAR · PESQUISAR · PESQUISAR · PESQUISAR · PESQUISAR · </div>
+    <div class="line l3">CRITICAR · CRITICAR · CRITICAR · CRITICAR · CRITICAR · CRITICAR · CRITICAR · CRITICAR · CRITICAR · CRITICAR · CRITICAR · CRITICAR · CRITICAR · CRITICAR · CRITICAR · CRITICAR · </div>
+  </div>
+  <svg class="cta-ring" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="100" cy="100" r="96" fill="none" stroke="#ECE7DA" stroke-width="2" opacity=".4"/>
+    <circle cx="100" cy="100" r="64" fill="#E8A93D" opacity=".22"/>
+    <circle cx="100" cy="100" r="38" fill="none" stroke="#ECE7DA" stroke-width="2" opacity=".5"/>
+    <circle cx="100" cy="100" r="15" fill="#C0492B"/>
+  </svg>
+  <div class="cta-inner">
+    <div class="cta-card">
+      <p class="cta-eyebrow">salvador · ba · disponível para projetos</p>
+      <h2 class="cta-head">tem uma pergunta de pesquisa? vamos construir a ferramenta.</h2>
+      <p class="cta-sub">
+        sistemas de gestão, telemetria, ensaios interativos, pesquisa para mídia. da pergunta crítica
+        ao produto que responde a ela. me conta o que você precisa.
+      </p>
+      <a class="cta-btn" href="mailto:cintiavtrnssa@gmail.com">cintiavtrnssa@gmail.com ↗</a>
+    </div>
   </div>
 </section>
 
