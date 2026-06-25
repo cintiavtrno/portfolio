@@ -101,7 +101,7 @@ main{margin-left:58px;}
 .scroll-note{font-family:var(--mono);font-size:.68rem;color:#8a8d85;letter-spacing:.04em;}
 #pilares{background:var(--cobalto);color:var(--paper);padding:1.6rem 3.4rem 2.8rem;position:relative;overflow:hidden;}
 .sec-head{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,3vw,2.4rem);text-transform:uppercase;
-  line-height:1.05;max-width:24ch;margin-bottom:1.4rem;}
+  line-height:1.05;max-width:24ch;margin-bottom:1.4rem;position:relative;z-index:2;}
 .pilares-grid{display:flex;flex-direction:column;gap:0;border-top:1px solid rgba(236,231,218,.25);position:relative;z-index:1;}
 .pilar{display:grid;grid-template-columns:4rem 1fr auto;gap:0 2rem;align-items:baseline;
   padding:1.4rem 0;border-bottom:1px solid rgba(236,231,218,.18);}
@@ -352,10 +352,20 @@ footer a{color:var(--mostarda);text-decoration:none;}
     <p class="eyebrow">salvador, ba · lab404 / ufba · 2026</p>
     <h1 class="hero-head">pesquisa<br>crítica.<br><span class="hl">construção</span><br>na mão.</h1>
     <p class="hero-sub">
-      pesquisadora interdisciplinar em salvador. construo os sistemas que critico:
-      dashboards de gestão, telemetria industrial, ensaios digitais interativos, audiosséries documentais.
-      <b>a pergunta de pesquisa primeiro. a ferramenta técnica, depois.</b>
-    </p>
+  pesquisadora interdisciplinar e desenvolvedora web criativa (front-end). como não sei desenhar da forma tradicional, uso a lógica e a matemática. a estrutura e os vetores nascem do cálculo de coordenadas direto no html/svg, e o desenho ganha vida ao explorar todo o poder artístico do css para testar os limites do navegador.
+</p>
+
+<p class="hero-sub">
+  construo os mesmos sistemas que critico. e não, isso não significa que me corrompi. pesquiso e debato ativamente sobre privacidade de dados, capitalismo de vigilância, vieses algorítmicos e os perigos da dataficação extrema da vida. minha atuação técnica é a de uma hacker consciente: eu preciso entender a máquina por dentro para não ser refém dela. é por isso que desenvolvo desde dashboards de gestão e projetos de telemetria industrial até ensaios digitais interativos.
+</p>
+
+<p class="hero-sub">
+  toda essa base vem da minha formação. sou técnica em automação industrial pelo ifba, o que explica meu fascínio por circuitos, placas e protocolos. porém, quando entrei no bacharelado em ciência e tecnologia na ufba, eu já estava profundamente descrente da área. a tecnologia fechada em si mesma me sufocava; sentia falta da intersecção com o humano. estávamos tão imersos na técnica que perdíamos a capacidade de enxergar os problemas estruturais nos sistemas que criávamos.
+</p>
+
+<p class="hero-sub">
+  a pesquisa me salvou. ela me devolveu a capacidade de ver o impacto político das ferramentas e me ensinou a programar com propósito. <b>a pergunta de pesquisa sempre vem primeiro. a ferramenta técnica, depois.</b>
+</p>
     <div class="hero-cta">
       <a href="mailto:cintiavtrnssa@gmail.com" class="btn-mail">cintiavtrnssa@gmail.com ↗</a>
       <span class="scroll-note">// quatro aplicações abaixo</span>
@@ -378,7 +388,7 @@ footer a{color:var(--mostarda);text-decoration:none;}
     <circle cx="100" cy="580" r="18" fill="#ECE7DA" opacity=".15"/>
   </svg>
   <div class="sec-content">
-    <p class="eyebrow" style="color:var(--mostarda);">visão geral</p>
+    <p class="eyebrow" style="color:var(--mostarda);position:relative;z-index:2;">visão geral</p>
     <h2 class="sec-head">quatro formas de fazer a mesma pergunta: o que a tecnologia faz com as pessoas e o que dá pra construir a partir disso.</h2>
     <div class="pilares-grid">
     <div class="pilar" style="--p:#E8A93D;"><div class="pilar-n">01</div><div><h3 class="pilar-t">sistemas <span>digitais</span></h3><p class="pilar-d">dashboards, autenticação e bancos de dados em tempo real para organizações reais.</p></div><div class="pilar-pg">p. 01</div></div>
