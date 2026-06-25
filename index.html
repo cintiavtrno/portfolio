@@ -37,7 +37,20 @@ a{color:inherit;}
   letter-spacing:.1em;color:var(--mostarda);text-decoration:none;}
 main{margin-left:58px;}
 .tile-mark{position:absolute;pointer-events:none;opacity:.5;}
-#inicio{position:relative;min-height:92vh;display:flex;flex-direction:column;justify-content:center;
+#inicio{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 0 3.2rem;overflow:hidden;background:var(--ink);}
+#inicio-bg{position:absolute;inset:0;width:100%;height:100%;z-index:0;}
+#inicio-content{position:relative;z-index:1;padding:0 3.4rem;}
+#inicio .eyebrow{color:rgba(236,231,218,.45);}
+#inicio .hero-head{color:var(--paper);}
+#inicio .hero-sub{color:rgba(236,231,218,.65);}
+#inicio .hero-sub b{color:var(--paper);}
+#inicio .btn-mail{color:var(--paper);border-bottom-color:var(--mostarda);}
+#inicio .scroll-note{color:rgba(236,231,218,.3);}
+@media(max-width:860px){
+  #inicio-content{padding:0 1.3rem;}
+  #inicio{min-height:100svh;}
+}
   padding:6rem 3.4rem 4rem;overflow:hidden;background:var(--paper);}
 .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--cobalto);margin-bottom:1.6rem;text-transform:uppercase;}
 .hero-head{font-family:var(--display);font-weight:900;font-size:clamp(2.8rem,7vw,6.4rem);line-height:.94;
@@ -66,8 +79,6 @@ main{margin-left:58px;}
 .btn-mail{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;color:var(--ink);
   text-decoration:none;border-bottom:2px solid var(--cobalto);padding-bottom:.15rem;}
 .scroll-note{font-family:var(--mono);font-size:.68rem;color:#8a8d85;letter-spacing:.04em;}
-.hero-pattern{position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);width:min(34vw,420px);opacity:.95;}
-@media (max-width:900px){.hero-pattern{display:none;}}
 #pilares{background:var(--cobalto);color:var(--paper);padding:5rem 3.4rem;position:relative;overflow:hidden;}
 .sec-head{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,3vw,2.4rem);text-transform:uppercase;
   line-height:1.05;max-width:24ch;margin-bottom:2.8rem;}
@@ -252,39 +263,41 @@ footer a{color:var(--mostarda);text-decoration:none;}
 </nav>
 
 <main>
-
 <section id="inicio">
-  <svg class="hero-pattern" viewBox="0 0 360 420" xmlns="http://www.w3.org/2000/svg">
-    <rect x="0" y="0" width="120" height="120" fill="#2643D6"/>
-    <circle cx="120" cy="120" r="70" fill="#ECE7DA"/>
-    <rect x="120" y="0" width="120" height="120" fill="#E8A93D"/>
-    <path d="M120,0 L240,0 L240,120 Z" fill="#C0492B"/>
-    <rect x="0" y="120" width="120" height="120" fill="#15171A"/>
-    <circle cx="60" cy="180" r="34" fill="#ECE7DA" opacity=".9"/>
-    <rect x="120" y="120" width="120" height="120" fill="#2B6E50"/>
-    <path d="M120,240 L240,120 L240,240 Z" fill="#E8A93D"/>
-    <rect x="240" y="0" width="120" height="120" fill="#ECE7DA" stroke="#15171A" stroke-width="2"/>
-    <circle cx="300" cy="60" r="46" fill="#C0492B"/>
-    <rect x="240" y="120" width="120" height="120" fill="#2643D6"/>
-    <path d="M240,120 L360,120 L300,240 Z" fill="#ECE7DA"/>
-    <rect x="0" y="240" width="120" height="120" fill="#E8A93D"/>
-    <rect x="30" y="270" width="60" height="60" fill="#15171A"/>
-    <rect x="120" y="240" width="120" height="120" fill="#ECE7DA" stroke="#15171A" stroke-width="2"/>
-    <circle cx="180" cy="300" r="40" fill="#2643D6"/>
-    <rect x="240" y="240" width="120" height="120" fill="#C0492B"/>
-    <path d="M300,240 L360,240 L360,360 Z" fill="#15171A"/>
+  <svg id="inicio-bg" viewBox="0 0 700 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <rect width="700" height="700" fill="#15171A"/>
+    <rect x="0" y="0" width="175" height="175" fill="#2643D6" opacity=".9"/>
+    <circle cx="87" cy="87" r="68" fill="#ECE7DA" opacity=".07"/>
+    <rect x="175" y="0" width="175" height="175" fill="#E8A93D" opacity=".85"/>
+    <polygon points="175,0 350,0 262,175" fill="#C0492B" opacity=".7"/>
+    <rect x="350" y="0" width="175" height="175" fill="#2B6E50" opacity=".8"/>
+    <circle cx="437" cy="87" r="68" fill="#2643D6" opacity=".5"/>
+    <rect x="525" y="0" width="175" height="175" fill="#15171A"/>
+    <circle cx="612" cy="87" r="95" fill="#C0492B" opacity=".6"/>
+    <circle cx="612" cy="87" r="52" fill="#E8A93D" opacity=".5"/>
+    <rect x="0"   y="175" width="525" height="175" fill="#2643D6" opacity=".1"/>
+    <rect x="525" y="175" width="175" height="175" fill="#2B6E50" opacity=".18"/>
+    <polygon points="0,350 262,175 525,350" fill="#E8A93D" opacity=".07"/>
+    <rect x="0" y="350" width="700" height="350" fill="#15171A"/>
+    <circle cx="120" cy="520" r="160" fill="#2643D6" opacity=".35"/>
+    <circle cx="420" cy="700" r="200" fill="#E8A93D" opacity=".1"/>
+    <rect x="520" y="380" width="180" height="180" fill="#C0492B" opacity=".25"/>
+    <circle cx="620" cy="580" r="90" fill="#2B6E50" opacity=".2"/>
+    <line x1="0" y1="350" x2="700" y2="350" stroke="#ECE7DA" stroke-width="1" opacity=".08"/>
   </svg>
 
-  <p class="eyebrow">salvador, ba · lab404 / ufba · 2026</p>
-  <h1 class="hero-head">pesquisa<br>crítica.<br><span class="hl">construção</span><br>na mão.</h1>
-  <p class="hero-sub">
-    pesquisadora interdisciplinar em salvador. construo os sistemas que critico:
-    dashboards de gestão, telemetria industrial, ensaios digitais interativos, audiosséries documentais.
-    <b>a pergunta de pesquisa primeiro. a ferramenta técnica, depois.</b>
-  </p>
-  <div class="hero-cta">
-    <a href="mailto:cintiavtrnssa@gmail.com" class="btn-mail">cintiavtrnssa@gmail.com ↗</a>
-    <span class="scroll-note">// quatro aplicações abaixo</span>
+  <div id="inicio-content">
+    <p class="eyebrow">salvador, ba · lab404 / ufba · 2026</p>
+    <h1 class="hero-head">pesquisa<br>crítica.<br><span class="hl">construção</span><br>na mão.</h1>
+    <p class="hero-sub">
+      pesquisadora interdisciplinar em salvador. construo os sistemas que critico:
+      dashboards de gestão, telemetria industrial, ensaios digitais interativos, audiosséries documentais.
+      <b>a pergunta de pesquisa primeiro. a ferramenta técnica, depois.</b>
+    </p>
+    <div class="hero-cta">
+      <a href="mailto:cintiavtrnssa@gmail.com" class="btn-mail">cintiavtrnssa@gmail.com ↗</a>
+      <span class="scroll-note">// quatro aplicações abaixo</span>
+    </div>
   </div>
 </section>
 
