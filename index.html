@@ -129,6 +129,7 @@ main{margin-left:58px;}
 .iecis-badge.ok{background:#DFF3D6;color:#0CA848;}
 .iecis-badge.pend{background:#FCE3C4;color:#8A4400;}
 .fig-cap{font-family:var(--mono);font-size:.65rem;color:#8a8d85;margin-top:1rem;}
+.sec-geo{position:absolute;bottom:0;right:0;width:min(380px,55%);height:90px;pointer-events:none;overflow:hidden;}
 #automacao{background:var(--terracota);color:var(--paper);}
 #automacao .eyebrow{color:var(--ink);}
 .schema-ds{margin-bottom:2.6rem;border:1.5px solid rgba(236,231,218,.35);font-family:var(--mono);}
@@ -150,7 +151,7 @@ main{margin-left:58px;}
 .proto-legend{display:flex;flex-direction:column;gap:.4rem;}
 .proto-legend .row{display:flex;align-items:center;gap:.6rem;font-size:.7rem;line-height:1.4;}
 .proto-legend .sw{width:12px;height:12px;flex-shrink:0;border-radius:2px;}
-#midia{background:var(--mostarda);color:var(--ink);}
+#midia{background:var(--mostarda);color:var(--ink);position:relative;overflow:hidden;}
 #midia .eyebrow{color:var(--terracota);}
 .stat-row{display:flex;gap:3.2rem;flex-wrap:wrap;margin-bottom:2.6rem;}
 .stat-n{font-family:var(--display);font-weight:900;font-size:2.6rem;line-height:1;}
@@ -180,7 +181,7 @@ main{margin-left:58px;}
 .not-link{font-family:var(--mono);font-size:.68rem;color:var(--cobalto);text-decoration:none;border-bottom:1.5px solid var(--cobalto);}
 .not-publi{font-family:var(--mono);font-size:.62rem;letter-spacing:.04em;text-transform:uppercase;
   background:var(--ink);color:var(--mostarda);padding:.1rem .4rem;}
-#pesquisa{background:var(--verde);color:var(--paper);}
+#pesquisa{background:var(--verde);color:var(--paper);position:relative;overflow:hidden;}
 #pesquisa .eyebrow{color:var(--mostarda);}
 .ens-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:rgba(236,231,218,.2);
   border:1px solid rgba(236,231,218,.2);margin-bottom:1.8rem;}
@@ -197,7 +198,7 @@ main{margin-left:58px;}
 .pub-v{font-family:var(--mono);font-size:.64rem;color:var(--mostarda);margin-bottom:.6rem;}
 .pub-d{font-size:.78rem;line-height:1.75;color:rgba(236,231,218,.75);max-width:62ch;margin-bottom:.5rem;}
 .pub-l{font-family:var(--mono);font-size:.72rem;color:var(--paper);border-bottom:1.5px solid var(--mostarda);text-decoration:none;}
-#sobre{background:var(--paper);color:var(--ink);display:grid;grid-template-columns:1fr 1.7fr;gap:4rem;padding:5.5rem 3.4rem;}
+#sobre{background:var(--paper);color:var(--ink);position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1.7fr;gap:4rem;padding:5.5rem 3.4rem;}
 .sobre-name{font-family:var(--display);font-weight:900;font-size:clamp(2rem,4vw,3rem);text-transform:uppercase;line-height:.95;margin-bottom:1rem;}
 .sobre-mail{font-family:var(--mono);font-size:.85rem;color:var(--cobalto);text-decoration:none;border-bottom:2px solid var(--cobalto);}
 .sobre-loc{font-family:var(--mono);font-size:.7rem;color:#8a8d85;margin-top:.7rem;}
@@ -264,7 +265,7 @@ footer a{color:var(--mostarda);text-decoration:none;}
 
 <main>
 <section id="inicio">
-  <svg id="inicio-bg" viewBox="0 0 700 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <svg id="inicio-bg" viewBox="0 0 1400 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
     <rect width="700" height="700" fill="#15171A"/>
     <rect x="0" y="0" width="175" height="175" fill="#2643D6" opacity=".9"/>
     <circle cx="87" cy="87" r="68" fill="#ECE7DA" opacity=".07"/>
@@ -279,7 +280,7 @@ footer a{color:var(--mostarda);text-decoration:none;}
     <rect x="525" y="175" width="175" height="175" fill="#2B6E50" opacity=".18"/>
     <polygon points="0,350 262,175 525,350" fill="#E8A93D" opacity=".07"/>
     <rect x="0" y="350" width="700" height="350" fill="#15171A"/>
-    <circle cx="120" cy="520" r="160" fill="#2643D6" opacity=".35"/>
+    <circle cx="120" cy="520" r="160" fill="#2643D6" opacity=".18"/>
     <circle cx="420" cy="700" r="200" fill="#E8A93D" opacity=".1"/>
     <rect x="520" y="380" width="180" height="180" fill="#C0492B" opacity=".25"/>
     <circle cx="620" cy="580" r="90" fill="#2B6E50" opacity=".2"/>
@@ -304,6 +305,18 @@ footer a{color:var(--mostarda);text-decoration:none;}
 <section id="pilares">
   <p class="eyebrow" style="color:var(--mostarda);">visão geral</p>
   <h2 class="sec-head">quatro formas de fazer a mesma pergunta: o que a tecnologia faz com as pessoas e o que dá pra construir a partir disso.</h2>
+  <svg class="sec-geo" viewBox="0 0 380 90" preserveAspectRatio="xMaxYMax meet" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="18" cy="78" r="7" fill="#ECE7DA" opacity=".9"/>
+    <circle cx="46" cy="72" r="11" fill="#E8A93D" opacity=".8"/>
+    <circle cx="80" cy="65" r="16" fill="none" stroke="#ECE7DA" stroke-width="1.2" opacity=".45"/>
+    <circle cx="80" cy="65" r="7" fill="#ECE7DA" opacity=".12"/>
+    <circle cx="122" cy="56" r="23" fill="#C0492B" opacity=".6"/>
+    <circle cx="176" cy="44" r="33" fill="none" stroke="#ECE7DA" stroke-width="1.2" opacity=".22"/>
+    <circle cx="176" cy="44" r="15" fill="#E8A93D" opacity=".22"/>
+    <circle cx="248" cy="28" r="46" fill="none" stroke="#ECE7DA" stroke-width="1" opacity=".14"/>
+    <circle cx="248" cy="28" r="22" fill="#ECE7DA" opacity=".06"/>
+    <circle cx="345" cy="5" r="65" fill="none" stroke="#ECE7DA" stroke-width="1" opacity=".1"/>
+  </svg>
   <div class="pilares-grid">
     <div class="pilar" style="--p:#E8A93D;"><div class="pilar-n">01</div><div><h3 class="pilar-t">sistemas <span>digitais</span></h3><p class="pilar-d">dashboards, autenticação e bancos de dados em tempo real para organizações reais.</p></div><div class="pilar-pg">p. 01</div></div>
     <div class="pilar" style="--p:#C0492B;"><div class="pilar-n">02</div><div><h3 class="pilar-t">automação <span>& iot</span></h3><p class="pilar-d">prototipagem, robótica e telemetria: sensores, microcontroladores, protocolos.</p></div><div class="pilar-pg">p. 02</div></div>
@@ -313,6 +326,18 @@ footer a{color:var(--mostarda);text-decoration:none;}
 </section>
 
 <section class="sec" id="produtos">
+  <svg class="sec-geo" viewBox="0 0 380 90" preserveAspectRatio="xMaxYMax meet" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="18" cy="78" r="7" fill="#15171A" opacity=".6"/>
+    <circle cx="46" cy="72" r="11" fill="#2643D6" opacity=".7"/>
+    <circle cx="80" cy="65" r="16" fill="none" stroke="#15171A" stroke-width="1.2" opacity=".2"/>
+    <circle cx="80" cy="65" r="7" fill="#15171A" opacity=".06"/>
+    <circle cx="122" cy="56" r="23" fill="#C0492B" opacity=".45"/>
+    <circle cx="176" cy="44" r="33" fill="none" stroke="#15171A" stroke-width="1.2" opacity=".12"/>
+    <circle cx="176" cy="44" r="15" fill="#2643D6" opacity=".15"/>
+    <circle cx="248" cy="28" r="46" fill="none" stroke="#15171A" stroke-width="1" opacity=".08"/>
+    <circle cx="248" cy="28" r="22" fill="#15171A" opacity=".04"/>
+    <circle cx="345" cy="5" r="65" fill="none" stroke="#15171A" stroke-width="1" opacity=".06"/>
+  </svg>
   <p class="eyebrow">01 · produto digital · gestão institucional</p>
   <h2 class="sec-title">iecis<br>gestão</h2>
   <p class="sec-lead">
@@ -359,6 +384,18 @@ footer a{color:var(--mostarda);text-decoration:none;}
   <p class="fig-cap">interface ilustrativa. dados fictícios, apenas para demonstração de layout.</p>
 </section>
 <section class="sec" id="automacao">
+  <svg class="sec-geo" viewBox="0 0 380 90" preserveAspectRatio="xMaxYMax meet" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="18" cy="78" r="7" fill="#ECE7DA" opacity=".9"/>
+    <circle cx="46" cy="72" r="11" fill="#2643D6" opacity=".7"/>
+    <circle cx="80" cy="65" r="16" fill="none" stroke="#ECE7DA" stroke-width="1.2" opacity=".4"/>
+    <circle cx="80" cy="65" r="7" fill="#ECE7DA" opacity=".1"/>
+    <circle cx="122" cy="56" r="23" fill="#E8A93D" opacity=".65"/>
+    <circle cx="176" cy="44" r="33" fill="none" stroke="#ECE7DA" stroke-width="1.2" opacity=".2"/>
+    <circle cx="176" cy="44" r="15" fill="#2643D6" opacity=".2"/>
+    <circle cx="248" cy="28" r="46" fill="none" stroke="#ECE7DA" stroke-width="1" opacity=".12"/>
+    <circle cx="248" cy="28" r="22" fill="#ECE7DA" opacity=".06"/>
+    <circle cx="345" cy="5" r="65" fill="none" stroke="#ECE7DA" stroke-width="1" opacity=".08"/>
+  </svg>
   <p class="eyebrow">ESP32 · RS-485 · LoRa · MEI — Fasano SP / Trancoso</p>
   <h2 class="sec-title">bms &<br>telemetria</h2>
   <p class="sec-lead">
@@ -486,6 +523,18 @@ footer a{color:var(--mostarda);text-decoration:none;}
   </div>
 </section>
 <section class="sec" id="midia">
+  <svg class="sec-geo" viewBox="0 0 380 90" preserveAspectRatio="xMaxYMax meet" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="18" cy="78" r="7" fill="#15171A" opacity=".6"/>
+    <circle cx="46" cy="72" r="11" fill="#C0492B" opacity=".8"/>
+    <circle cx="80" cy="65" r="16" fill="none" stroke="#15171A" stroke-width="1.2" opacity=".18"/>
+    <circle cx="80" cy="65" r="7" fill="#15171A" opacity=".08"/>
+    <circle cx="122" cy="56" r="23" fill="#2643D6" opacity=".5"/>
+    <circle cx="176" cy="44" r="33" fill="none" stroke="#15171A" stroke-width="1.2" opacity=".14"/>
+    <circle cx="176" cy="44" r="15" fill="#C0492B" opacity=".2"/>
+    <circle cx="248" cy="28" r="46" fill="none" stroke="#15171A" stroke-width="1" opacity=".1"/>
+    <circle cx="248" cy="28" r="22" fill="#15171A" opacity=".05"/>
+    <circle cx="345" cy="5" r="65" fill="none" stroke="#15171A" stroke-width="1" opacity=".07"/>
+  </svg>
   <p class="eyebrow">03 — pesquisa para mídia · conteúdo & narrativa</p>
   <h2 class="sec-title">preta<br>letrada</h2>
   <p class="sec-lead">
@@ -590,6 +639,18 @@ footer a{color:var(--mostarda);text-decoration:none;}
   </div>
 </section>
 <section class="sec" id="pesquisa">
+  <svg class="sec-geo" viewBox="0 0 380 90" preserveAspectRatio="xMaxYMax meet" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="18" cy="78" r="7" fill="#ECE7DA" opacity=".9"/>
+    <circle cx="46" cy="72" r="11" fill="#E8A93D" opacity=".8"/>
+    <circle cx="80" cy="65" r="16" fill="none" stroke="#ECE7DA" stroke-width="1.2" opacity=".4"/>
+    <circle cx="80" cy="65" r="7" fill="#ECE7DA" opacity=".1"/>
+    <circle cx="122" cy="56" r="23" fill="#2643D6" opacity=".5"/>
+    <circle cx="176" cy="44" r="33" fill="none" stroke="#ECE7DA" stroke-width="1.2" opacity=".2"/>
+    <circle cx="176" cy="44" r="15" fill="#E8A93D" opacity=".2"/>
+    <circle cx="248" cy="28" r="46" fill="none" stroke="#ECE7DA" stroke-width="1" opacity=".12"/>
+    <circle cx="248" cy="28" r="22" fill="#ECE7DA" opacity=".06"/>
+    <circle cx="345" cy="5" r="65" fill="none" stroke="#ECE7DA" stroke-width="1" opacity=".08"/>
+  </svg>
   <p class="eyebrow">04 — pesquisa aplicada</p>
   <h2 class="sec-title">ensaios &<br>publicações</h2>
   <p class="sec-lead">
@@ -638,6 +699,18 @@ footer a{color:var(--mostarda);text-decoration:none;}
   </div>
 </section>
 <section id="sobre">
+  <svg class="sec-geo" viewBox="0 0 380 90" preserveAspectRatio="xMaxYMax meet" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="18" cy="78" r="7" fill="#15171A" opacity=".5"/>
+    <circle cx="46" cy="72" r="11" fill="#2643D6" opacity=".65"/>
+    <circle cx="80" cy="65" r="16" fill="none" stroke="#15171A" stroke-width="1.2" opacity=".18"/>
+    <circle cx="80" cy="65" r="7" fill="#15171A" opacity=".06"/>
+    <circle cx="122" cy="56" r="23" fill="#E8A93D" opacity=".55"/>
+    <circle cx="176" cy="44" r="33" fill="none" stroke="#15171A" stroke-width="1.2" opacity=".12"/>
+    <circle cx="176" cy="44" r="15" fill="#2643D6" opacity=".14"/>
+    <circle cx="248" cy="28" r="46" fill="none" stroke="#15171A" stroke-width="1" opacity=".08"/>
+    <circle cx="248" cy="28" r="22" fill="#15171A" opacity=".04"/>
+    <circle cx="345" cy="5" r="65" fill="none" stroke="#15171A" stroke-width="1" opacity=".05"/>
+  </svg>
   <div>
     <h2 class="sobre-name">cíntia<br>vitorino</h2>
     <a href="mailto:cintiavtrnssa@gmail.com" class="sobre-mail">cintiavtrnssa@gmail.com</a>
