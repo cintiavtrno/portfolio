@@ -474,6 +474,24 @@ body{overflow-x:hidden;}
 /* eu tinha zerado a margem dos links e eles colaram */
 .top-mobile a{margin-left:0;}
 .top-mobile > span{display:flex;gap:.85rem;flex-wrap:wrap;min-width:0;}
+
+.destaque{border-top:1px solid rgba(236,231,218,.22);padding-top:1.3rem;margin-bottom:2.2rem;}
+.dest-rot{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--mostarda);margin:0 0 .5rem;}
+.dest-txt{font-size:.78rem;line-height:1.8;color:rgba(236,231,218,.78);max-width:58ch;margin:0 0 1.2rem;}
+.dest-lista{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0 1.3rem;}
+.dest-item{display:grid;grid-template-rows:auto auto 1fr;gap:.35rem;text-decoration:none;
+  padding:1rem 0 1.2rem;border-top:2px solid var(--mostarda);min-width:0;
+  transition:border-color .18s;}
+.dest-item:hover,.dest-item:focus-visible{border-color:var(--paper);}
+.dest-item:focus-visible{outline:2px solid var(--mostarda);outline-offset:3px;}
+.dest-n{font-family:var(--mono);font-size:.62rem;color:var(--mostarda);}
+.dest-tit{font-family:var(--display);font-weight:800;font-size:1.3rem;line-height:1.1;color:var(--paper);}
+.dest-desc{font-size:.72rem;line-height:1.75;color:rgba(236,231,218,.7);}
+.escrita-nota{border-top:1px solid rgba(236,231,218,.3);padding-top:1rem;margin-top:1.8rem;
+  font-size:.78rem;line-height:1.85;color:rgba(236,231,218,.88);max-width:62ch;}
+.escrita-nota b{color:var(--paper);}
+@media (max-width:720px){ .dest-lista{gap:0;} }
 </style>
 </head>
 <body>
@@ -579,15 +597,32 @@ body{overflow-x:hidden;}
     <h2 class="tr-titulo">o trabalho</h2>
     <p class="tr-sub">17 peças. os botões reagrupam, e <b>tudo</b> volta à lista inteira.</p>
   </div>
+
+  <div class="destaque">
+    <p class="dest-rot">ensaios visuais interativos</p>
+    <p class="dest-txt">faço ensaios que se lê navegando, em html, css e js puros, sem framework. quatro que eu abriria primeiro.</p>
+    <div class="dest-lista">
+      <a class="dest-item" href="https://cintiavtrn.github.io/retrotech/" target="_blank" rel="noopener"><span class="dest-n">01</span><span class="dest-tit">a recusa que virou vitrine &#8599;</span><span class="dest-desc">atlas isométrico onde cada baía é uma etapa do argumento, sobre uma geração que trocou o celular por câmera analógica e disco de vinil. publicado no manual do usuário.</span></a>
+      <a class="dest-item" href="https://cintiavitorino.com.br/doprazeraodever/" target="_blank" rel="noopener"><span class="dest-n">02</span><span class="dest-tit">do prazer ao dever &#8599;</span><span class="dest-desc">corredor de museu com sete vitrines isométricas, sobre um século de mercantilização do futebol brasileiro. a pessoa caminha pelo corredor e abre cada vitrine.</span></a>
+      <a class="dest-item" href="https://cintiavitorino.com.br/doislados/" target="_blank" rel="noopener"><span class="dest-n">03</span><span class="dest-tit">dois lados &#8599;</span><span class="dest-desc">prancha de leitura com três trens correndo em três alturas diferentes, sobre o pelourinho dos anos 1990 e o subúrbio ferroviário dos anos 2010.</span></a>
+      <a class="dest-item" href="https://cintiavitorino.com.br/pranchasmartcities/" target="_blank" rel="noopener"><span class="dest-n">04</span><span class="dest-tit">cidades inteligentes &#8599;</span><span class="dest-desc">prancha sobre tecnologia urbana em salvador, com um mapa que se abre para mostrar onde cada sistema está instalado.</span></a>
+    </div>
+  </div>
+
   <div class="abas" role="tablist" aria-label="filtrar por tipo de trabalho">
     <button class="aba on" role="tab" data-filtro="tudo" aria-selected="true">tudo</button>
     <button class="aba" role="tab" data-filtro="motion" aria-selected="false">motion</button>
+    <button class="aba" role="tab" data-filtro="ensaios" aria-selected="false">ensaios</button>
     <button class="aba" role="tab" data-filtro="sites" aria-selected="false">sites</button>
     <button class="aba" role="tab" data-filtro="sistemas" aria-selected="false">sistemas</button>
     <button class="aba" role="tab" data-filtro="pesquisa" aria-selected="false">pesquisa</button>
   </div>
   <p class="abas-estado" id="abas-estado" role="status" aria-live="polite"></p>
   <div class="pecas" id="pecas">
+    <a class="peca" data-cat="ensaios" href="https://cintiavtrn.github.io/retrotech/" target="_blank" rel="noopener"><span class="peca-cat">ensaios</span><span class="peca-tit">a recusa que virou vitrine &#8599;</span><span class="peca-nota">atlas isométrico onde cada baía é uma etapa do argumento, sobre uma geração que trocou o celular por câmera analógica e disco de vinil.</span></a>
+    <a class="peca" data-cat="ensaios" href="https://cintiavitorino.com.br/doprazeraodever/" target="_blank" rel="noopener"><span class="peca-cat">ensaios</span><span class="peca-tit">do prazer ao dever &#8599;</span><span class="peca-nota">corredor de museu com sete vitrines isométricas, sobre um século de mercantilização do futebol brasileiro.</span></a>
+    <a class="peca" data-cat="ensaios" href="https://cintiavitorino.com.br/doislados/" target="_blank" rel="noopener"><span class="peca-cat">ensaios</span><span class="peca-tit">dois lados &#8599;</span><span class="peca-nota">prancha de leitura com três trens correndo em três alturas diferentes, sobre o pelourinho dos anos 1990 e o subúrbio ferroviário dos anos 2010.</span></a>
+    <a class="peca" data-cat="ensaios" href="https://cintiavitorino.com.br/pranchasmartcities/" target="_blank" rel="noopener"><span class="peca-cat">ensaios</span><span class="peca-tit">cidades inteligentes &#8599;</span><span class="peca-nota">prancha sobre tecnologia urbana em salvador, com um mapa que se abre para mostrar onde cada sistema está instalado.</span></a>
     <a class="peca" data-cat="sites" href="https://cintiavitorino.com.br/" target="_blank" rel="noopener"><span class="peca-cat">sites</span><span class="peca-tit">cintiavitorino.com.br &#8599;</span><span class="peca-nota">doze ensaios visuais interativos, feitos em html, css e js puros</span></a>
     <a class="peca" data-cat="sites" href="https://cintiavitorino.com.br/doislados/" target="_blank" rel="noopener"><span class="peca-cat">sites</span><span class="peca-tit">dois lados &#8599;</span><span class="peca-nota">prancha de leitura com planta, corte e perfil, para a disciplina arqc19</span></a>
     <a class="peca" data-cat="sites" href="https://cintiavtrn.github.io/retrotech/" target="_blank" rel="noopener"><span class="peca-cat">sites</span><span class="peca-tit">a recusa que virou vitrine &#8599;</span><span class="peca-nota">atlas isométrico, publicado no manual do usuário</span></a>
@@ -1012,7 +1047,8 @@ body{overflow-x:hidden;}
     <a class="ens" href="/paredaoefisica/"><div class="ens-dot" style="background:#C0492B;"></div><div class="ens-t">paredão e física</div><div class="ens-c">acústica · cidade</div></a>
     <a class="ens" href="/acaradocrime/"><div class="ens-dot" style="background:#C9B68C;"></div><div class="ens-t">cara de bandido</div><div class="ens-c">linguagem · raça</div></a>
   </div>
-  <a href="https://cintiavitorino.com.br/" class="arquivo-link">ver arquivo completo de ensaios ↗</a>
+  <p class="escrita-nota">eu também escrevo no registro acadêmico. os textos abaixo passaram por revisão por pares e têm doi. <b>[faltam aqui os outros lugares onde publico, me envie os links]</b></p>
+      <a href="https://cintiavitorino.com.br/" class="arquivo-link">ver arquivo completo de ensaios ↗</a>
   <div style="margin-top:2.8rem;">
     <div class="pub">
       <div class="pub-y">2025</div>
