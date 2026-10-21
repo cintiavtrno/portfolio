@@ -15,7 +15,7 @@
   --cobalto:#2643D6;
   --cobalto-d:#16297E;
   --mostarda:#E8A93D;
-  --terracota:#C0492B;
+  --terracota:#C0492B;--terracota-d:#8F3520;
   --verde:#2B6E50;
   --display:'Big Shoulders Display',sans-serif;
   --body:'IBM Plex Sans',sans-serif;
@@ -140,13 +140,13 @@ main{margin-left:58px;}
 .iecis-stat{background:#fff;border:2px solid #CFE2A0;border-radius:4px;padding:9px 11px;}
 .iecis-stat .lb{font-size:8.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#3D5C28;}
 .iecis-stat .vl{font-family:var(--display);font-weight:800;font-size:22px;color:#1A2B10;margin-top:2px;}
-.iecis-stat.en .vl{color:#0CA848;}
+.iecis-stat.en .vl{color:#0A6B2F;}
 .iecis-stat.sa .vl{color:#E40084;}
 .iecis-tablecard{background:#fff;border:2px solid #CFE2A0;border-radius:4px;padding:9px 11px;}
-.iecis-tablecard .th{font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#7A9A5A;display:flex;justify-content:space-between;border-bottom:1px solid #EDF5E5;padding-bottom:5px;margin-bottom:5px;}
+.iecis-tablecard .th{font-family:var(--mono);font-size:8px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#4A6B33;display:flex;justify-content:space-between;border-bottom:1px solid #EDF5E5;padding-bottom:5px;margin-bottom:5px;}
 .iecis-tablecard .row{display:flex;justify-content:space-between;font-size:9.5px;font-weight:600;padding:4px 0;border-bottom:1px solid #EDF5E5;}
 .iecis-badge{font-size:7.5px;font-weight:800;padding:2px 6px;border-radius:99px;}
-.iecis-badge.ok{background:#DFF3D6;color:#0CA848;}
+.iecis-badge.ok{background:#DFF3D6;color:#0A6B2F;}
 .iecis-badge.pend{background:#FCE3C4;color:#8A4400;}
 .fig-cap{font-family:var(--mono);font-size:.65rem;color:#8a8d85;margin-top:1rem;}
 .sec-geo{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
@@ -289,6 +289,191 @@ footer a{color:var(--mostarda);text-decoration:none;}
     padding-left: 5vw;
     padding-right: 5vw;
 }
+
+/* ══ REFORMA ══════════════════════════════════════════════════ */
+/* a rolagem horizontal vinha de filhos largos, e nao do html */
+body{overflow-x:hidden;}
+#inicio,#trabalho,#percurso{max-width:100%;}
+
+/* herói: a mesma palavra em dois estados (f2 do guia) */
+.hl-cheio{
+  display:inline-block;background:var(--cobalto);color:var(--paper);
+  padding:0 .14em;font-style:normal;
+}
+.hl-vazio{
+  display:inline-block;color:transparent;font-style:normal;
+  -webkit-text-stroke:2px var(--mostarda);
+}
+@supports not (-webkit-text-stroke: 2px red){ .hl-vazio{color:var(--mostarda);} }
+.hero-legenda{
+  font-family:var(--mono);font-size:.74rem;line-height:1.85;
+  color:rgba(236,231,218,.6);max-width:46ch;margin:1.6rem 0 0;
+}
+
+/* três portas (m10): respostas do ponto de vista de quem chega */
+.porta-pergunta{
+  font-family:var(--display);font-size:1.35rem;letter-spacing:.01em;
+  color:var(--paper);margin:2.6rem 0 .9rem;
+}
+.portas{display:grid;gap:0;max-width:62ch;border-top:1px solid rgba(236,231,218,.22);}
+.porta{
+  display:grid;grid-template-columns:2.6rem 1fr;gap:0 1rem;align-items:baseline;
+  padding:1rem 0;border-bottom:1px solid rgba(236,231,218,.22);
+  text-decoration:none;transition:padding-left .18s;
+}
+.porta:hover,.porta:focus-visible{padding-left:.7rem;}
+.porta:focus-visible{outline:2px solid var(--mostarda);outline-offset:3px;}
+.porta-n{font-family:var(--mono);font-size:.68rem;color:var(--mostarda);}
+.porta-t{
+  font-family:var(--display);font-size:1.5rem;font-weight:800;
+  color:var(--paper);grid-column:2;line-height:1.1;
+}
+.porta-d{
+  grid-column:2;font-size:.72rem;line-height:1.7;
+  color:rgba(236,231,218,.6);margin-top:.2rem;
+}
+
+/* trabalho */
+#trabalho{background:var(--ink);color:var(--paper);padding:5rem 2.5rem 5rem 5rem;}
+.tr-topo{margin-bottom:1.6rem;}
+.tr-titulo{
+  font-family:var(--display);font-weight:900;line-height:.95;
+  font-size:clamp(2.4rem,6vw,4.2rem);color:var(--paper);margin:0;
+}
+.tr-sub{font-family:var(--mono);font-size:.72rem;color:rgba(236,231,218,.6);margin:.6rem 0 0;}
+.tr-sub b{color:var(--mostarda);font-weight:400;}
+.abas{display:flex;flex-wrap:wrap;border:2px solid var(--paper);width:max-content;max-width:100%;}
+.aba{
+  font-family:var(--display);font-weight:800;font-size:.92rem;letter-spacing:.04em;
+  padding:.55rem 1.1rem;background:none;border:none;
+  border-right:2px solid var(--paper);color:var(--paper);cursor:pointer;
+}
+.aba:last-child{border-right:none;}
+.aba.on{background:var(--paper);color:var(--ink);}
+.aba:focus-visible{outline:2px solid var(--mostarda);outline-offset:-5px;}
+.abas-estado{font-family:var(--mono);font-size:.68rem;color:rgba(236,231,218,.55);margin:.7rem 0 1.4rem;}
+.pecas{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0;
+  border-top:1px solid rgba(236,231,218,.22);}
+.peca{
+  display:flex;flex-direction:column;gap:.3rem;padding:1.1rem 1.2rem 1.3rem 0;
+  border-bottom:1px solid rgba(236,231,218,.22);text-decoration:none;min-width:0;
+  transition:background .18s;
+}
+.peca:hover,.peca:focus-visible{background:rgba(236,231,218,.05);}
+.peca:focus-visible{outline:2px solid var(--mostarda);outline-offset:-2px;}
+.peca-cat{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--mostarda);}
+.peca-tit{font-family:var(--display);font-weight:800;font-size:1.18rem;
+  line-height:1.15;color:var(--paper);}
+.peca-nota{font-size:.7rem;line-height:1.6;color:rgba(236,231,218,.6);}
+.peca[hidden]{display:none;}
+
+/* percurso: telas laterais */
+#percurso{background:var(--ink);color:var(--paper);padding:1rem 0 5rem 5rem;
+  border-top:1px solid rgba(236,231,218,.22);}
+.pc-topo{display:flex;align-items:flex-end;justify-content:space-between;
+  gap:1.5rem;padding-right:2.5rem;margin-bottom:1.4rem;flex-wrap:wrap;}
+.pc-controles{display:flex;align-items:center;gap:.9rem;}
+.pc-seta{
+  width:2.6rem;height:2.6rem;background:none;border:2px solid var(--paper);
+  color:var(--paper);font-size:1.1rem;cursor:pointer;line-height:1;
+}
+.pc-seta:hover:not(:disabled){background:var(--paper);color:var(--ink);}
+.pc-seta:disabled{opacity:.3;cursor:default;}
+.pc-seta:focus-visible{outline:2px solid var(--mostarda);outline-offset:3px;}
+.pc-conta{font-family:var(--mono);font-size:.74rem;color:rgba(236,231,218,.7);}
+.pc-trilho{
+  display:flex;gap:1.4rem;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding-right:2.5rem;scrollbar-width:none;
+}
+.pc-trilho::-webkit-scrollbar{display:none;}
+.pc-trilho:focus-visible{outline:2px solid var(--mostarda);outline-offset:4px;}
+.pc-tela{
+  flex:0 0 min(46ch,82vw);scroll-snap-align:start;
+  border-top:2px solid var(--mostarda);padding-top:1.1rem;min-width:0;
+}
+.pc-n{font-family:var(--mono);font-size:.68rem;color:var(--mostarda);}
+.pc-t{font-family:var(--display);font-weight:800;font-size:1.7rem;
+  line-height:1.1;color:var(--paper);margin:.3rem 0 .7rem;}
+.pc-p{font-size:.8rem;line-height:1.95;color:rgba(236,231,218,.72);margin:0;}
+.pc-p b{color:var(--paper);font-weight:600;}
+.pc-regua{display:flex;gap:.5rem;margin-top:1.6rem;}
+.pc-ponto{width:2.2rem;height:3px;background:rgba(236,231,218,.25);}
+.pc-ponto.on{background:var(--mostarda);}
+
+@media (max-width:720px){
+  #trabalho{padding:3.5rem 1.4rem 3.5rem 4.6rem;}
+  #percurso{padding-left:4.6rem;}
+  .pc-topo{padding-right:1.4rem;}
+  .pc-trilho{padding-right:1.4rem;}
+  .portas{max-width:none;}
+  .porta-t{font-size:1.25rem;}
+}
+@media (prefers-reduced-motion:reduce){
+  .porta,.peca{transition:none;}
+  .pc-trilho{scroll-behavior:auto;}
+}
+
+/* ── consertos medidos ───────────────────────────────────────── */
+/* a palavra vazada precisa de tinta propria: so o contorno some em
+   navegador sem text-stroke e nao e lida por quem tem baixa visao */
+.hl-vazio{color:rgba(232,169,61,.42);}
+
+/* #automacao era terracota pura: texto de 10 a 12px dava 4,07:1 */
+#automacao{background:var(--terracota-d);}
+#automacao .eyebrow{color:rgba(236,231,218,.88);}
+
+/* #midia e mostarda: cobalto em cima dava 3,57:1 */
+#midia .eyebrow,#midia .not-link,#midia a[class*="link"]{color:var(--cobalto-d);}
+
+/* rotulo de 8px nao se le em tela nenhuma */
+.iecis-tablecard .th{font-size:10px;}
+
+/* a barra do celular empurrava a pagina para o lado */
+.top-mobile{flex-wrap:wrap;gap:.4rem;min-width:0;}
+.top-mobile > *{min-width:0;}
+.top-mobile a{margin-left:0;}
+
+/* ── contraste, par de cor por par de cor ────────────────────────
+   Em toda seção colorida o texto pequeno estava em mostarda ou
+   terracota sobre fundo saturado. A cor de acento passa a marcar
+   só título e número; o texto corrido fica em papel.             */
+#pilares .eyebrow,#pilares .pilar-tag{color:var(--paper);}
+#pilares p,#pilares li,#pilares .pilar-desc{color:rgba(236,231,218,.82);}
+#pilares h3 span,#pilares h3 em,#pilares h3 i{color:var(--mostarda);}
+
+#automacao .eyebrow,#automacao .tag,#automacao [class*="rotulo"]{color:rgba(236,231,218,.9);}
+#automacao p,#automacao li,#automacao td,#automacao span{color:rgba(236,231,218,.86);}
+#automacao h2,#automacao h3{color:var(--paper);}
+
+#midia .eyebrow,#midia .not-link,#midia a,#midia p,#midia li{color:var(--ink);}
+#midia h2,#midia h3{color:var(--ink);}
+
+#pesquisa .eyebrow,#pesquisa .tag{color:var(--paper);}
+#pesquisa p,#pesquisa li{color:rgba(236,231,218,.9);}
+
+.cta-card a,.cta-card p,.cta-card .eyebrow{color:var(--ink);}
+
+/* cinzas e verdes de maquete, fracos demais sobre claro */
+#produtos .iecis-tablecard .th,
+#produtos [style*="8A8D85"],#sobre [style*="8A8D85"]{color:#5E6159 !important;}
+#produtos [style*="7A9A5A"]{color:#4A6B33 !important;}
+#produtos [style*="0CA848"]{color:#0A6B2F !important;}
+
+#pesquisa .arquivo-link{color:var(--paper);}
+.sobre-loc{color:#5E6159;}
+/* so o que esta sobre a mostarda do cartao; o botao tem fundo proprio */
+.cta-card a:not(.cta-btn),.cta-card p,.cta-card .eyebrow{color:var(--ink);}
+.cta-btn{color:var(--paper) !important;}
+
+/* estes quatro perdiam para regras mais especificas do arquivo */
+#pilares .sec-content .eyebrow{color:var(--paper) !important;}
+#automacao .sec-content .eyebrow,#automacao .protos-intro .eyebrow{color:rgba(236,231,218,.9) !important;}
+#produtos .fig-cap{color:#5E6159 !important;}
+
+/* eu tinha zerado a margem dos links e eles colaram */
+.top-mobile a{margin-left:0;}
+.top-mobile > span{display:flex;gap:.85rem;flex-wrap:wrap;min-width:0;}
 </style>
 </head>
 <body>
@@ -302,11 +487,13 @@ footer a{color:var(--mostarda);text-decoration:none;}
   <svg class="rail-mark" viewBox="0 0 40 40"><rect width="40" height="40" fill="#2643D6"/><circle cx="40" cy="40" r="24" fill="#ECE7DA"/></svg>
   <div class="rail-links">
     <a href="#inicio">início</a>
+      <a href="#trabalho">trabalho</a>
     <a href="#produtos">produtos</a>
     <a href="#automacao">automação</a>
     <a href="#midia">mídia</a>
     <a href="#pesquisa">pesquisa</a>
-    <a href="#sobre">sobre</a>
+    <a href="#percurso">percurso</a>
+      <a href="#sobre">sobre</a>
   </div>
   <div class="rail-contact">
     <svg class="dot" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="none" stroke="#E8A93D" stroke-width="1.6"/><circle cx="12" cy="12" r="3.5" fill="#E8A93D"/></svg>
@@ -355,27 +542,93 @@ footer a{color:var(--mostarda);text-decoration:none;}
   </div>
 
   <div id="inicio-content">
-    <p class="eyebrow">salvador, ba · lab404 / ufba · 2026</p>
-    <h1 class="hero-head">pesquisa<br>crítica.<br><span class="hl">construção</span><br>na mão.</h1>
-    <p class="hero-sub">
-  pesquisadora interdisciplinar e desenvolvedora web criativa (front-end). como não sei desenhar da forma tradicional, uso a lógica e a matemática. a estrutura e os vetores nascem do cálculo de coordenadas direto no html/svg, e o desenho ganha vida ao explorar todo o poder artístico do css para testar os limites do navegador.
-</p>
+    
+    <h1 class="hero-head">eu <span class="hl-cheio">construo</span><br>os sistemas<br>que eu <span class="hl-vazio">critico</span>.</h1>
 
-<p class="hero-sub">
-  construo os mesmos sistemas que critico. e não, isso não significa que me corrompi. pesquiso e debato ativamente sobre privacidade de dados, capitalismo de vigilância, vieses algorítmicos e os perigos da dataficação extrema da vida. minha atuação técnica é a de uma hacker consciente: eu preciso entender a máquina por dentro para não ser refém dela. é por isso que desenvolvo desde dashboards de gestão e projetos de telemetria industrial até ensaios digitais interativos.
-</p>
+    <p class="hero-legenda">a palavra cheia é o que eu faço. a vazada é o que eu questiono. é a mesma palavra em dois estados, e é disso que este portfólio trata.</p>
 
-<p class="hero-sub">
-  toda essa base vem da minha formação. sou técnica em automação industrial pelo ifba, o que explica meu fascínio por circuitos, placas e protocolos. porém, quando entrei no bacharelado em ciência e tecnologia na ufba, eu já estava profundamente descrente da área. a tecnologia fechada em si mesma me sufocava; sentia falta da intersecção com o humano. estávamos tão imersos na técnica que perdíamos a capacidade de enxergar os problemas estruturais nos sistemas que criávamos.
-</p>
+    <p class="porta-pergunta">o que você veio ver?</p>
+    <div class="portas">
+      <a class="porta" href="#trabalho">
+        <span class="porta-n">01</span>
+        <span class="porta-t">o trabalho</span>
+        <span class="porta-d">motion, sites, sistemas e pesquisa, tudo numa tela só</span>
+      </a>
+      <a class="porta" href="#percurso">
+        <span class="porta-n">02</span>
+        <span class="porta-t">quem faz</span>
+        <span class="porta-d">o percurso em quatro telas, de automação industrial à pesquisa</span>
+      </a>
+      <a class="porta" href="mailto:cintiavtrnssa@gmail.com">
+        <span class="porta-n">03</span>
+        <span class="porta-t">chamar para um projeto</span>
+        <span class="porta-d">cintiavtrnssa@gmail.com</span>
+      </a>
+    </div>
 
-<p class="hero-sub">
-  a pesquisa me salvou. ela me devolveu a capacidade de ver o impacto político das ferramentas e me ensinou a programar com propósito. <b>a pergunta de pesquisa sempre vem primeiro. a ferramenta técnica, depois.</b>
-</p>
     <div class="hero-cta">
       <a href="mailto:cintiavtrnssa@gmail.com" class="btn-mail">cintiavtrnssa@gmail.com ↗</a>
-      <span class="scroll-note">// quatro aplicações abaixo</span>
+      <span class="scroll-note">salvador, ba &middot; lab404 / ufba &middot; 2026</span>
     </div>
+  </div>
+</section>
+
+<!-- TRABALHO · abas que reagrupam (m12) -->
+<section id="trabalho">
+  <div class="tr-topo">
+    <h2 class="tr-titulo">o trabalho</h2>
+    <p class="tr-sub">17 peças. os botões reagrupam, e <b>tudo</b> volta à lista inteira.</p>
+  </div>
+  <div class="abas" role="tablist" aria-label="filtrar por tipo de trabalho">
+    <button class="aba on" role="tab" data-filtro="tudo" aria-selected="true">tudo</button>
+    <button class="aba" role="tab" data-filtro="motion" aria-selected="false">motion</button>
+    <button class="aba" role="tab" data-filtro="sites" aria-selected="false">sites</button>
+    <button class="aba" role="tab" data-filtro="sistemas" aria-selected="false">sistemas</button>
+    <button class="aba" role="tab" data-filtro="pesquisa" aria-selected="false">pesquisa</button>
+  </div>
+  <p class="abas-estado" id="abas-estado" role="status" aria-live="polite"></p>
+  <div class="pecas" id="pecas">
+    <a class="peca" data-cat="sites" href="https://cintiavitorino.com.br/" target="_blank" rel="noopener"><span class="peca-cat">sites</span><span class="peca-tit">cintiavitorino.com.br &#8599;</span><span class="peca-nota">doze ensaios visuais interativos, feitos em html, css e js puros</span></a>
+    <a class="peca" data-cat="sites" href="https://cintiavitorino.com.br/doislados/" target="_blank" rel="noopener"><span class="peca-cat">sites</span><span class="peca-tit">dois lados &#8599;</span><span class="peca-nota">prancha de leitura com planta, corte e perfil, para a disciplina arqc19</span></a>
+    <a class="peca" data-cat="sites" href="https://cintiavtrn.github.io/retrotech/" target="_blank" rel="noopener"><span class="peca-cat">sites</span><span class="peca-tit">a recusa que virou vitrine &#8599;</span><span class="peca-nota">atlas isométrico, publicado no manual do usuário</span></a>
+    <a class="peca" data-cat="sistemas" href="#produtos"><span class="peca-cat">sistemas</span><span class="peca-tit">iecisgestão</span><span class="peca-nota">produto digital de gestão institucional</span></a>
+    <a class="peca" data-cat="sistemas" href="#automacao"><span class="peca-cat">sistemas</span><span class="peca-tit">bms &amp; telemetria</span><span class="peca-nota">esp32, rs-485 e lora, em fasano sp e trancoso</span></a>
+    <a class="peca" data-cat="pesquisa" href="#pesquisa"><span class="peca-cat">pesquisa</span><span class="peca-tit">ensaios &amp; publicações</span><span class="peca-nota">dois artigos com doi, em periódico revisado</span></a>
+    <a class="peca" data-cat="pesquisa" href="#midia"><span class="peca-cat">pesquisa</span><span class="peca-tit">pretaletrada</span><span class="peca-nota">pesquisa para mídia, em spotify, audible e 30ebr</span></a>
+    <a class="peca" data-cat="motion" href="https://www.instagram.com/reel/DQXhN3QD2wf/?igsh=eXl3N2Z5cWRodjc1" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">os "garotin" &#8599;</span><span class="peca-nota">+1M de visualizações</span></a>
+    <a class="peca" data-cat="motion" href="https://www.instagram.com/reel/DH4QbxupLLW/?igsh=dG1yMDFhd3QybjRo" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">Peter Tosh &#8599;</span><span class="peca-nota">+1M de visualizações</span></a>
+    <a class="peca" data-cat="motion" href="https://www.instagram.com/reel/DMYj_j3Jk6d/?igsh=MXRxOXNmN3M5b3Rqdg==" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">asiáticos em Pecadores &#8599;</span><span class="peca-nota">+1,5M de visualizações</span></a>
+    <a class="peca" data-cat="motion" href="https://www.instagram.com/reel/DTgVBYtj4sc/?igsh=MXRnNnB2MjdwODlyaw==" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">doidinhos do centro &#8599;</span><span class="peca-nota">reel de pesquisa</span></a>
+    <a class="peca" data-cat="motion" href="https://www.instagram.com/reel/DY0M1rvhpax/?igsh=bnNyeWVwM3J3bnZt" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">cangaço e mundo árabe &#8599;</span><span class="peca-nota">+500mil de visualizações</span></a>
+    <a class="peca" data-cat="motion" href="https://www.instagram.com/reel/DVhGkozjzI6/?igsh=MW9vN3RhZzg0Z3M0ag==" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">a cultura dos ratos &#8599;</span><span class="peca-nota">+400mil de visualizações</span></a>
+    <a class="peca" data-cat="motion" href="https://www.instagram.com/reel/DN1MicI3vxD/?igsh=dXM2OXF4Znp0eGNk" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">Auto da Compadecida &#8599;</span><span class="peca-nota">+600mil de visualizações</span></a>
+    <a class="peca" data-cat="motion" href="https://www.instagram.com/reel/DXFhSWhD6zV/?igsh=MWpjOGN6OWM4dzFueQ==" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">BK', para 30eBR &#8599;</span><span class="peca-nota">+200mil de visualizações</span></a>
+    <a class="peca" data-cat="motion" href="https://www.instagram.com/reel/DY7hDKdMJoc/?igsh=MW90cnl4MzR0YXF2cg==" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">Jorge Ben, para 30eBR &#8599;</span><span class="peca-nota">+100mil de visualizações</span></a>
+    <a class="peca" data-cat="motion" href="https://www.instagram.com/reel/DOEtt7DD_r-/?igsh=MXdwY2RjNnh1emdyYQ==" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">Planet Hemp, para 30eBR &#8599;</span><span class="peca-nota">+250mil de visualizações</span></a>
+  </div>
+</section>
+
+<!-- PERCURSO · rolagem lateral com setas e teclado (m9) -->
+<section id="percurso">
+  <div class="pc-topo">
+    <h2 class="tr-titulo">quem faz</h2>
+    <div class="pc-controles">
+      <button class="pc-seta" id="pc-ant" aria-label="tela anterior">&#8592;</button>
+      <span class="pc-conta" id="pc-conta">01 / 04</span>
+      <button class="pc-seta" id="pc-prox" aria-label="próxima tela">&#8594;</button>
+    </div>
+  </div>
+  <div class="pc-trilho" id="pc-trilho" tabindex="0" role="group" aria-label="percurso em quatro telas, use as setas">
+    <article class="pc-tela"><span class="pc-n">01</span><h3 class="pc-t">como eu desenho</h3><p class="pc-p">pesquisadora interdisciplinar e desenvolvedora web criativa (front-end). como não sei desenhar da forma tradicional, uso a lógica e a matemática. a estrutura e os vetores nascem do cálculo de coordenadas direto no html/svg, e o desenho ganha vida ao explorar todo o poder artístico do css para testar os limites do navegador.</p></article>
+    <article class="pc-tela"><span class="pc-n">02</span><h3 class="pc-t">construo o que critico</h3><p class="pc-p">construo os mesmos sistemas que critico. e não, isso não significa que me corrompi. pesquiso e debato ativamente sobre privacidade de dados, capitalismo de vigilância, vieses algorítmicos e os perigos da dataficação extrema da vida. minha atuação técnica é a de uma hacker consciente: eu preciso entender a máquina por dentro para não ser refém dela. é por isso que desenvolvo desde dashboards de gestão e projetos de telemetria industrial até ensaios digitais interativos.</p></article>
+    <article class="pc-tela"><span class="pc-n">03</span><h3 class="pc-t">de onde isso vem</h3><p class="pc-p">toda essa base vem da minha formação. sou técnica em automação industrial pelo ifba, o que explica meu fascínio por circuitos, placas e protocolos. porém, quando entrei no bacharelado em ciência e tecnologia na ufba, eu já estava profundamente descrente da área. a tecnologia fechada em si mesma me sufocava; sentia falta da intersecção com o humano. estávamos tão imersos na técnica que perdíamos a capacidade de enxergar os problemas estruturais nos sistemas que criávamos.</p></article>
+    <article class="pc-tela"><span class="pc-n">04</span><h3 class="pc-t">o que a pesquisa devolveu</h3><p class="pc-p">a pesquisa me salvou. ela me devolveu a capacidade de ver o impacto político das ferramentas e me ensinou a programar com propósito. <b>a pergunta de pesquisa sempre vem primeiro. a ferramenta técnica, depois.</b></p></article>
+  </div>
+  <div class="pc-regua" id="pc-regua" aria-hidden="true">
+    <span class="pc-ponto on"></span>
+    <span class="pc-ponto"></span>
+    <span class="pc-ponto"></span>
+    <span class="pc-ponto"></span>
   </div>
 </section>
 
@@ -858,5 +1111,75 @@ footer a{color:var(--mostarda);text-decoration:none;}
   <a href="mailto:cintiavtrnssa@gmail.com">cintiavtrnssa@gmail.com</a>
 </footer>
 
+
+<script>
+/* abas que reagrupam, com estado anunciado para leitor de tela */
+(function(){
+  var abas = document.querySelectorAll('.aba'),
+      pecas = document.querySelectorAll('.peca'),
+      estado = document.getElementById('abas-estado');
+  function filtrar(cat){
+    var n = 0;
+    pecas.forEach(function(p){
+      var mostra = (cat === 'tudo') || (p.dataset.cat === cat);
+      p.hidden = !mostra; if (mostra) n++;
+    });
+    abas.forEach(function(a){
+      var on = a.dataset.filtro === cat;
+      a.classList.toggle('on', on);
+      a.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    estado.textContent = n + (n === 1 ? ' peça' : ' peças')
+      + (cat === 'tudo' ? '' : ' em ' + cat);
+  }
+  abas.forEach(function(a){ a.addEventListener('click', function(){ filtrar(a.dataset.filtro); }); });
+  filtrar('tudo');
+})();
+
+/* percurso: setas, teclado e régua acompanham a rolagem */
+(function(){
+  var trilho = document.getElementById('pc-trilho');
+  if (!trilho) return;
+  var telas = trilho.querySelectorAll('.pc-tela'),
+      ant = document.getElementById('pc-ant'),
+      prox = document.getElementById('pc-prox'),
+      conta = document.getElementById('pc-conta'),
+      pontos = document.querySelectorAll('.pc-ponto'),
+      atual = 0;
+  function dois(n){ return (n < 10 ? '0' : '') + n; }
+  function ir(i){
+    atual = Math.max(0, Math.min(telas.length - 1, i));
+    var suave = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    trilho.scrollTo({ left: telas[atual].offsetLeft - trilho.offsetLeft,
+                      behavior: suave ? 'smooth' : 'auto' });
+    pinta();
+  }
+  function pinta(){
+    conta.textContent = dois(atual + 1) + ' / ' + dois(telas.length);
+    ant.disabled = atual === 0;
+    prox.disabled = atual === telas.length - 1;
+    pontos.forEach(function(p, i){ p.classList.toggle('on', i === atual); });
+  }
+  ant.addEventListener('click', function(){ ir(atual - 1); });
+  prox.addEventListener('click', function(){ ir(atual + 1); });
+  trilho.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowRight'){ e.preventDefault(); ir(atual + 1); }
+    if (e.key === 'ArrowLeft'){ e.preventDefault(); ir(atual - 1); }
+  });
+  var espera;
+  trilho.addEventListener('scroll', function(){
+    clearTimeout(espera);
+    espera = setTimeout(function(){
+      var meio = trilho.scrollLeft + trilho.clientWidth / 2, perto = 0, dist = 1e9;
+      telas.forEach(function(t, i){
+        var c = t.offsetLeft - trilho.offsetLeft + t.offsetWidth / 2;
+        if (Math.abs(c - meio) < dist){ dist = Math.abs(c - meio); perto = i; }
+      });
+      atual = perto; pinta();
+    }, 90);
+  }, { passive: true });
+  pinta();
+})();
+</script>
 </body>
 </html>
