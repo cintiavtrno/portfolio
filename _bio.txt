@@ -1,0 +1,7 @@
+pesquisadora interdisciplinar e desenvolvedora web criativa (front-end). como não sei desenhar da forma tradicional, uso a lógica e a matemática. a estrutura e os vetores nascem do cálculo de coordenadas direto no html/svg, e o desenho ganha vida ao explorar todo o poder artístico do css para testar os limites do navegador.
+@@@
+construo os mesmos sistemas que critico. e não, isso não significa que me corrompi. pesquiso e debato ativamente sobre privacidade de dados, capitalismo de vigilância, vieses algorítmicos e os perigos da dataficação extrema da vida. minha atuação técnica é a de uma hacker consciente: eu preciso entender a máquina por dentro para não ser refém dela. é por isso que desenvolvo desde dashboards de gestão e projetos de telemetria industrial até ensaios digitais interativos.
+@@@
+toda essa base vem da minha formação. sou técnica em automação industrial pelo ifba, o que explica meu fascínio por circuitos, placas e protocolos. porém, quando entrei no bacharelado em ciência e tecnologia na ufba, eu já estava profundamente descrente da área. a tecnologia fechada em si mesma me sufocava; sentia falta da intersecção com o humano. estávamos tão imersos na técnica que perdíamos a capacidade de enxergar os problemas estruturais nos sistemas que criávamos.
+@@@
+a pesquisa me salvou. ela me devolveu a capacidade de ver o impacto político das ferramentas e me ensinou a programar com propósito. <b>a pergunta de pesquisa sempre vem primeiro. a ferramenta técnica, depois.</b>

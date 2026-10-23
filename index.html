@@ -492,6 +492,23 @@ body{overflow-x:hidden;}
   font-size:.78rem;line-height:1.85;color:rgba(236,231,218,.88);max-width:62ch;}
 .escrita-nota b{color:var(--paper);}
 @media (max-width:720px){ .dest-lista{gap:0;} }
+
+.hero-assina{font-family:var(--mono);font-size:.84rem;letter-spacing:.14em;
+  color:var(--mostarda);margin:.5rem 0 0;text-transform:lowercase;}
+.abertura{margin-bottom:2.4rem;}
+.reel{width:100%;max-width:880px;display:block;background:#000;border:2px solid var(--paper);}
+.abertura-leg{font-family:var(--mono);font-size:.72rem;line-height:1.7;
+  color:rgba(236,231,218,.7);margin:.7rem 0 0;max-width:62ch;}
+
+/* chiado de tv antiga: uma vez, na abertura */
+#chiado{position:fixed;inset:0;z-index:9000;pointer-events:none;background:var(--ink);}
+#chiado canvas{width:100%;height:100%;display:block;opacity:.55;}
+#chiado .varredura{position:absolute;inset:0;
+  background:repeating-linear-gradient(to bottom,
+    rgba(0,0,0,.42) 0 2px, rgba(0,0,0,0) 2px 4px);}
+#chiado .linha{position:absolute;left:0;right:0;height:3px;background:rgba(236,231,218,.8);}
+#chiado.saindo{opacity:0;transition:opacity .5s ease;}
+@media (prefers-reduced-motion:reduce){ #chiado{display:none;} }
 </style>
 </head>
 <body>
@@ -561,9 +578,10 @@ body{overflow-x:hidden;}
 
   <div id="inicio-content">
     
-    <h1 class="hero-head">eu <span class="hl-cheio">construo</span><br>os sistemas<br>que eu <span class="hl-vazio">critico</span>.</h1>
+    <h1 class="hero-head">portfólio</h1>
+    <p class="hero-assina">cíntia vitorino &middot; web, motion e dados</p>
 
-    <p class="hero-legenda">a palavra cheia é o que eu faço. a vazada é o que eu questiono. é a mesma palavra em dois estados, e é disso que este portfólio trata.</p>
+    <p class="hero-legenda">sem nome criativo. é isso mesmo. eu construo os sistemas que eu critico, e aqui está o que saiu disso.</p>
 
     <p class="porta-pergunta">o que você veio ver?</p>
     <div class="portas">
@@ -585,7 +603,7 @@ body{overflow-x:hidden;}
     </div>
 
     <div class="hero-cta">
-      <a href="mailto:cintiavtrnssa@gmail.com" class="btn-mail">cintiavtrnssa@gmail.com ↗</a>
+      <a href="mailto:cintiavtrnssa@gmail.com" class="btn-mail">cintiavtrnssa@gmail.com</a>
       <span class="scroll-note">salvador, ba &middot; lab404 / ufba &middot; 2026</span>
     </div>
   </div>
@@ -595,51 +613,55 @@ body{overflow-x:hidden;}
 <section id="trabalho">
   <div class="tr-topo">
     <h2 class="tr-titulo">o trabalho</h2>
-    <p class="tr-sub">17 peças. os botões reagrupam, e <b>tudo</b> volta à lista inteira.</p>
+    <p class="tr-sub">15 peças. os botões reagrupam, e <b>tudo</b> volta à lista inteira.</p>
+  </div>
+
+
+  <div class="abertura">
+    <video class="reel" controls preload="none" playsinline
+           poster="motion/cintia.jpg"
+           aria-label="reel de criações de cíntia vitorino">
+      <source src="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/cintia.mp4" type="video/mp4">
+      seu navegador não toca vídeo. <a href="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/cintia.mp4">baixe o arquivo</a>.
+    </video>
+    <p class="abertura-leg">dois minutos e meio com o que eu desenvolvi, entre web, motion e dados.</p>
   </div>
 
   <div class="destaque">
-    <p class="dest-rot">ensaios visuais interativos</p>
+    <p class="dest-rot">web &middot; ensaios visuais interativos</p>
     <p class="dest-txt">faço ensaios que se lê navegando, em html, css e js puros, sem framework. quatro que eu abriria primeiro.</p>
     <div class="dest-lista">
-      <a class="dest-item" href="https://cintiavtrn.github.io/retrotech/" target="_blank" rel="noopener"><span class="dest-n">01</span><span class="dest-tit">a recusa que virou vitrine &#8599;</span><span class="dest-desc">atlas isométrico onde cada baía é uma etapa do argumento, sobre uma geração que trocou o celular por câmera analógica e disco de vinil. publicado no manual do usuário.</span></a>
-      <a class="dest-item" href="https://cintiavitorino.com.br/doprazeraodever/" target="_blank" rel="noopener"><span class="dest-n">02</span><span class="dest-tit">do prazer ao dever &#8599;</span><span class="dest-desc">corredor de museu com sete vitrines isométricas, sobre um século de mercantilização do futebol brasileiro. a pessoa caminha pelo corredor e abre cada vitrine.</span></a>
-      <a class="dest-item" href="https://cintiavitorino.com.br/doislados/" target="_blank" rel="noopener"><span class="dest-n">03</span><span class="dest-tit">dois lados &#8599;</span><span class="dest-desc">prancha de leitura com três trens correndo em três alturas diferentes, sobre o pelourinho dos anos 1990 e o subúrbio ferroviário dos anos 2010.</span></a>
-      <a class="dest-item" href="https://cintiavitorino.com.br/pranchasmartcities/" target="_blank" rel="noopener"><span class="dest-n">04</span><span class="dest-tit">cidades inteligentes &#8599;</span><span class="dest-desc">prancha sobre tecnologia urbana em salvador, com um mapa que se abre para mostrar onde cada sistema está instalado.</span></a>
+      <a class="dest-item" href="https://cintiavtrn.github.io/retrotech/" target="_blank" rel="noopener"><span class="dest-n">01</span><span class="dest-tit">a recusa que virou vitrine</span><span class="dest-desc">atlas isométrico onde cada baía é uma etapa do argumento, sobre uma geração que trocou o celular por câmera analógica e disco de vinil. publicado no manual do usuário.</span></a>
+      <a class="dest-item" href="https://cintiavitorino.com.br/doprazeraodever/" target="_blank" rel="noopener"><span class="dest-n">02</span><span class="dest-tit">do prazer ao dever</span><span class="dest-desc">corredor de museu com sete vitrines isométricas, sobre um século de mercantilização do futebol brasileiro. a pessoa caminha pelo corredor e abre cada vitrine.</span></a>
+      <a class="dest-item" href="https://cintiavitorino.com.br/doislados/" target="_blank" rel="noopener"><span class="dest-n">03</span><span class="dest-tit">dois lados</span><span class="dest-desc">prancha de leitura com três trens correndo em três alturas diferentes, sobre o pelourinho dos anos 1990 e o subúrbio ferroviário dos anos 2010.</span></a>
+      <a class="dest-item" href="https://cintiavitorino.com.br/pranchasmartcities/" target="_blank" rel="noopener"><span class="dest-n">04</span><span class="dest-tit">cidades inteligentes</span><span class="dest-desc">prancha sobre tecnologia urbana em salvador, com um mapa que se abre para mostrar onde cada sistema está instalado.</span></a>
     </div>
   </div>
 
   <div class="abas" role="tablist" aria-label="filtrar por tipo de trabalho">
     <button class="aba on" role="tab" data-filtro="tudo" aria-selected="true">tudo</button>
+    <button class="aba" role="tab" data-filtro="web" aria-selected="false">web</button>
     <button class="aba" role="tab" data-filtro="motion" aria-selected="false">motion</button>
-    <button class="aba" role="tab" data-filtro="ensaios" aria-selected="false">ensaios</button>
-    <button class="aba" role="tab" data-filtro="sites" aria-selected="false">sites</button>
-    <button class="aba" role="tab" data-filtro="sistemas" aria-selected="false">sistemas</button>
+    <button class="aba" role="tab" data-filtro="dados" aria-selected="false">dados</button>
     <button class="aba" role="tab" data-filtro="pesquisa" aria-selected="false">pesquisa</button>
   </div>
   <p class="abas-estado" id="abas-estado" role="status" aria-live="polite"></p>
   <div class="pecas" id="pecas">
-    <a class="peca" data-cat="ensaios" href="https://cintiavtrn.github.io/retrotech/" target="_blank" rel="noopener"><span class="peca-cat">ensaios</span><span class="peca-tit">a recusa que virou vitrine &#8599;</span><span class="peca-nota">atlas isométrico onde cada baía é uma etapa do argumento, sobre uma geração que trocou o celular por câmera analógica e disco de vinil.</span></a>
-    <a class="peca" data-cat="ensaios" href="https://cintiavitorino.com.br/doprazeraodever/" target="_blank" rel="noopener"><span class="peca-cat">ensaios</span><span class="peca-tit">do prazer ao dever &#8599;</span><span class="peca-nota">corredor de museu com sete vitrines isométricas, sobre um século de mercantilização do futebol brasileiro.</span></a>
-    <a class="peca" data-cat="ensaios" href="https://cintiavitorino.com.br/doislados/" target="_blank" rel="noopener"><span class="peca-cat">ensaios</span><span class="peca-tit">dois lados &#8599;</span><span class="peca-nota">prancha de leitura com três trens correndo em três alturas diferentes, sobre o pelourinho dos anos 1990 e o subúrbio ferroviário dos anos 2010.</span></a>
-    <a class="peca" data-cat="ensaios" href="https://cintiavitorino.com.br/pranchasmartcities/" target="_blank" rel="noopener"><span class="peca-cat">ensaios</span><span class="peca-tit">cidades inteligentes &#8599;</span><span class="peca-nota">prancha sobre tecnologia urbana em salvador, com um mapa que se abre para mostrar onde cada sistema está instalado.</span></a>
-    <a class="peca" data-cat="sites" href="https://cintiavitorino.com.br/" target="_blank" rel="noopener"><span class="peca-cat">sites</span><span class="peca-tit">cintiavitorino.com.br &#8599;</span><span class="peca-nota">doze ensaios visuais interativos, feitos em html, css e js puros</span></a>
-    <a class="peca" data-cat="sites" href="https://cintiavitorino.com.br/doislados/" target="_blank" rel="noopener"><span class="peca-cat">sites</span><span class="peca-tit">dois lados &#8599;</span><span class="peca-nota">prancha de leitura com planta, corte e perfil, para a disciplina arqc19</span></a>
-    <a class="peca" data-cat="sites" href="https://cintiavtrn.github.io/retrotech/" target="_blank" rel="noopener"><span class="peca-cat">sites</span><span class="peca-tit">a recusa que virou vitrine &#8599;</span><span class="peca-nota">atlas isométrico, publicado no manual do usuário</span></a>
-    <a class="peca" data-cat="sistemas" href="#produtos"><span class="peca-cat">sistemas</span><span class="peca-tit">iecisgestão</span><span class="peca-nota">produto digital de gestão institucional</span></a>
-    <a class="peca" data-cat="sistemas" href="#automacao"><span class="peca-cat">sistemas</span><span class="peca-tit">bms &amp; telemetria</span><span class="peca-nota">esp32, rs-485 e lora, em fasano sp e trancoso</span></a>
+    <a class="peca" data-cat="web" href="https://cintiavitorino.com.br/" target="_blank" rel="noopener"><span class="peca-cat">web</span><span class="peca-tit">cintiavitorino.com.br</span><span class="peca-nota">doze ensaios visuais interativos</span></a>
+    <a class="peca" data-cat="web" href="https://cintiavitorino.com.br/doislados/" target="_blank" rel="noopener"><span class="peca-cat">web</span><span class="peca-tit">dois lados</span><span class="peca-nota">prancha de leitura com planta, corte e perfil</span></a>
+    <a class="peca" data-cat="web" href="https://cintiavitorino.com.br/doprazeraodever/" target="_blank" rel="noopener"><span class="peca-cat">web</span><span class="peca-tit">do prazer ao dever</span><span class="peca-nota">corredor de museu com sete vitrines isométricas</span></a>
+    <a class="peca" data-cat="web" href="https://cintiavtrn.github.io/retrotech/" target="_blank" rel="noopener"><span class="peca-cat">web</span><span class="peca-tit">a recusa que virou vitrine</span><span class="peca-nota">atlas isométrico, publicado no manual do usuário</span></a>
+    <a class="peca" data-cat="web" href="https://cintiavitorino.com.br/pranchasmartcities/" target="_blank" rel="noopener"><span class="peca-cat">web</span><span class="peca-tit">cidades inteligentes</span><span class="peca-nota">prancha sobre tecnologia urbana em salvador</span></a>
+    <a class="peca" data-cat="motion" href="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/cintia.mp4" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">o que eu desenvolvi</span><span class="peca-nota">reel de criações, com web, motion e dados lado a lado</span></a>
+    <a class="peca" data-cat="motion" href="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/cartas.mp4" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">cartas na mesa</span><span class="peca-nota">para seu voto decide, comparando propostas carta a carta</span></a>
+    <a class="peca" data-cat="motion" href="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/debate.mp4" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">placar da verdade</span><span class="peca-nota">checagem do debate da band, com veredito por fala</span></a>
+    <a class="peca" data-cat="motion" href="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/seisum.mp4" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">a escala 6x1</span><span class="peca-nota">para seu voto decide, sobre jornada e quem sustenta o comércio</span></a>
+    <a class="peca" data-cat="motion" href="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/ladip.mp4" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">o voto como direito humano</span><span class="peca-nota">para a ladip, da onu de 1945 à ditadura e à soberania</span></a>
+    <a class="peca" data-cat="motion" href="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/tml.mp4" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">tml, proposta</span><span class="peca-nota">um link para cada cliente, e o dado virando desenho</span></a>
+    <a class="peca" data-cat="dados" href="#produtos"><span class="peca-cat">dados</span><span class="peca-tit">iecisgestão</span><span class="peca-nota">produto digital de gestão institucional</span></a>
+    <a class="peca" data-cat="dados" href="#automacao"><span class="peca-cat">dados</span><span class="peca-tit">bms &amp; telemetria</span><span class="peca-nota">esp32, rs-485 e lora, em fasano sp e trancoso</span></a>
     <a class="peca" data-cat="pesquisa" href="#pesquisa"><span class="peca-cat">pesquisa</span><span class="peca-tit">ensaios &amp; publicações</span><span class="peca-nota">dois artigos com doi, em periódico revisado</span></a>
-    <a class="peca" data-cat="pesquisa" href="#midia"><span class="peca-cat">pesquisa</span><span class="peca-tit">pretaletrada</span><span class="peca-nota">pesquisa para mídia, em spotify, audible e 30ebr</span></a>
-    <a class="peca" data-cat="motion" href="https://www.instagram.com/reel/DQXhN3QD2wf/?igsh=eXl3N2Z5cWRodjc1" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">os "garotin" &#8599;</span><span class="peca-nota">+1M de visualizações</span></a>
-    <a class="peca" data-cat="motion" href="https://www.instagram.com/reel/DH4QbxupLLW/?igsh=dG1yMDFhd3QybjRo" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">Peter Tosh &#8599;</span><span class="peca-nota">+1M de visualizações</span></a>
-    <a class="peca" data-cat="motion" href="https://www.instagram.com/reel/DMYj_j3Jk6d/?igsh=MXRxOXNmN3M5b3Rqdg==" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">asiáticos em Pecadores &#8599;</span><span class="peca-nota">+1,5M de visualizações</span></a>
-    <a class="peca" data-cat="motion" href="https://www.instagram.com/reel/DTgVBYtj4sc/?igsh=MXRnNnB2MjdwODlyaw==" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">doidinhos do centro &#8599;</span><span class="peca-nota">reel de pesquisa</span></a>
-    <a class="peca" data-cat="motion" href="https://www.instagram.com/reel/DY0M1rvhpax/?igsh=bnNyeWVwM3J3bnZt" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">cangaço e mundo árabe &#8599;</span><span class="peca-nota">+500mil de visualizações</span></a>
-    <a class="peca" data-cat="motion" href="https://www.instagram.com/reel/DVhGkozjzI6/?igsh=MW9vN3RhZzg0Z3M0ag==" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">a cultura dos ratos &#8599;</span><span class="peca-nota">+400mil de visualizações</span></a>
-    <a class="peca" data-cat="motion" href="https://www.instagram.com/reel/DN1MicI3vxD/?igsh=dXM2OXF4Znp0eGNk" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">Auto da Compadecida &#8599;</span><span class="peca-nota">+600mil de visualizações</span></a>
-    <a class="peca" data-cat="motion" href="https://www.instagram.com/reel/DXFhSWhD6zV/?igsh=MWpjOGN6OWM4dzFueQ==" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">BK', para 30eBR &#8599;</span><span class="peca-nota">+200mil de visualizações</span></a>
-    <a class="peca" data-cat="motion" href="https://www.instagram.com/reel/DY7hDKdMJoc/?igsh=MW90cnl4MzR0YXF2cg==" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">Jorge Ben, para 30eBR &#8599;</span><span class="peca-nota">+100mil de visualizações</span></a>
-    <a class="peca" data-cat="motion" href="https://www.instagram.com/reel/DOEtt7DD_r-/?igsh=MXdwY2RjNnh1emdyYQ==" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">Planet Hemp, para 30eBR &#8599;</span><span class="peca-nota">+250mil de visualizações</span></a>
+    <a class="peca" data-cat="pesquisa" href="#midia"><span class="peca-cat">pesquisa</span><span class="peca-tit">pesquisa para mídia</span><span class="peca-nota">roteiro e apuração para pretaletrada, spotify, audible e 30ebr</span></a>
   </div>
 </section>
 
@@ -934,7 +956,7 @@ body{overflow-x:hidden;}
       <p>pesquisa para a audiossérie documental <b>Apartheid Tropical — 2ª Temporada</b>, sobre relações raciais no Brasil
       pós-Constituição de 1988. pesquisa conjunta com Camilla (Preta Letrada) para quatro dos oito episódios da temporada.</p>
       <div class="epchips"><span class="epchip">ep. 04</span><span class="epchip">ep. 05</span><span class="epchip">ep. 07</span><span class="epchip">ep. 08</span></div>
-      <a href="https://www.audible.com.br/pd/APARTHEID-TROPICAL-Segunda-Temporada-Audiolivro/B0G3C6TGMR" target="_blank" rel="noopener">ouvir na audible ↗</a>
+      <a href="https://www.audible.com.br/pd/APARTHEID-TROPICAL-Segunda-Temporada-Audiolivro/B0G3C6TGMR" target="_blank" rel="noopener">ouvir na audible</a>
     </div>
     <div class="partner">
       <h3>30eBR</h3>
@@ -948,50 +970,50 @@ body{overflow-x:hidden;}
     <div class="not-item">
       <div class="not-t">pesquisa sobre os "garotin"</div>
       <div class="not-v">+1M de visualizações</div>
-      <div class="not-meta"><a class="not-link" href="https://www.instagram.com/reel/DQXhN3QD2wf/?igsh=eXl3N2Z5cWRodjc1" target="_blank" rel="noopener">ver reel ↗</a></div>
+      <div class="not-meta"><a class="not-link" href="https://www.instagram.com/reel/DQXhN3QD2wf/?igsh=eXl3N2Z5cWRodjc1" target="_blank" rel="noopener">ver reel</a></div>
     </div>
 
     <div class="not-item">
       <div class="not-t">pesquisa sobre Peter Tosh</div>
       <div class="not-v">+1M de visualizações</div>
-      <div class="not-meta"><a class="not-link" href="https://www.instagram.com/reel/DH4QbxupLLW/?igsh=dG1yMDFhd3QybjRo" target="_blank" rel="noopener">ver reel ↗</a></div>
+      <div class="not-meta"><a class="not-link" href="https://www.instagram.com/reel/DH4QbxupLLW/?igsh=dG1yMDFhd3QybjRo" target="_blank" rel="noopener">ver reel</a></div>
     </div>
 
     <div class="not-item">
       <div class="not-t">sobre os asiáticos no filme Pecadores</div>
       <div class="not-v">+1,5M de visualizações</div>
-      <div class="not-meta"><a class="not-link" href="https://www.instagram.com/reel/DMYj_j3Jk6d/?igsh=MXRxOXNmN3M5b3Rqdg==" target="_blank" rel="noopener">ver reel ↗</a></div>
+      <div class="not-meta"><a class="not-link" href="https://www.instagram.com/reel/DMYj_j3Jk6d/?igsh=MXRxOXNmN3M5b3Rqdg==" target="_blank" rel="noopener">ver reel</a></div>
     </div>
 
     <div class="not-item">
       <div class="not-t">os "doidinhos do centro": são os loucos que estão na rua, ou é a rua que os leva à loucura?</div>
       <div class="not-v">+3M de visualizações</div>
-      <div class="not-meta"><a class="not-link" href="https://www.instagram.com/reel/DTgVBYtj4sc/?igsh=MXRnNnB2MjdwODlyaw==" target="_blank" rel="noopener">ver reel ↗</a></div>
+      <div class="not-meta"><a class="not-link" href="https://www.instagram.com/reel/DTgVBYtj4sc/?igsh=MXRnNnB2MjdwODlyaw==" target="_blank" rel="noopener">ver reel</a></div>
     </div>
 
     <div class="not-item">
       <div class="not-t">cangaço, mundo árabe, indígena e africano</div>
       <div class="not-v">+500mil de visualizações</div>
-      <div class="not-meta"><a class="not-link" href="https://www.instagram.com/reel/DY0M1rvhpax/?igsh=bnNyeWVwM3J3bnZt" target="_blank" rel="noopener">ver reel ↗</a></div>
+      <div class="not-meta"><a class="not-link" href="https://www.instagram.com/reel/DY0M1rvhpax/?igsh=bnNyeWVwM3J3bnZt" target="_blank" rel="noopener">ver reel</a></div>
     </div>
 
     <div class="not-item">
       <div class="not-t">a cultura dos ratos em Recife</div>
       <div class="not-v">+400mil de visualizações</div>
-      <div class="not-meta"><a class="not-link" href="https://www.instagram.com/reel/DVhGkozjzI6/?igsh=MW9vN3RhZzg0Z3M0ag==" target="_blank" rel="noopener">ver reel ↗</a></div>
+      <div class="not-meta"><a class="not-link" href="https://www.instagram.com/reel/DVhGkozjzI6/?igsh=MW9vN3RhZzg0Z3M0ag==" target="_blank" rel="noopener">ver reel</a></div>
     </div>
 
     <div class="not-item">
       <div class="not-t">Auto da Compadecida e a origem do diabo</div>
       <div class="not-v">+600mil de visualizações</div>
-      <div class="not-meta"><a class="not-link" href="https://www.instagram.com/reel/DN1MicI3vxD/?igsh=dXM2OXF4Znp0eGNk" target="_blank" rel="noopener">ver reel ↗</a></div>
+      <div class="not-meta"><a class="not-link" href="https://www.instagram.com/reel/DN1MicI3vxD/?igsh=dXM2OXF4Znp0eGNk" target="_blank" rel="noopener">ver reel</a></div>
     </div>
 
     <div class="not-item">
       <div class="not-t">BK' — para 30eBR</div>
       <div class="not-v">+200mil de visualizações</div>
       <div class="not-meta">
-        <a class="not-link" href="https://www.instagram.com/reel/DXFhSWhD6zV/?igsh=MWpjOGN6OWM4dzFueQ==" target="_blank" rel="noopener">ver reel ↗</a>
+        <a class="not-link" href="https://www.instagram.com/reel/DXFhSWhD6zV/?igsh=MWpjOGN6OWM4dzFueQ==" target="_blank" rel="noopener">ver reel</a>
         <span class="not-publi">publi</span>
       </div>
     </div>
@@ -999,7 +1021,7 @@ body{overflow-x:hidden;}
       <div class="not-t">Jorge Ben — para 30eBR</div>
       <div class="not-v">+100mil de visualizações</div>
       <div class="not-meta">
-        <a class="not-link" href="https://www.instagram.com/reel/DY7hDKdMJoc/?igsh=MW90cnl4MzR0YXF2cg==" target="_blank" rel="noopener">ver reel ↗</a>
+        <a class="not-link" href="https://www.instagram.com/reel/DY7hDKdMJoc/?igsh=MW90cnl4MzR0YXF2cg==" target="_blank" rel="noopener">ver reel</a>
         <span class="not-publi">publi</span>
       </div>
     </div>
@@ -1007,7 +1029,7 @@ body{overflow-x:hidden;}
       <div class="not-t">Planet Hemp — para 30eBR</div>
       <div class="not-v">+250mil de visualizações</div>
       <div class="not-meta">
-        <a class="not-link" href="https://www.instagram.com/reel/DOEtt7DD_r-/?igsh=MXdwY2RjNnh1emdyYQ==" target="_blank" rel="noopener">ver reel ↗</a>
+        <a class="not-link" href="https://www.instagram.com/reel/DOEtt7DD_r-/?igsh=MXdwY2RjNnh1emdyYQ==" target="_blank" rel="noopener">ver reel</a>
         <span class="not-publi">publi</span>
       </div>
     </div>
@@ -1048,7 +1070,7 @@ body{overflow-x:hidden;}
     <a class="ens" href="/acaradocrime/"><div class="ens-dot" style="background:#C9B68C;"></div><div class="ens-t">cara de bandido</div><div class="ens-c">linguagem · raça</div></a>
   </div>
   <p class="escrita-nota">eu também escrevo no registro acadêmico. os textos abaixo passaram por revisão por pares e têm doi. <b>[faltam aqui os outros lugares onde publico, me envie os links]</b></p>
-      <a href="https://cintiavitorino.com.br/" class="arquivo-link">ver arquivo completo de ensaios ↗</a>
+      <a href="https://cintiavitorino.com.br/" class="arquivo-link">ver arquivo completo de ensaios</a>
   <div style="margin-top:2.8rem;">
     <div class="pub">
       <div class="pub-y">2025</div>
@@ -1056,7 +1078,7 @@ body{overflow-x:hidden;}
         <div class="pub-t">Plataformização da Educação e Práxis Docente: revisão bibliográfica sobre economia da atenção e transformações pedagógicas</div>
         <div class="pub-v">COLLOQUIUM HUMANARUM · V.22 · COM LYNN ALVES</div>
         <p class="pub-d">revisão de 36 textos acadêmicos (2019–2024) sobre os efeitos da plataformização na educação brasileira, organizados em quatro eixos: mercantilização, tecnologias de captura de dados, práxis docente e avaliações críticas. discute como a economia da atenção e a dataficação reconfiguram a autonomia pedagógica e propõe o fortalecimento da soberania digital como resposta.</p>
-        <a class="pub-l" href="https://doi.org/10.5747/ch.2025.v22.h647" target="_blank" rel="noopener">ler artigo ↗</a>
+        <a class="pub-l" href="https://doi.org/10.5747/ch.2025.v22.h647" target="_blank" rel="noopener">ler artigo</a>
       </div>
     </div>
     <div class="pub">
@@ -1065,7 +1087,7 @@ body{overflow-x:hidden;}
         <div class="pub-t">Apropriações e usos das plataformas digitais de ensino pelos docentes no Brasil: uma revisão sistemática de literatura</div>
         <div class="pub-v">CENAS EDUCACIONAIS · COM ALLAN OLIVEIRA E LYNN ALVES</div>
         <p class="pub-d">mapeamento sistemático de como docentes brasileiros incorporam plataformas digitais de ensino à prática pedagógica, base do projeto de iniciação científica sobre plataformização da educação.</p>
-        <a class="pub-l" href="https://www.revistas.uneb.br/index.php/cenaseducacionais/article/view/16483" target="_blank" rel="noopener">ler artigo ↗</a>
+        <a class="pub-l" href="https://www.revistas.uneb.br/index.php/cenaseducacionais/article/view/16483" target="_blank" rel="noopener">ler artigo</a>
       </div>
     </div>
     <div class="pub">
@@ -1135,7 +1157,7 @@ body{overflow-x:hidden;}
         sistemas de gestão, telemetria, ensaios interativos, pesquisa para mídia. da pergunta crítica
         ao produto que responde a ela. me conta o que você precisa.
       </p>
-      <a class="cta-btn" href="mailto:cintiavtrnssa@gmail.com">cintiavtrnssa@gmail.com ↗</a>
+      <a class="cta-btn" href="mailto:cintiavtrnssa@gmail.com">cintiavtrnssa@gmail.com</a>
     </div>
   </div>
 </section>
@@ -1215,6 +1237,40 @@ body{overflow-x:hidden;}
     }, 90);
   }, { passive: true });
   pinta();
+})();
+</script>
+
+<script>
+/* chiado de abertura. roda uma vez por sessão e some sozinho. */
+(function(){
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  try { if (sessionStorage.getItem('chiado') === 'visto') return; } catch(e){}
+  var cap = document.createElement('div');
+  cap.id = 'chiado';
+  cap.innerHTML = '<canvas></canvas><div class="varredura"></div><div class="linha"></div>';
+  document.body.appendChild(cap);
+  var cv = cap.querySelector('canvas'), ct = cv.getContext('2d'),
+      linha = cap.querySelector('.linha'),
+      LG = 160, AL = 284;
+  cv.width = LG; cv.height = AL;
+  var ini = performance.now(), dados = ct.createImageData(LG, AL);
+  function pinta(agora){
+    var t = agora - ini;
+    var b = dados.data;
+    for (var i = 0; i < b.length; i += 4){
+      var v = (Math.random() * 255) | 0;
+      b[i] = v; b[i+1] = v; b[i+2] = v; b[i+3] = 255;
+    }
+    ct.putImageData(dados, 0, 0);
+    linha.style.top = ((t/7) % 120) + '%';
+    if (t < 950) requestAnimationFrame(pinta);
+    else {
+      cap.classList.add('saindo');
+      setTimeout(function(){ cap.remove(); }, 520);
+      try { sessionStorage.setItem('chiado', 'visto'); } catch(e){}
+    }
+  }
+  requestAnimationFrame(pinta);
 })();
 </script>
 </body>
