@@ -509,6 +509,36 @@ body{overflow-x:hidden;}
 #chiado .linha{position:absolute;left:0;right:0;height:3px;background:rgba(236,231,218,.8);}
 #chiado.saindo{opacity:0;transition:opacity .5s ease;}
 @media (prefers-reduced-motion:reduce){ #chiado{display:none;} }
+
+/* motion toca na propria pagina: o release serve com cabecalho de anexo,
+   entao link baixa. O elemento de video ignora isso e reproduz. */
+.peca-mot{text-align:left;font:inherit;cursor:pointer;}
+.peca-capa{position:relative;display:block;margin-bottom:.6rem;background:#000;
+  border:1px solid rgba(236,231,218,.3);}
+.peca-capa img{width:100%;display:block;aspect-ratio:9/16;object-fit:cover;}
+.peca-mot[data-video*="cintia"] .peca-capa img,
+.peca-mot[data-video*="tml"] .peca-capa img{aspect-ratio:16/9;}
+.peca-play{position:absolute;left:50%;top:50%;width:54px;height:54px;
+  transform:translate(-50%,-50%);background:var(--mostarda);
+  clip-path:polygon(28% 20%, 28% 80%, 80% 50%);}
+.peca-mot:hover .peca-capa,.peca-mot:focus-visible .peca-capa{border-color:var(--mostarda);}
+
+#palco{position:fixed;inset:0;z-index:9500;background:rgba(10,11,12,.94);
+  display:none;align-items:center;justify-content:center;padding:2rem;}
+#palco.on{display:flex;}
+.palco-caixa{width:min(100%,min(92vw,calc(78vh * 9 / 16)));max-height:92vh;}
+.palco-caixa.larga{width:min(92vw,1180px);}
+#palco video{width:100%;max-height:78vh;display:block;background:#000;
+  border:2px solid var(--paper);}
+.palco-topo{display:flex;justify-content:space-between;align-items:baseline;
+  gap:1rem;margin-bottom:.7rem;}
+.palco-tit{font-family:var(--display);font-weight:800;font-size:1.3rem;color:var(--paper);}
+.palco-x{background:none;border:2px solid var(--paper);color:var(--paper);
+  font-family:var(--display);font-size:.9rem;letter-spacing:.1em;padding:.3rem .7rem;cursor:pointer;}
+.palco-x:hover{background:var(--paper);color:var(--ink);}
+.palco-pe{margin-top:.6rem;font-family:var(--mono);font-size:.68rem;
+  color:rgba(236,231,218,.6);}
+.palco-pe a{color:var(--mostarda);}
 </style>
 </head>
 <body>
@@ -652,12 +682,12 @@ body{overflow-x:hidden;}
     <a class="peca" data-cat="web" href="https://cintiavitorino.com.br/doprazeraodever/" target="_blank" rel="noopener"><span class="peca-cat">web</span><span class="peca-tit">do prazer ao dever</span><span class="peca-nota">corredor de museu com sete vitrines isométricas</span></a>
     <a class="peca" data-cat="web" href="https://cintiavtrn.github.io/retrotech/" target="_blank" rel="noopener"><span class="peca-cat">web</span><span class="peca-tit">a recusa que virou vitrine</span><span class="peca-nota">atlas isométrico, publicado no manual do usuário</span></a>
     <a class="peca" data-cat="web" href="https://cintiavitorino.com.br/pranchasmartcities/" target="_blank" rel="noopener"><span class="peca-cat">web</span><span class="peca-tit">cidades inteligentes</span><span class="peca-nota">prancha sobre tecnologia urbana em salvador</span></a>
-    <a class="peca" data-cat="motion" href="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/cintia.mp4" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">o que eu desenvolvi</span><span class="peca-nota">reel de criações, com web, motion e dados lado a lado</span></a>
-    <a class="peca" data-cat="motion" href="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/cartas.mp4" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">cartas na mesa</span><span class="peca-nota">para seu voto decide, comparando propostas carta a carta</span></a>
-    <a class="peca" data-cat="motion" href="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/debate.mp4" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">placar da verdade</span><span class="peca-nota">checagem do debate da band, com veredito por fala</span></a>
-    <a class="peca" data-cat="motion" href="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/seisum.mp4" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">a escala 6x1</span><span class="peca-nota">para seu voto decide, sobre jornada e quem sustenta o comércio</span></a>
-    <a class="peca" data-cat="motion" href="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/ladip.mp4" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">o voto como direito humano</span><span class="peca-nota">para a ladip, da onu de 1945 à ditadura e à soberania</span></a>
-    <a class="peca" data-cat="motion" href="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/tml.mp4" target="_blank" rel="noopener"><span class="peca-cat">motion</span><span class="peca-tit">tml, proposta</span><span class="peca-nota">um link para cada cliente, e o dado virando desenho</span></a>
+    <button type="button" class="peca peca-mot" data-cat="motion" data-video="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/cintia.mp4" data-titulo="o que eu desenvolvi"><span class="peca-capa"><img src="motion/cintia.jpg" alt="" loading="lazy"><span class="peca-play" aria-hidden="true"></span></span><span class="peca-cat">motion</span><span class="peca-tit">o que eu desenvolvi</span><span class="peca-nota">reel de criações, com web, motion e dados lado a lado</span></button>
+    <button type="button" class="peca peca-mot" data-cat="motion" data-video="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/cartas.mp4" data-titulo="cartas na mesa"><span class="peca-capa"><img src="motion/cartas.jpg" alt="" loading="lazy"><span class="peca-play" aria-hidden="true"></span></span><span class="peca-cat">motion</span><span class="peca-tit">cartas na mesa</span><span class="peca-nota">para seu voto decide, comparando propostas carta a carta</span></button>
+    <button type="button" class="peca peca-mot" data-cat="motion" data-video="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/debate.mp4" data-titulo="placar da verdade"><span class="peca-capa"><img src="motion/debate.jpg" alt="" loading="lazy"><span class="peca-play" aria-hidden="true"></span></span><span class="peca-cat">motion</span><span class="peca-tit">placar da verdade</span><span class="peca-nota">checagem do debate da band, com veredito por fala</span></button>
+    <button type="button" class="peca peca-mot" data-cat="motion" data-video="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/seisum.mp4" data-titulo="a escala 6x1"><span class="peca-capa"><img src="motion/seisum.jpg" alt="" loading="lazy"><span class="peca-play" aria-hidden="true"></span></span><span class="peca-cat">motion</span><span class="peca-tit">a escala 6x1</span><span class="peca-nota">para seu voto decide, sobre jornada e quem sustenta o comércio</span></button>
+    <button type="button" class="peca peca-mot" data-cat="motion" data-video="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/ladip.mp4" data-titulo="o voto como direito humano"><span class="peca-capa"><img src="motion/ladip.jpg" alt="" loading="lazy"><span class="peca-play" aria-hidden="true"></span></span><span class="peca-cat">motion</span><span class="peca-tit">o voto como direito humano</span><span class="peca-nota">para a ladip, da onu de 1945 à ditadura e à soberania</span></button>
+    <button type="button" class="peca peca-mot" data-cat="motion" data-video="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/tml.mp4" data-titulo="tml, proposta"><span class="peca-capa"><img src="motion/tml.jpg" alt="" loading="lazy"><span class="peca-play" aria-hidden="true"></span></span><span class="peca-cat">motion</span><span class="peca-tit">tml, proposta</span><span class="peca-nota">um link para cada cliente, e o dado virando desenho</span></button>
     <a class="peca" data-cat="dados" href="#produtos"><span class="peca-cat">dados</span><span class="peca-tit">iecisgestão</span><span class="peca-nota">produto digital de gestão institucional</span></a>
     <a class="peca" data-cat="dados" href="#automacao"><span class="peca-cat">dados</span><span class="peca-tit">bms &amp; telemetria</span><span class="peca-nota">esp32, rs-485 e lora, em fasano sp e trancoso</span></a>
     <a class="peca" data-cat="pesquisa" href="#pesquisa"><span class="peca-cat">pesquisa</span><span class="peca-tit">ensaios &amp; publicações</span><span class="peca-nota">dois artigos com doi, em periódico revisado</span></a>
@@ -1271,6 +1301,51 @@ body{overflow-x:hidden;}
     }
   }
   requestAnimationFrame(pinta);
+})();
+</script>
+
+<div id="palco" role="dialog" aria-modal="true" aria-label="peça de motion">
+  <div class="palco-caixa" id="palco-caixa">
+    <div class="palco-topo">
+      <span class="palco-tit" id="palco-tit"></span>
+      <button class="palco-x" id="palco-x">fechar</button>
+    </div>
+    <video id="palco-video" controls playsinline preload="metadata"></video>
+    <p class="palco-pe">se não tocar aqui, <a id="palco-baixar" href="#">baixe o arquivo</a>.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var palco = document.getElementById('palco'),
+      cx = document.getElementById('palco-caixa'),
+      vid = document.getElementById('palco-video'),
+      tit = document.getElementById('palco-tit'),
+      baixar = document.getElementById('palco-baixar'),
+      ultimo = null;
+  function abre(b){
+    ultimo = b;
+    var u = b.dataset.video;
+    tit.textContent = b.dataset.titulo || '';
+    vid.src = u; baixar.href = u;
+    cx.classList.toggle('larga', /cintia|tml/.test(u));
+    palco.classList.add('on');
+    document.getElementById('palco-x').focus();
+    vid.play().catch(function(){});
+  }
+  function fecha(){
+    palco.classList.remove('on');
+    vid.pause(); vid.removeAttribute('src'); vid.load();
+    if (ultimo) ultimo.focus();
+  }
+  document.querySelectorAll('.peca-mot').forEach(function(b){
+    b.addEventListener('click', function(){ abre(b); });
+  });
+  document.getElementById('palco-x').addEventListener('click', fecha);
+  palco.addEventListener('click', function(e){ if (e.target === palco) fecha(); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && palco.classList.contains('on')) fecha();
+  });
 })();
 </script>
 </body>
