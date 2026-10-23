@@ -512,7 +512,11 @@ body{overflow-x:hidden;}
 
 /* motion toca na propria pagina: o release serve com cabecalho de anexo,
    entao link baixa. O elemento de video ignora isso e reproduz. */
-.peca-mot{text-align:left;font:inherit;cursor:pointer;}
+/* botao traz fundo e borda do navegador: zerar, senao o texto claro
+   cai sobre cinza e o contraste despenca para 1,1 */
+.peca-mot{text-align:left;font:inherit;cursor:pointer;
+  background:none;border:0;border-bottom:1px solid rgba(236,231,218,.22);
+  color:inherit;-webkit-appearance:none;appearance:none;}
 .peca-capa{position:relative;display:block;margin-bottom:.6rem;background:#000;
   border:1px solid rgba(236,231,218,.3);}
 .peca-capa img{width:100%;display:block;aspect-ratio:9/16;object-fit:cover;}
@@ -539,6 +543,7 @@ body{overflow-x:hidden;}
 .palco-pe{margin-top:.6rem;font-family:var(--mono);font-size:.68rem;
   color:rgba(236,231,218,.6);}
 .palco-pe a{color:var(--mostarda);}
+.peca-wide img{aspect-ratio:16/10 !important;}
 </style>
 </head>
 <body>
@@ -609,7 +614,7 @@ body{overflow-x:hidden;}
   <div id="inicio-content">
     
     <h1 class="hero-head">portfólio</h1>
-    <p class="hero-assina">cíntia vitorino &middot; web, motion e dados</p>
+    <p class="hero-assina">cíntia vitorino &middot; sites, ensaios, motion e dados</p>
 
     <p class="hero-legenda">sem nome criativo. é isso mesmo. eu construo os sistemas que eu critico, e aqui está o que saiu disso.</p>
 
@@ -643,7 +648,7 @@ body{overflow-x:hidden;}
 <section id="trabalho">
   <div class="tr-topo">
     <h2 class="tr-titulo">o trabalho</h2>
-    <p class="tr-sub">15 peças. os botões reagrupam, e <b>tudo</b> volta à lista inteira.</p>
+    <p class="tr-sub">19 peças. os botões reagrupam, e <b>tudo</b> volta à lista inteira.</p>
   </div>
 
 
@@ -654,11 +659,11 @@ body{overflow-x:hidden;}
       <source src="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/cintia.mp4" type="video/mp4">
       seu navegador não toca vídeo. <a href="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/cintia.mp4">baixe o arquivo</a>.
     </video>
-    <p class="abertura-leg">dois minutos e meio com o que eu desenvolvi, entre web, motion e dados.</p>
+    <p class="abertura-leg">dois minutos e meio com o que eu desenvolvi, por tipo de trabalho.</p>
   </div>
 
   <div class="destaque">
-    <p class="dest-rot">web &middot; ensaios visuais interativos</p>
+    <p class="dest-rot">ensaios visuais interativos</p>
     <p class="dest-txt">faço ensaios que se lê navegando, em html, css e js puros, sem framework. quatro que eu abriria primeiro.</p>
     <div class="dest-lista">
       <a class="dest-item" href="https://cintiavtrn.github.io/retrotech/" target="_blank" rel="noopener"><span class="dest-n">01</span><span class="dest-tit">a recusa que virou vitrine</span><span class="dest-desc">atlas isométrico onde cada baía é uma etapa do argumento, sobre uma geração que trocou o celular por câmera analógica e disco de vinil. publicado no manual do usuário.</span></a>
@@ -670,22 +675,27 @@ body{overflow-x:hidden;}
 
   <div class="abas" role="tablist" aria-label="filtrar por tipo de trabalho">
     <button class="aba on" role="tab" data-filtro="tudo" aria-selected="true">tudo</button>
-    <button class="aba" role="tab" data-filtro="web" aria-selected="false">web</button>
+    <button class="aba" role="tab" data-filtro="sites" aria-selected="false">sites</button>
+    <button class="aba" role="tab" data-filtro="ensaios" aria-selected="false">ensaios</button>
     <button class="aba" role="tab" data-filtro="motion" aria-selected="false">motion</button>
     <button class="aba" role="tab" data-filtro="dados" aria-selected="false">dados</button>
     <button class="aba" role="tab" data-filtro="pesquisa" aria-selected="false">pesquisa</button>
   </div>
   <p class="abas-estado" id="abas-estado" role="status" aria-live="polite"></p>
   <div class="pecas" id="pecas">
-    <a class="peca" data-cat="web" href="https://cintiavitorino.com.br/" target="_blank" rel="noopener"><span class="peca-cat">web</span><span class="peca-tit">cintiavitorino.com.br</span><span class="peca-nota">doze ensaios visuais interativos</span></a>
-    <a class="peca" data-cat="web" href="https://cintiavitorino.com.br/doislados/" target="_blank" rel="noopener"><span class="peca-cat">web</span><span class="peca-tit">dois lados</span><span class="peca-nota">prancha de leitura com planta, corte e perfil</span></a>
-    <a class="peca" data-cat="web" href="https://cintiavitorino.com.br/doprazeraodever/" target="_blank" rel="noopener"><span class="peca-cat">web</span><span class="peca-tit">do prazer ao dever</span><span class="peca-nota">corredor de museu com sete vitrines isométricas</span></a>
-    <a class="peca" data-cat="web" href="https://cintiavtrn.github.io/retrotech/" target="_blank" rel="noopener"><span class="peca-cat">web</span><span class="peca-tit">a recusa que virou vitrine</span><span class="peca-nota">atlas isométrico, publicado no manual do usuário</span></a>
-    <a class="peca" data-cat="web" href="https://cintiavitorino.com.br/pranchasmartcities/" target="_blank" rel="noopener"><span class="peca-cat">web</span><span class="peca-tit">cidades inteligentes</span><span class="peca-nota">prancha sobre tecnologia urbana em salvador</span></a>
-    <button type="button" class="peca peca-mot" data-cat="motion" data-video="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/cintia.mp4" data-titulo="o que eu desenvolvi"><span class="peca-capa"><img src="motion/cintia.jpg" alt="" loading="lazy"><span class="peca-play" aria-hidden="true"></span></span><span class="peca-cat">motion</span><span class="peca-tit">o que eu desenvolvi</span><span class="peca-nota">reel de criações, com web, motion e dados lado a lado</span></button>
+    <a class="peca" data-cat="sites" href="https://iecis.com.br/" target="_blank" rel="noopener"><span class="peca-capa peca-wide"><img src="motion/iecis.jpg" alt="" loading="lazy"></span><span class="peca-cat">sites</span><span class="peca-tit">iecis</span><span class="peca-nota">sistema de gestão interna do instituto de esporte, cidadania e inclusão social</span></a>
+    <a class="peca" data-cat="sites" href="https://seuvotodecide.com.br/" target="_blank" rel="noopener"><span class="peca-capa peca-wide"><img src="motion/svd.jpg" alt="" loading="lazy"></span><span class="peca-cat">sites</span><span class="peca-tit">seu voto decide</span><span class="peca-nota">plataforma de conteúdo para quem pensa em não votar</span></a>
+    <a class="peca" data-cat="sites" href="https://cintiavitorino.com.br/" target="_blank" rel="noopener"><span class="peca-cat">sites</span><span class="peca-tit">cintiavitorino.com.br</span><span class="peca-nota">meu site de ensaios, feito em html, css e js puros</span></a>
+    <a class="peca" data-cat="ensaios" href="https://cintiavitorino.com.br/doislados/" target="_blank" rel="noopener"><span class="peca-cat">ensaios</span><span class="peca-tit">dois lados</span><span class="peca-nota">prancha de leitura com planta, corte e perfil</span></a>
+    <a class="peca" data-cat="ensaios" href="https://cintiavitorino.com.br/doprazeraodever/" target="_blank" rel="noopener"><span class="peca-cat">ensaios</span><span class="peca-tit">do prazer ao dever</span><span class="peca-nota">corredor de museu com sete vitrines isométricas</span></a>
+    <a class="peca" data-cat="ensaios" href="https://cintiavtrn.github.io/retrotech/" target="_blank" rel="noopener"><span class="peca-cat">ensaios</span><span class="peca-tit">a recusa que virou vitrine</span><span class="peca-nota">atlas isométrico, publicado no manual do usuário</span></a>
+    <a class="peca" data-cat="ensaios" href="https://cintiavitorino.com.br/pranchasmartcities/" target="_blank" rel="noopener"><span class="peca-cat">ensaios</span><span class="peca-tit">cidades inteligentes</span><span class="peca-nota">prancha sobre tecnologia urbana em salvador</span></a>
+    <button type="button" class="peca peca-mot" data-cat="motion" data-video="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/cintia.mp4" data-titulo="o que eu desenvolvi"><span class="peca-capa"><img src="motion/cintia.jpg" alt="" loading="lazy"><span class="peca-play" aria-hidden="true"></span></span><span class="peca-cat">motion</span><span class="peca-tit">o que eu desenvolvi</span><span class="peca-nota">reel de criações, por tipo de trabalho</span></button>
     <button type="button" class="peca peca-mot" data-cat="motion" data-video="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/cartas.mp4" data-titulo="cartas na mesa"><span class="peca-capa"><img src="motion/cartas.jpg" alt="" loading="lazy"><span class="peca-play" aria-hidden="true"></span></span><span class="peca-cat">motion</span><span class="peca-tit">cartas na mesa</span><span class="peca-nota">para seu voto decide, comparando propostas carta a carta</span></button>
     <button type="button" class="peca peca-mot" data-cat="motion" data-video="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/debate.mp4" data-titulo="placar da verdade"><span class="peca-capa"><img src="motion/debate.jpg" alt="" loading="lazy"><span class="peca-play" aria-hidden="true"></span></span><span class="peca-cat">motion</span><span class="peca-tit">placar da verdade</span><span class="peca-nota">checagem do debate da band, com veredito por fala</span></button>
     <button type="button" class="peca peca-mot" data-cat="motion" data-video="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/seisum.mp4" data-titulo="a escala 6x1"><span class="peca-capa"><img src="motion/seisum.jpg" alt="" loading="lazy"><span class="peca-play" aria-hidden="true"></span></span><span class="peca-cat">motion</span><span class="peca-tit">a escala 6x1</span><span class="peca-nota">para seu voto decide, sobre jornada e quem sustenta o comércio</span></button>
+    <button type="button" class="peca peca-mot" data-cat="motion" data-video="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/collor.mp4" data-titulo="qual é a consequência"><span class="peca-capa"><img src="motion/collor.jpg" alt="" loading="lazy"><span class="peca-play" aria-hidden="true"></span></span><span class="peca-cat">motion</span><span class="peca-tit">qual é a consequência</span><span class="peca-nota">para seu voto decide, sobre o debate e o que vem depois</span></button>
+    <button type="button" class="peca peca-mot" data-cat="motion" data-video="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/avos.mp4" data-titulo="incentive seus avós"><span class="peca-capa"><img src="motion/avos.jpg" alt="" loading="lazy"><span class="peca-play" aria-hidden="true"></span></span><span class="peca-cat">motion</span><span class="peca-tit">incentive seus avós</span><span class="peca-nota">para seu voto decide, das diretas já ao voto de hoje</span></button>
     <button type="button" class="peca peca-mot" data-cat="motion" data-video="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/ladip.mp4" data-titulo="o voto como direito humano"><span class="peca-capa"><img src="motion/ladip.jpg" alt="" loading="lazy"><span class="peca-play" aria-hidden="true"></span></span><span class="peca-cat">motion</span><span class="peca-tit">o voto como direito humano</span><span class="peca-nota">para a ladip, da onu de 1945 à ditadura e à soberania</span></button>
     <button type="button" class="peca peca-mot" data-cat="motion" data-video="https://github.com/cintiavtrno/portfolio/releases/download/motion-v1/tml.mp4" data-titulo="tml, proposta"><span class="peca-capa"><img src="motion/tml.jpg" alt="" loading="lazy"><span class="peca-play" aria-hidden="true"></span></span><span class="peca-cat">motion</span><span class="peca-tit">tml, proposta</span><span class="peca-nota">um link para cada cliente, e o dado virando desenho</span></button>
     <a class="peca" data-cat="dados" href="#produtos"><span class="peca-cat">dados</span><span class="peca-tit">iecisgestão</span><span class="peca-nota">produto digital de gestão institucional</span></a>
